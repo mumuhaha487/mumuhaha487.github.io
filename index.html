@@ -1,343 +1,969 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>木木哈哈的博客</title><meta name="author" content="木木em哈哈"><meta name="copyright" content="木木em哈哈"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="开卷">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>木木哈哈的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="开卷">
 <meta property="og:type" content="website">
 <meta property="og:title" content="木木哈哈的博客">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="木木哈哈的博客">
 <meta property="og:description" content="开卷">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic.imgdb.cn/item/649c398a1ddac507cc775dba.png">
 <meta property="article:author" content="木木em哈哈">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic.imgdb.cn/item/649c398a1ddac507cc775dba.png"><link rel="shortcut icon" href="https://pic.imgdb.cn/item/649c39921ddac507cc7771b9.webp"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '木木哈哈的博客',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2023-06-28 22:02:20'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
+    <link rel="alternate" href="/atom.xml" title="木木哈哈的博客" type="application/atom+xml">
   
-    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
-      const link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.href = url
-      if (id) link.id = id
-      link.onerror = reject
-      link.onload = link.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        link.onload = link.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(link)
-    })
   
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">木木哈哈的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-c红黑树（4-4）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/20/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%884-4%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-06-19T16:13:55.000Z" itemprop="datePublished">2023-06-20</time>
+</a>
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic.imgdb.cn/item/649c398a1ddac507cc775dba.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://pic.imgdb.cn/item/649c39781ddac507cc773309.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="木木哈哈的博客"><img class="site-icon" src="https://pic.imgdb.cn/item/649c39921ddac507cc7771b9.webp"/><span class="site-name">木木哈哈的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">木木哈哈的博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://githubfast.com/mumuhaha487" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/mumuemhaha" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=3420083632&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:3420083632@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/06/20/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%884-4%EF%BC%89/" title="c++红黑树（4/4）">c++红黑树（4/4）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-19T16:13:55.000Z" title="发表于 2023-06-20 00:13:55">2023-06-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c-c/">c/c++</a></span></div><div class="content">不愧是我。鸽这件事我依然还是鸽了(滑稽.jpg)回顾上期的博客
-c++红黑树（3&#x2F;4）_
-在上一期的博客中我们学到了第二种情况红黑树如何进行平衡性调整
-接下来我们要试试剩下的情况，红黑树如何进行平衡性调整
-其实说是这一章一共三种情况，但是如果理解了前面两章，其实要比前两章简单的多得多
-情况假如父亲在爷爷的左节点上，插入的节点在父亲的右节点（往下的情况默认没叔叔节点或者叔叔节点为黑）
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++</a>
+  </div>
 
- 做法很简单——只需要先做左旋再右旋
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/20/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%884-4%EF%BC%89/">c++红黑树（4/4）</a>
+    </h1>
+  
 
-这样节点就行了
-接下来就是变色了
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="不愧是我。鸽这件事我依然还是鸽了-滑稽-jpg"><a href="#不愧是我。鸽这件事我依然还是鸽了-滑稽-jpg" class="headerlink" title="不愧是我。鸽这件事我依然还是鸽了(滑稽.jpg)"></a>不愧是我。鸽这件事我依然还是鸽了(滑稽.jpg)</h1><h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上期的博客</p>
+<p><a target="_blank" rel="noopener" href="http://blog.0ha.top/index.php/2023/06/13/%e7%ba%a2%e9%bb%91%e6%a0%91c%ef%bc%883-4%ef%bc%89/">c++红黑树（3&#x2F;4）_</a></p>
+<p>在上一期的博客中我们学到了第二种情况红黑树如何进行平衡性调整</p>
+<p>接下来我们要试试剩下的情况，红黑树如何进行平衡性调整</p>
+<p>其实说是这一章一共三种情况，但是如果理解了前面两章，其实要比前两章简单的多得多</p>
+<h2 id="情况"><a href="#情况" class="headerlink" title="情况"></a>情况</h2><p>假如父亲在爷爷的左节点上，插入的节点在父亲的右节点<br>（往下的情况默认没叔叔节点或者叔叔节点为黑）</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-38.png"></p>
+<p> 做法很简单——只需要先做左旋再右旋</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-39.png"></p>
+<p>这样节点就行了</p>
+<p>接下来就是变色了</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-40.png"></p>
+<h2 id="打脸-jpg"><a href="#打脸-jpg" class="headerlink" title="打脸.jpg"></a>打脸.jpg</h2><p>emmm……</p>
+<p>上一章好像讲过新节点最好不要变色来着….</p>
+<p>这个我后面会解释</p>
+<h2 id="如果有叔叔节点"><a href="#如果有叔叔节点" class="headerlink" title="如果有叔叔节点"></a>如果有叔叔节点</h2><p>就是这样变</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-41.png"></p>
+<p>类似就是加了一个叔叔节点的变化</p>
+<h2 id="假如父亲在爷爷的右节点上"><a href="#假如父亲在爷爷的右节点上" class="headerlink" title="假如父亲在爷爷的右节点上"></a>假如父亲在爷爷的右节点上</h2><p>这时只需要左右反过来就行了，会更好理解</p>
+<h2 id="插入的节点在父亲的右节点"><a href="#插入的节点在父亲的右节点" class="headerlink" title="插入的节点在父亲的右节点"></a>插入的节点在父亲的右节点</h2><p>此时只需要与之相反的左旋就行了</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-42.png"></p>
+<p>如果有叔叔节点就是</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-43.png"></p>
+<h2 id="插入的节点在父亲的左节点"><a href="#插入的节点在父亲的左节点" class="headerlink" title="插入的节点在父亲的左节点"></a>插入的节点在父亲的左节点</h2><p> 这个只需要与之相反的先做右旋在做左旋</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-44.png"></p>
+<p>然后老样子</p>
+<p>如果有叔叔节点就是其实</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-45.png"></p>
+<p> 这样所有的就完成了</p>
+<h2 id="对于上一章所讲的新节点最好不要变（阿巴阿巴…）"><a href="#对于上一章所讲的新节点最好不要变（阿巴阿巴…）" class="headerlink" title="对于上一章所讲的新节点最好不要变（阿巴阿巴…）"></a>对于上一章所讲的新节点最好不要变（阿巴阿巴…）</h2><p>这是因为一个特殊情况必须要把新节点当成一个整体</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-46.png"></p>
+<p>但是，仔细看</p>
+<p>无论如何变交换的时候只要把30这个节点交换就行了</p>
+<p>其他的不用变，自然而然，新节点就可以变色</p>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>左旋右旋只需要判断是左节点向下“拉”还是右节点向下“拉”</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>其实这里没有什么好说的，左旋只是相反的右旋，只需要把所有的方向一变就行</p>
+<h2 id="左旋节点"><a href="#左旋节点" class="headerlink" title="左旋节点"></a>左旋节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">void RotateLeft(RBNode&lt;T&gt;*&amp; pointer)</span><br><span class="line">&#123;</span><br><span class="line">//     4      -----左旋----             6</span><br><span class="line">//  /      \                         /     \</span><br><span class="line">// 3        6                     4         7</span><br><span class="line">//         /   \                 /  \</span><br><span class="line">//        5     7              3     5   </span><br><span class="line">RBNode&lt;T&gt;* node_1 = pointer;</span><br><span class="line">pointer = pointer-&gt;rchild;</span><br><span class="line">pointer-&gt;parent = node_1-&gt;parent;</span><br><span class="line">node_1-&gt;rchild = pointer-&gt;lchild;</span><br><span class="line">if (pointer-&gt;lchild)</span><br><span class="line">pointer-&gt;lchild-&gt;parent = node_1;</span><br><span class="line">pointer-&gt;lchild = node_1;</span><br><span class="line">node_1-&gt;parent = pointer;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-打脸.jpgemmm……
-上一章好像讲过新节点最好不要变色来着….
-这个我后面会解释
-如果有叔叔节点就是这样变
+<h2 id="先左旋后右旋"><a href="#先左旋后右旋" class="headerlink" title="先左旋后右旋"></a>先左旋后右旋</h2><p>这里附上先左旋在右旋的节点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    //如下图不全，只是示意，不要按照这个图写代码否则会造成代码出现bug</span><br><span class="line">    //      6      -----先左旋----    6       -----再右旋----    5</span><br><span class="line">    //   /      \                   /   \                      /    \</span><br><span class="line">    //  4        7                 5     7                    4      6 </span><br><span class="line">    //    \                       /                                    \</span><br><span class="line">    //     5                     4                                      7</span><br><span class="line">代码就为</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-类似就是加了一个叔叔节点的变化
-假如父亲在爷爷的右节点上这时只需要左右反过来就行了，会更好理解
-插入的节点在父亲的右节点此时只需要与之相反的左旋就行了
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">void RotateLeftRight(RBNode&lt;T&gt;*&amp; pointer)</span><br><span class="line">&#123;</span><br><span class="line">//如下图不全，只是示意，不要按照这个图写代码否则会造成代码出现bug</span><br><span class="line">//      6      -----先左旋----    6       -----再右旋----    5</span><br><span class="line">//   /      \                   /   \                      /    \</span><br><span class="line">//  4        7                 5     7                    4      6 </span><br><span class="line">//    \                       /                                    \</span><br><span class="line">//     5                     4                                      7</span><br><span class="line">RBNode&lt;T&gt;* noderoot = pointer;</span><br><span class="line">RBNode&lt;T&gt;* noderoot_left = pointer-&gt;lchild;</span><br><span class="line">RBNode&lt;T&gt;* noderoot_right = pointer-&gt;rchild;</span><br><span class="line">RotateLeft(noderoot_left);</span><br><span class="line">pointer-&gt;lchild = noderoot;</span><br><span class="line">RotateRight(noderoot_right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-如果有叔叔节点就是
+<h2 id="先右旋再左旋"><a href="#先右旋再左旋" class="headerlink" title="先右旋再左旋"></a>先右旋再左旋</h2><p>理解了先左后右，那这个也会十分好理解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//先右后左</span><br><span class="line">void RotateRightLeft(RBNode&lt;T&gt;*&amp; pointer)</span><br><span class="line">&#123;</span><br><span class="line">    //      6     -----先右旋----     6       -----再左旋----     7</span><br><span class="line">    //   /     \                   /     \                      /    \</span><br><span class="line">    //  4        8                4       7                    6      8 </span><br><span class="line">    //          /                           \                 /                   </span><br><span class="line">    //         7                             8               4      </span><br><span class="line">    RBNode&lt;T&gt;* noderoot = pointer;</span><br><span class="line">    RBNode&lt;T&gt;* noderoot_left = pointer-&gt;lchild;</span><br><span class="line">    RBNode&lt;T&gt;* noderoot_right = pointer-&gt;rchild;</span><br><span class="line">    RotateRight(noderoot_right);</span><br><span class="line">    pointer-&gt;rchild = noderoot;</span><br><span class="line">    RotateLeft(noderoot_left);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-插入的节点在父亲的左节点 这个只需要与之相反的先做右旋在做左旋
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>函数打好了，现在只需要分类把情况一填</p>
+<p>把颜色一变就行了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">if (parent-&gt;parent-&gt;lchild==parent)</span><br><span class="line">&#123;</span><br><span class="line">//插入数据是父亲的左节点</span><br><span class="line">if (parent-&gt;lchild = point)</span><br><span class="line">&#123;</span><br><span class="line">RotateRight(grandpa);</span><br><span class="line">grandpa-&gt;colour = BLACK;</span><br><span class="line">grandpa-&gt;rchild-&gt;colour = RED;</span><br><span class="line">&#125;</span><br><span class="line">//插入数据是父亲的右节点</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">RotateLeftRight(grandpa);</span><br><span class="line">grandpa-&gt;lchild = RED;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">if (parent-&gt;lchild = point)</span><br><span class="line">&#123;</span><br><span class="line">Rotateleft(grandpa);</span><br><span class="line">grandpa-&gt;colour = BLACK;</span><br><span class="line">grandpa-&gt;lchild-&gt;colour = RED;</span><br><span class="line">&#125;</span><br><span class="line">//插入数据是父亲的右节点</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">RotateRightLeft(grandpa);</span><br><span class="line">grandpa-&gt;lchild = RED;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-然后老样子
-如果有叔叔节点就是其实
+<h2 id="总代码"><a href="#总代码" class="headerlink" title="总代码"></a>总代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">//定义一个颜色</span><br><span class="line">enum Colour</span><br><span class="line">&#123;</span><br><span class="line">RED,</span><br><span class="line">BLACK,</span><br><span class="line">&#125;;</span><br><span class="line">//定义一个模版T</span><br><span class="line">template&lt;typename T&gt;</span><br><span class="line">//一个节点的结构体</span><br><span class="line">struct RBNode</span><br><span class="line">&#123;</span><br><span class="line">RBNode* lchild,</span><br><span class="line">* rchild,</span><br><span class="line">* parent;</span><br><span class="line">Tdata;</span><br><span class="line">//初始化为RED也可以后面定义一个初始化函数</span><br><span class="line">Colour colour=RED;</span><br><span class="line">&#125;;</span><br><span class="line">//再定义一个模版T（template只能联系到下面一句语句）</span><br><span class="line">template &lt;typename T&gt;</span><br><span class="line">class RBTree//树</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">RBTree()</span><br><span class="line">&#123;</span><br><span class="line">root = nullptr;</span><br><span class="line">&#125;</span><br><span class="line">~RBTree()</span><br><span class="line">&#123;</span><br><span class="line">ReleaseNode(root);</span><br><span class="line">&#125;</span><br><span class="line">//插入元素</span><br><span class="line">void InsNode(const T&amp; e)</span><br><span class="line">&#123;</span><br><span class="line">InsNode(root, e);</span><br><span class="line">&#125;</span><br><span class="line">void InsNode(RBNode&lt;T&gt;*&amp; tnode, const T&amp; e)</span><br><span class="line">&#123;</span><br><span class="line">RBNode&lt;T&gt;* point = tnode;</span><br><span class="line">RBNode&lt;T&gt;* parent = nullptr;</span><br><span class="line">//深入到叶子节点准备插入新数据</span><br><span class="line">while (point-&gt;data==nullptr)</span><br><span class="line">&#123;</span><br><span class="line">if (e == point-&gt;data)</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;该数据已经存在&quot;);</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br><span class="line">parent = point;</span><br><span class="line">if (e &gt;= point)</span><br><span class="line">point = point-&gt;rchild;</span><br><span class="line">else</span><br><span class="line">point = point-&gt;lchild;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">//准备插入数据</span><br><span class="line">point = new RBNode&lt;T&gt;;</span><br><span class="line">point-&gt;data = e;</span><br><span class="line">point-&gt;lchild = nullptr;</span><br><span class="line">point-&gt;rchild = nullptr;</span><br><span class="line">point-&gt;parent = nullptr;</span><br><span class="line">point-&gt;colour = RED;</span><br><span class="line"></span><br><span class="line">if (parent == nullptr)</span><br><span class="line">&#123;</span><br><span class="line">//插入的是根节点</span><br><span class="line">point-&gt;colour = BLACK;</span><br><span class="line">tnode = point;</span><br><span class="line">&#125;</span><br><span class="line">//不是根节点</span><br><span class="line">if (e &gt; parent-&gt;data)</span><br><span class="line">parent-&gt;rchild = point; </span><br><span class="line">else</span><br><span class="line">parent-&gt;lchild = point;</span><br><span class="line"> </span><br><span class="line">point-&gt;parent = parent;</span><br><span class="line">if (parent-&gt;colour == BLACK)</span><br><span class="line">&#123;</span><br><span class="line">count &lt;&lt; e &lt;&lt; &quot;插入完成&quot; &lt;&lt; endl;</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br><span class="line">//接下来就是插入地方的父亲节点是红色的，且深度至少为3（因为第二层父亲节点颜色一定为黑色</span><br><span class="line">RBNode&lt;T&gt;* uncle = nullptr;</span><br><span class="line">RBNode&lt;T&gt;* grandpa = nullptr;</span><br><span class="line">//开始整个平衡性调整</span><br><span class="line">while (true)</span><br><span class="line">&#123;</span><br><span class="line">uncle = (parent-&gt;parent != nullptr) ? (getuncle(parent) :nullptr);</span><br><span class="line">grandpa = point-&gt;parent-&gt;parent;</span><br><span class="line">if grandpa == nullptr</span><br><span class="line">break;</span><br><span class="line">if (uncle != nullptr &amp;&amp; uncle-&gt;colour == RED)</span><br><span class="line">&#123;</span><br><span class="line">parent-&gt;colour = BLACK;</span><br><span class="line">uncle-&gt;colour = BLACK;</span><br><span class="line">grandpa-&gt;colour = RED;</span><br><span class="line">if (grandpa == root)</span><br><span class="line">&#123;</span><br><span class="line">grandpa-&gt;colour = BLACK;</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">point = grandpa;</span><br><span class="line">parent = grandpa-&gt;parent;</span><br><span class="line">if (parent-&gt;colour == BLACK)</span><br><span class="line">break;</span><br><span class="line">continue;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">//（uncle != nullptr &amp;&amp; uncle-&gt;colour == RED）不满足</span><br><span class="line">int sign = 0;</span><br><span class="line">RBNode&lt;T&gt;* gff = grandpa-&gt;parent;</span><br><span class="line">//标记数据sign判断祖父节点与曾祖父节点的关系</span><br><span class="line">if (gff != nullptr)</span><br><span class="line">&#123;</span><br><span class="line">if (gff-&gt;lchild = grandpa)</span><br><span class="line">sign = 1;</span><br><span class="line">else</span><br><span class="line">sign = 2;</span><br><span class="line">&#125;</span><br><span class="line">//插入数据的父亲是爷爷的左节点</span><br><span class="line">if (parent-&gt;parent-&gt;lchild==parent)</span><br><span class="line">&#123;</span><br><span class="line">//插入数据是父亲的左节点</span><br><span class="line">if (parent-&gt;lchild = point)</span><br><span class="line">&#123;</span><br><span class="line">RotateRight(grandpa);</span><br><span class="line">grandpa-&gt;colour = BLACK;</span><br><span class="line">grandpa-&gt;rchild-&gt;colour = RED;</span><br><span class="line">&#125;</span><br><span class="line">//插入数据是父亲的右节点</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">RotateLeftRight(grandpa);</span><br><span class="line">grandpa-&gt;lchild = RED;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">if (parent-&gt;lchild = point)</span><br><span class="line">&#123;</span><br><span class="line">Rotateleft(grandpa);</span><br><span class="line">grandpa-&gt;colour = BLACK;</span><br><span class="line">grandpa-&gt;lchild-&gt;colour = RED;</span><br><span class="line">&#125;</span><br><span class="line">//插入数据是父亲的右节点</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">RotateRightLeft(grandpa);</span><br><span class="line">grandpa-&gt;lchild = RED;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">if (parent-&gt;colour == BLACK)</span><br><span class="line">break;</span><br><span class="line">if (gff == nullptr)</span><br><span class="line">root = grandpa;</span><br><span class="line">else if (sign == 1)</span><br><span class="line">gff-&gt;lchild = grandpa;</span><br><span class="line">else if (sign == 2)</span><br><span class="line">gff-&gt;rchild = grandpa;</span><br><span class="line"> </span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">//无论如何根节点颜色为黑色</span><br><span class="line">root-&gt;colour = BLACK;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">//删除节点，释放内存</span><br><span class="line">void ReleaseNode(RBNode&lt;T&gt;* pnode)</span><br><span class="line">&#123;</span><br><span class="line">if (pnode != nullptr)</span><br><span class="line">&#123;</span><br><span class="line">ReleaseNode(pnode-&gt;lchild);</span><br><span class="line">ReleaseNode(pnode-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line">delete pnode;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//获取叔叔节点</span><br><span class="line">RBNode&lt;T&gt;* getuncle(RBNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">if (p-&gt;parent-&gt;lchild == p)</span><br><span class="line">return p-&gt;parent-&gt;rchild;</span><br><span class="line">else</span><br><span class="line">return p-&gt;parent-&gt;rchild;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//右旋节点</span><br><span class="line">void RotateRight(RBNode&lt;T&gt;*&amp; pointer)</span><br><span class="line">&#123;</span><br><span class="line">//         6      -----右旋----             4</span><br><span class="line">//     /      \                          /     \</span><br><span class="line">//    4        7                        3       6</span><br><span class="line">//  /   \                                      /  \</span><br><span class="line">// 3     5                                    5    7   </span><br><span class="line">RBNode&lt;T&gt;* node_1 = pointer;</span><br><span class="line">pointer = pointer-&gt;lchild;</span><br><span class="line">pointer-&gt;parent = node_1-&gt;parent;</span><br><span class="line">node_1-&gt;lchild = pointer-&gt;rchild;</span><br><span class="line">if (pointer-&gt;rchild)</span><br><span class="line">pointer-&gt;rchild-&gt;parent = node_1;</span><br><span class="line">pointer-&gt;rchild = node_1;</span><br><span class="line">node_1-&gt;parent = pointer;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//左旋节点</span><br><span class="line">void RotateLeft(RBNode&lt;T&gt;*&amp; pointer)</span><br><span class="line">&#123;</span><br><span class="line">//     4      -----左旋----             6</span><br><span class="line">//  /      \                         /     \</span><br><span class="line">// 3        6                     4         7</span><br><span class="line">//         /   \                 /  \</span><br><span class="line">//        5     7              3     5   </span><br><span class="line">RBNode&lt;T&gt;* node_1 = pointer;</span><br><span class="line">pointer = pointer-&gt;rchild;</span><br><span class="line">pointer-&gt;parent = node_1-&gt;parent;</span><br><span class="line">node_1-&gt;rchild = pointer-&gt;lchild;</span><br><span class="line">if (pointer-&gt;lchild)</span><br><span class="line">pointer-&gt;lchild-&gt;parent = node_1;</span><br><span class="line">pointer-&gt;lchild = node_1;</span><br><span class="line">node_1-&gt;parent = pointer;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">//先左后右</span><br><span class="line">void RotateLeftRight(RBNode&lt;T&gt;*&amp; pointer)</span><br><span class="line">&#123;</span><br><span class="line">//如下图不全，只是示意，不要按照这个图写代码否则会造成代码出现bug</span><br><span class="line">//      6      -----先左旋----    6       -----再右旋----    5</span><br><span class="line">//   /      \                   /   \                      /    \</span><br><span class="line">//  4        7                 5     7                    4      6 </span><br><span class="line">//    \                       /                                    \</span><br><span class="line">//     5                     4                                      7</span><br><span class="line">RBNode&lt;T&gt;* noderoot = pointer;</span><br><span class="line">RBNode&lt;T&gt;* noderoot_left = pointer-&gt;lchild;</span><br><span class="line">RBNode&lt;T&gt;* noderoot_right = pointer-&gt;rchild;</span><br><span class="line">RotateLeft(noderoot_left);</span><br><span class="line">pointer-&gt;lchild = noderoot;</span><br><span class="line">RotateRight(noderoot_right);</span><br><span class="line">&#125;</span><br><span class="line">//先右后左</span><br><span class="line">void RotateRightLeft(RBNode&lt;T&gt;*&amp; pointer)</span><br><span class="line">&#123;</span><br><span class="line">//      6     -----先右旋----     6       -----再左旋----     7</span><br><span class="line">//   /     \                   /     \                      /    \</span><br><span class="line">//  4        8                4       7                    6      8 </span><br><span class="line">//          /                           \                 /                   </span><br><span class="line">//         7                             8               4      </span><br><span class="line">RBNode&lt;T&gt;* noderoot = pointer;</span><br><span class="line">RBNode&lt;T&gt;* noderoot_left = pointer-&gt;lchild;</span><br><span class="line">RBNode&lt;T&gt;* noderoot_right = pointer-&gt;rchild;</span><br><span class="line">RotateRight(noderoot_right);</span><br><span class="line">pointer-&gt;rchild = noderoot;</span><br><span class="line">RotateLeft(noderoot_left);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">private:</span><br><span class="line">//根节点</span><br><span class="line">RBNode &lt;T&gt;* root;</span><br><span class="line">&#125;;</span><br><span class="line">template&lt;typename T&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">RBNode&lt;T&gt;* root;</span><br><span class="line">RBTree();</span><br><span class="line">//还没有到定义的时候</span><br><span class="line">printf(&quot;OK&quot;);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
- 这样所有的就完成了
-对于上一章所讲的新节点最好不要变（阿巴阿巴…）这是因为一个特殊情况必须要把新节点当成一个整体
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这四节课主要学了什么是红黑树，以及如何进行红黑树进行平衡性调整</p>
+<p>学习了这四节你可以更加得心应手的去理解指针以及树的概念</p>
+<p>并且在学习其他类型的树时会非常非常的得心应手</p>
+<p>最后，恭喜你看到这里。</p>
 
-但是，仔细看
- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/06/16/%E5%92%95%E5%92%95%E5%92%95%E5%92%95/" title="咕咕咕咕">咕咕咕咕</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-16T03:16:06.000Z" title="发表于 2023-06-16 11:16:06">2023-06-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">我知道当鸽子不好
-因为生病头晕的原因时间耽搁了，近期要期末，所以红黑树最后一节要鸽到暑假了。
-咕咕咕咕咕咕咕~~~
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/20/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%884-4%EF%BC%89/" data-id="cljfslc34000avouu5u9ugeth" data-title="c++红黑树（4/4）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li></ul>
 
-</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/06/13/%E7%BA%A2%E9%BB%91%E6%A0%91c%EF%BC%883-4%EF%BC%89/" title="c++红黑树（3/4）">c++红黑树（3/4）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-13T09:13:32.000Z" title="发表于 2023-06-13 17:13:32">2023-06-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c-c/">c/c++</a></span></div><div class="content">回顾C++红黑树（2&#x2F;4）
-在上一期的博客中我们学到了第一种情况红黑树如何进行平衡性调整
-接下来我们要试试第二种情况，红黑树如何进行平衡性调整
-下一节
-c++红黑树（4&#x2F;4
-情况第二种情况就是父亲节点为红色，叔叔节点没有或者为黑色，父亲节点为爷爷的左节点，且爷爷节点为曾祖父（爷爷的父亲）节点的左节点。
-就是这么一个图
-
-解决办法这里要把节点进行右旋
-在这里可能听起来会比较难以理解
-但是记住你需要做的步骤，代码就可以很简单的进行实现
-右旋把曾祖父的左孩子指针从祖父那里断开（同时也断开祖父的父亲指针）
-然后曾祖父的左孩子指针指向父亲节点
-同时把父亲节点得到右指针指向祖父节点，如果父亲节点有右孩子节点需要把他提取出来放到原曾祖父的左孩子（同时连接祖父的父亲指针，后面都记得变，不说了）
-就完成了右旋的操作
-结果图为
-
-变色这个时候只需要变色就行了
-把你的父亲节点变为黑色，同时把原爷爷节点变为红色
-就为下图
-
-这时候红黑树就进行了平衡
-接上一章的问题上一章的图片为
-
-还记得我们上一回记住的吗？
-把篮圈内的部分看为一个整体（因为他已经平衡了）
-这时候他就是新的红色节点
-他的父亲 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/06/11/vscode%E7%94%A8%E7%9A%84%E5%A4%AA%E5%A5%87%E6%80%AA%E4%BA%86/" title="VSCode用的太奇怪了">VSCode用的太奇怪了</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-11T15:59:56.000Z" title="发表于 2023-06-11 23:59:56">2023-06-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/uncategorized/">uncategorized</a></span></div><div class="content">VSCode用的太奇怪了，一些地方明明没有错，一个劲的给我报错，不是我能够驾驭的，我还是老老实实用VS2022吧！！！
-
-</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%882-4%EF%BC%89/" title="C++红黑树（2/4）">C++红黑树（2/4）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-11T15:54:36.000Z" title="发表于 2023-06-11 23:54:36">2023-06-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c-c/">c/c++</a></span></div><div class="content">回顾上一章
-C++红黑树（1&#x2F;4）
-下一章
-c++红黑树（3&#x2F;4）
-上一章学到了红黑树的特点以及基本定义
-本章我们要学插入时候的第一类情况——父亲节点为红色叔叔节点也为红（当然祖父节点一定为黑色）
-情况当我的红色节点插上去时因为特性二——红色节点不可以相邻出现从而要对整个树进行平衡性调整
-
-我们可以把新节点的颜色不变，然后把父亲节点和叔叔节点的颜色变为黑色，然后把爷爷节点的颜色变为红色
-局部解决办法从而达到这棵树的平衡
-
-需要注意的是如果祖父是根节点的话要把祖父的颜色也调为黑色
-
-全局解决的思想 然而不幸的是一颗树的深度不仅仅可以是3，他可以更深——4，5,，6，7…或者更多
-如图
-
-要在这个红黑树上把插入一个新的红色节点
-那么还是安装之前的方法调整你会发现一个问题就是你插入节点的祖父节点的父亲节点（也就是你的曾祖父节点）是红色的且你祖父节点的叔叔节点是黑色不在这一类方法中
-如图
-
-但是不要慌张，后面两节会讲到其他的情况以及应对的方法（需要注意的时在后续解决中你要把蓝圈部分当成一个整体【因为他已经平衡了】）
-现在恭喜你，你已经学到了红黑树插入时会遇到的第一种情况的解 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%881-4%EF%BC%89/" title="C++红黑树（1/4）">C++红黑树（1/4）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-11T05:37:28.000Z" title="发表于 2023-06-11 13:37:28">2023-06-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c-c/">c/c++</a></span></div><div class="content">下一篇博客C++红黑树（2&#x2F;4）
-红黑树的优点以及特点_红黑树是一种自平衡二叉查找树，它能够保证在最坏情况下基本动态集合操作（插入、删除、查找）的时间复杂度为O(log n)。红黑树通过在每个节点上增加一个存储位来表示节点的颜色，可以将树保持黑平衡，具体来说就是满足任何一条从根到叶子节点的路径上的黑节点数量相等。红黑树的性质包括：根节点是黑色的；每个叶子节点都是黑色的空节点；如果一个节点是红色的，则它的两个子节点都是黑色的；任意一节点到其每个叶子的所有路径都包含相同数目的黑色节点。这些性质保证了红黑树的平衡性和查找效率。_
-红黑树的定义&#x2F;特性
-1.红黑树只会出现红色节点以及黑色节点且根节点一定是黑色
-2.红色节点不能相邻出现（黑色可以）
-3.所有叶子节点到根节点所经过的黑色节点一定相同
-4.最短路径的两倍不会超过最长路径
-
-举例如图
-这是一棵红黑树
-
-而下面都不是红黑树
-
-不符合第三个条件
-
-不符合第二个条件
-代码则我们可以看到写出c++&#x2F;c的代码
-123456789101112131415161718192021222324252627282930313 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/06/10/c%E4%B8%AD%E7%9A%84pair-%E5%92%8Cmake-pair%E7%9A%84%E7%94%A8%E6%B3%95/" title="C++中的pair 和make_pair的用法">C++中的pair 和make_pair的用法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-10T08:52:35.000Z" title="发表于 2023-06-10 16:52:35">2023-06-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/c-c/">c/c++</a></span></div><div class="content">pair的基础用法概念pair可以把两个数据整合到一个变量中
+    </footer>
+  </div>
+  
+</article>
 
 
-注意只能是两个，多不行，少也不行
-数据类型可同可不同
+
+  
+    <article id="post-咕咕咕咕" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/16/%E5%92%95%E5%92%95%E5%92%95%E5%92%95/" class="article-date">
+  <time class="dt-published" datetime="2023-06-16T03:16:06.000Z" itemprop="datePublished">2023-06-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/uncategorized/">uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/16/%E5%92%95%E5%92%95%E5%92%95%E5%92%95/">咕咕咕咕</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>我知道当鸽子不好</p>
+<p>因为生病头晕的原因时间耽搁了，近期要期末，所以红黑树最后一节要鸽到暑假了。</p>
+<p>咕咕咕咕咕咕咕~~~</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/202cb962ac59075b964b26.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/16/%E5%92%95%E5%92%95%E5%92%95%E5%92%95/" data-id="cljfslc3i0019vouugr5odg3z" data-title="咕咕咕咕" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%B2%E8%81%8A/" rel="tag">闲聊</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
 
 
-可以方便的进行数据管理
-pair的基础定义以及逻辑关系
-pair p1; &#x2F;&#x2F;创建一个空的pair对象（使用默认构造），它的两个元素分别是T1和T2类型，采用值初始化。
-pair p1(v1, v2); &#x2F;&#x2F;创建一个pair对象，它的两个元素分别是T1和T2类型，其中first成员初始化为v1，second成员初始化为v2。
-make_pair(v1, v2); &#x2F;&#x2F; 以v1和v2的值创建一个新的pair对象，其元素类型分别是v1和v2的类型。
-p1 &lt; p2; &#x2F;&#x2F; 两个pair对象间的小于运算，其定义遵循字典次序：如 p1.first &lt; p2.first 或者 !(p2.first &lt; p1.first) &amp;&amp; (p1.second &lt; p2.second) 则返回true。
-p1 &#x3D;&#x3D; p2； &#x2F;&#x2F; ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/06/10/%E5%AD%A6%E7%82%B9c-c%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F/" title="学点c/c++？？？？">学点c/c++？？？？</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-10T03:22:14.000Z" title="发表于 2023-06-10 11:22:14">2023-06-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%84%9F%E6%85%A8/">感慨</a></span></div><div class="content">c瘾犯了，学点python c&#x2F;c++？？？
-工具就用pycharm vscode？？？
-😀😀😀
-</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/06/09/%E7%94%A8python%E7%88%AC%E5%8F%96%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%EF%BC%88%E5%85%A5%E4%B8%AA%E9%97%A8%EF%BC%89/" title="用python爬取博客的图片链接（入个门）">用python爬取博客的图片链接（入个门）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-09T15:19:36.000Z" title="发表于 2023-06-09 23:19:36">2023-06-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/">python</a></span></div><div class="content">前言学了一个晚上学了一点点皮毛可能还有很多地方有不足但是思想大概搞懂了（python的re库把我脑袋搞晕了QAQ）
-这个大佬轻喷，有什么改进可以指出十分感谢
-请求网页的源代码
-定义头文件
-许多网站为了防止有人恶意爬取，网站就会做反爬取
-就要自己定义头文件，以便于可以正常显示源代码
-比如csdn不定义User-Agent返回的源代码就为空
-按f12打开控制台，打开网络（network）刷新网页，随便点击一个链接在请求的文件里有
+
+  
+    <article id="post-红黑树c（3-4）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/13/%E7%BA%A2%E9%BB%91%E6%A0%91c%EF%BC%883-4%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-06-13T09:13:32.000Z" itemprop="datePublished">2023-06-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/13/%E7%BA%A2%E9%BB%91%E6%A0%91c%EF%BC%883-4%EF%BC%89/">c++红黑树（3/4）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p><a href="/index.php/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%882-4%EF%BC%89/">C++红黑树（2&#x2F;4）</a></p>
+<p>在上一期的博客中我们学到了第一种情况红黑树如何进行平衡性调整</p>
+<p>接下来我们要试试第二种情况，红黑树如何进行平衡性调整</p>
+<p>下一节</p>
+<p><a target="_blank" rel="noopener" href="http://blog.0ha.top/index.php/2023/06/20/c%e7%ba%a2%e9%bb%91%e6%a0%91%ef%bc%884-4%ef%bc%89/">c++红黑树（4&#x2F;4</a></p>
+<h2 id="情况"><a href="#情况" class="headerlink" title="情况"></a>情况</h2><p>第二种情况就是父亲节点为红色，叔叔节点没有或者为黑色，父亲节点为爷爷的左节点，且爷爷节点为曾祖父（爷爷的父亲）节点的左节点。</p>
+<p>就是这么一个图</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-30.png"></p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>这里要把节点进行右旋</p>
+<p>在这里可能听起来会比较难以理解</p>
+<p>但是记住你需要做的步骤，代码就可以很简单的进行实现</p>
+<h2 id="右旋"><a href="#右旋" class="headerlink" title="右旋"></a>右旋</h2><p>把曾祖父的左孩子指针从祖父那里断开（同时也断开祖父的父亲指针）</p>
+<p>然后曾祖父的左孩子指针指向父亲节点</p>
+<p>同时把父亲节点得到右指针指向祖父节点，如果父亲节点有右孩子节点需要把他提取出来放到原曾祖父的左孩子（同时连接祖父的父亲指针，后面都记得变，不说了）</p>
+<p>就完成了右旋的操作</p>
+<p>结果图为</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-31.png"></p>
+<h2 id="变色"><a href="#变色" class="headerlink" title="变色"></a>变色</h2><p>这个时候只需要变色就行了</p>
+<p>把你的父亲节点变为黑色，同时把原爷爷节点变为红色</p>
+<p>就为下图</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-32.png"></p>
+<p>这时候红黑树就进行了平衡</p>
+<h2 id="接上一章的问题"><a href="#接上一章的问题" class="headerlink" title="接上一章的问题"></a>接上一章的问题</h2><p>上一章的图片为</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-33.png"></p>
+<p>还记得我们上一回记住的吗？</p>
+<p>把篮圈内的部分看为一个整体（因为他已经平衡了）</p>
+<p>这时候他就是新的红色节点</p>
+<p>他的父亲为“50”，他的祖父为“80”</p>
+<p>可能看起来会比较复杂</p>
+<p>我们只需要记住操作</p>
+<p>由于没有曾祖父所以不需要改曾祖父的节点</p>
+<p>把父亲的节点的右孩子连接到祖父节点，再把原父亲右孩子节点连接到祖父的左节点</p>
+<p>这样宏观的结果就是相当于把爷爷节点“拽”了下来</p>
+<p>最后的图为</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-34.png"></p>
+<p>最后进行变色</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-35.png"></p>
+<p>一个红黑树到达平衡</p>
+<h2 id="代码讲解"><a href="#代码讲解" class="headerlink" title="代码讲解"></a>代码讲解</h2><p>首先接在上一章情况之后</p>
+<p>代码</p>
+<h2 id="判断爷爷是左节点还是右节点"><a href="#判断爷爷是左节点还是右节点" class="headerlink" title="判断爷爷是左节点还是右节点"></a>判断爷爷是左节点还是右节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//（uncle != nullptr &amp;&amp; uncle-&gt;colour == RED）不满足</span><br><span class="line">int sign = 0;</span><br><span class="line">RBNode&lt;T&gt;* gff = grandpa-&gt;parent;</span><br><span class="line">//标记数据sign判断祖父节点与曾祖父节点的关系</span><br><span class="line">if (gff != nullptr)</span><br><span class="line">&#123;</span><br><span class="line">if (gff-&gt;lchild = grandpa)</span><br><span class="line">sign = 1;</span><br><span class="line">else</span><br><span class="line">sign = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是为了判断祖父是曾祖父的左节点还是右节点方便连接</p>
+<h2 id="右旋函数代码"><a href="#右旋函数代码" class="headerlink" title="右旋函数代码"></a>右旋函数代码</h2><p>现在我们要创建一个右旋函数</p>
+<p>我以函数是传递爷爷节点参数为例</p>
+<p>除去曾祖父链接其他代码都按照说明写上去，按照逻辑来，不会那么难理解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void RotateRight(RBNode&lt;T&gt;*&amp; pointer)</span><br><span class="line">&#123;</span><br><span class="line">//         6      -----右旋----             4</span><br><span class="line">//     /      \                          /     \</span><br><span class="line">//    4        7                        3       6</span><br><span class="line">//  /   \                                      /  \</span><br><span class="line">// 3     5                                    5    7   </span><br><span class="line">RBNode&lt;T&gt;* node_1 = pointer;</span><br><span class="line">pointer = pointer-&gt;lchild;</span><br><span class="line">pointer-&gt;parent = node_1-&gt;parent;</span><br><span class="line">node_1-&gt;lchild = pointer-&gt;rchild;</span><br><span class="line">if (pointer-&gt;rchild)</span><br><span class="line">pointer-&gt;rchild-&gt;parent = node_1;</span><br><span class="line">pointer-&gt;rchild = node_1;</span><br><span class="line">node_1-&gt;parent = pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="选择情况并且执行右旋函数代码"><a href="#选择情况并且执行右旋函数代码" class="headerlink" title="选择情况并且执行右旋函数代码"></a>选择情况并且执行右旋函数代码</h2><p>选择祖父为为左节点，父亲也为左节点的情况并执行代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//插入数据的父亲是爷爷的左节点</span><br><span class="line">if (parent-&gt;parent-&gt;lchild==parent)</span><br><span class="line">&#123;</span><br><span class="line">//插入数据是父亲的左节点</span><br><span class="line">if (parent-&gt;lchild = point)</span><br><span class="line">&#123;</span><br><span class="line">RotateRight(grandpa);</span><br><span class="line">&#125;</span><br><span class="line">//插入数据是父亲的右节点</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">//...</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">//...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="连接到原来的树上"><a href="#连接到原来的树上" class="headerlink" title="连接到原来的树上"></a>连接到原来的树上</h2><p>最后就要把原父亲节点连接到曾祖父节点上（也就是连接到原来树上）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if (parent-&gt;colour == BLACK)</span><br><span class="line">break;</span><br><span class="line">if (gff == nullptr)</span><br><span class="line">root = grandpa;</span><br><span class="line">else if (sign == 1)</span><br><span class="line">gff-&gt;lchild = grandpa;</span><br><span class="line">else if (sign == 2)</span><br><span class="line">gff-&gt;rchild = grandpa;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在每次平衡性调整时，需要注意新节点的颜色最好不要变，因为它可能会是一个整体</p>
+<p>比如这个 </p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-36.png"></p>
+<p>这里新节点的颜色被整体看为红色</p>
+<p>如果后续新节点要变化颜色，这个整体就要变化为黑色（也就是30这个节点变为黑色），一般情况下要篮圈内进行平衡性调整，这是复杂化且不合理的。</p>
+<h2 id="总代码"><a href="#总代码" class="headerlink" title="总代码"></a>总代码</h2><p>附上现在更新的总代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">//定义一个颜色</span><br><span class="line">enum Colour</span><br><span class="line">&#123;</span><br><span class="line">RED,</span><br><span class="line">BLACK,</span><br><span class="line">&#125;;</span><br><span class="line">//定义一个模版T</span><br><span class="line">template&lt;typename T&gt;</span><br><span class="line">//一个节点的结构体</span><br><span class="line">struct RBNode</span><br><span class="line">&#123;</span><br><span class="line">RBNode* lchild,</span><br><span class="line">* rchild,</span><br><span class="line">* parent;</span><br><span class="line">Tdata;</span><br><span class="line">//初始化为RED也可以后面定义一个初始化函数</span><br><span class="line">Colour colour=RED;</span><br><span class="line">&#125;;</span><br><span class="line">//再定义一个模版T（template只能联系到下面一句语句）</span><br><span class="line">template &lt;typename T&gt;</span><br><span class="line">class RBTree//树</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">RBTree()</span><br><span class="line">&#123;</span><br><span class="line">root = nullptr;</span><br><span class="line">&#125;</span><br><span class="line">~RBTree()</span><br><span class="line">&#123;</span><br><span class="line">ReleaseNode(root);</span><br><span class="line">&#125;</span><br><span class="line">//插入元素</span><br><span class="line">void InsNode(const T&amp; e)</span><br><span class="line">&#123;</span><br><span class="line">InsNode(root, e);</span><br><span class="line">&#125;</span><br><span class="line">void InsNode(RBNode&lt;T&gt;*&amp; tnode, const T&amp; e)</span><br><span class="line">&#123;</span><br><span class="line">RBNode&lt;T&gt;* point = tnode;</span><br><span class="line">RBNode&lt;T&gt;* parent = nullptr;</span><br><span class="line">//深入到叶子节点准备插入新数据</span><br><span class="line">while (point-&gt;data==nullptr)</span><br><span class="line">&#123;</span><br><span class="line">if (e == point-&gt;data)</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;该数据已经存在&quot;);</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br><span class="line">parent = point;</span><br><span class="line">if (e &gt;= point)</span><br><span class="line">point = point-&gt;rchild;</span><br><span class="line">else</span><br><span class="line">point = point-&gt;lchild;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">//准备插入数据</span><br><span class="line">point = new RBNode&lt;T&gt;;</span><br><span class="line">point-&gt;data = e;</span><br><span class="line">point-&gt;lchild = nullptr;</span><br><span class="line">point-&gt;rchild = nullptr;</span><br><span class="line">point-&gt;parent = nullptr;</span><br><span class="line">point-&gt;colour = RED;</span><br><span class="line"></span><br><span class="line">if (parent == nullptr)</span><br><span class="line">&#123;</span><br><span class="line">//插入的是根节点</span><br><span class="line">point-&gt;colour = BLACK;</span><br><span class="line">tnode = point;</span><br><span class="line">&#125;</span><br><span class="line">//不是根节点</span><br><span class="line">if (e &gt; parent-&gt;data)</span><br><span class="line">parent-&gt;rchild = point; </span><br><span class="line">else</span><br><span class="line">parent-&gt;lchild = point;</span><br><span class="line"> </span><br><span class="line">point-&gt;parent = parent;</span><br><span class="line">if (parent-&gt;colour == BLACK)</span><br><span class="line">&#123;</span><br><span class="line">count &lt;&lt; e &lt;&lt; &quot;插入完成&quot; &lt;&lt; endl;</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br><span class="line">//接下来就是插入地方的父亲节点是红色的，且深度至少为3（因为第二层父亲节点颜色一定为黑色</span><br><span class="line">RBNode&lt;T&gt;* uncle = nullptr;</span><br><span class="line">RBNode&lt;T&gt;* grandpa = nullptr;</span><br><span class="line">//开始整个平衡性调整</span><br><span class="line">while (true)</span><br><span class="line">&#123;</span><br><span class="line">uncle = (parent-&gt;parent != nullptr) ? (getuncle(parent) :nullptr);</span><br><span class="line">grandpa = point-&gt;parent-&gt;parent;</span><br><span class="line">if grandpa == nullptr</span><br><span class="line">break;</span><br><span class="line">if (uncle != nullptr &amp;&amp; uncle-&gt;colour == RED)</span><br><span class="line">&#123;</span><br><span class="line">parent-&gt;colour = BLACK;</span><br><span class="line">uncle-&gt;colour = BLACK;</span><br><span class="line">grandpa-&gt;colour = RED;</span><br><span class="line">if (grandpa == root)</span><br><span class="line">&#123;</span><br><span class="line">grandpa-&gt;colour = BLACK;</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">point = grandpa;</span><br><span class="line">parent = grandpa-&gt;parent;</span><br><span class="line">if (parent-&gt;colour == BLACK)</span><br><span class="line">break;</span><br><span class="line">continue;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">//（uncle != nullptr &amp;&amp; uncle-&gt;colour == RED）不满足</span><br><span class="line">int sign = 0;</span><br><span class="line">RBNode&lt;T&gt;* gff = grandpa-&gt;parent;</span><br><span class="line">//标记数据sign判断祖父节点与曾祖父节点的关系</span><br><span class="line">if (gff != nullptr)</span><br><span class="line">&#123;</span><br><span class="line">if (gff-&gt;lchild = grandpa)</span><br><span class="line">sign = 1;</span><br><span class="line">else</span><br><span class="line">sign = 2;</span><br><span class="line">&#125;</span><br><span class="line">//插入数据的父亲是爷爷的左节点</span><br><span class="line">if (parent-&gt;parent-&gt;lchild==parent)</span><br><span class="line">&#123;</span><br><span class="line">//插入数据是父亲的左节点</span><br><span class="line">if (parent-&gt;lchild = point)</span><br><span class="line">&#123;</span><br><span class="line">RotateRight(grandpa);</span><br><span class="line">&#125;</span><br><span class="line">//插入数据是父亲的右节点</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">//...</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">//...</span><br><span class="line">&#125;</span><br><span class="line">if (parent-&gt;colour == BLACK)</span><br><span class="line">break;</span><br><span class="line">if (gff == nullptr)</span><br><span class="line">root = grandpa;</span><br><span class="line">else if (sign == 1)</span><br><span class="line">gff-&gt;lchild = grandpa;</span><br><span class="line">else if (sign == 2)</span><br><span class="line">gff-&gt;rchild = grandpa;</span><br><span class="line"> </span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">//无论如何根节点颜色为黑色</span><br><span class="line">root-&gt;colour = BLACK;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">//删除节点，释放内存</span><br><span class="line">void ReleaseNode(RBNode&lt;T&gt;* pnode)</span><br><span class="line">&#123;</span><br><span class="line">if (pnode != nullptr)</span><br><span class="line">&#123;</span><br><span class="line">ReleaseNode(pnode-&gt;lchild);</span><br><span class="line">ReleaseNode(pnode-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line">delete pnode;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//获取叔叔节点</span><br><span class="line">RBNode&lt;T&gt;* getuncle(RBNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">if (p-&gt;parent-&gt;lchild == p)</span><br><span class="line">return p-&gt;parent-&gt;rchild;</span><br><span class="line">else</span><br><span class="line">return p-&gt;parent-&gt;rchild;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//右旋节点</span><br><span class="line">void RotateRight(RBNode&lt;T&gt;*&amp; pointer)</span><br><span class="line">&#123;</span><br><span class="line">//         6      -----右旋----             4</span><br><span class="line">//     /      \                          /     \</span><br><span class="line">//    4        7                        3       6</span><br><span class="line">//  /   \                                      /  \</span><br><span class="line">// 3     5                                    5    7   </span><br><span class="line">RBNode&lt;T&gt;* node_1 = pointer;</span><br><span class="line">pointer = pointer-&gt;lchild;</span><br><span class="line">pointer-&gt;parent = node_1-&gt;parent;</span><br><span class="line">node_1-&gt;lchild = pointer-&gt;rchild;</span><br><span class="line">if (pointer-&gt;rchild)</span><br><span class="line">pointer-&gt;rchild-&gt;parent = node_1;</span><br><span class="line">pointer-&gt;rchild = node_1;</span><br><span class="line">node_1-&gt;parent = pointer;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">private:</span><br><span class="line">//根节点</span><br><span class="line">RBNode &lt;T&gt;* root;</span><br><span class="line">&#125;;</span><br><span class="line">template&lt;typename T&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">RBNode&lt;T&gt;* root;</span><br><span class="line">RBTree();</span><br><span class="line">//还没有到定义的时候</span><br><span class="line">printf(&quot;OK&quot;);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>再次恭喜你，了解了红黑树的第二种情况的处理方法，接下来的最后一章的要讲剩下来的三种情况——因为设计左旋的代码和右旋其实相差不多，我们理解了右旋代码可以很快的理解并且使用左旋代码。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/13/%E7%BA%A2%E9%BB%91%E6%A0%91c%EF%BC%883-4%EF%BC%89/" data-id="cljfslc3n001tvouu3iym07nk" data-title="c++红黑树（3/4）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
 
 
-一般用到的就是User-Agent，host,cookie，Accept和connection
 
-这边我就定义一个头文件变量
-123456headers_dict=&#123;         &#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36 Edg/114.0.1823.37&#x27; & ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/06/08/python%E7%88%AC%E8%99%ABindexerror-list-index-out-of-range%E9%94%99%E8%AF%AF%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="python爬虫“indexerror: list index out of range”错误及其解决办法">python爬虫“indexerror: list index out of range”错误及其解决办法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-08T15:22:41.000Z" title="发表于 2023-06-08 23:22:41">2023-06-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/python/">python</a></span></div><div class="content">前因在写爬虫代码时候代码报错
+  
+    <article id="post-vscode用的太奇怪了" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/11/vscode%E7%94%A8%E7%9A%84%E5%A4%AA%E5%A5%87%E6%80%AA%E4%BA%86/" class="article-date">
+  <time class="dt-published" datetime="2023-06-11T15:59:56.000Z" itemprop="datePublished">2023-06-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/uncategorized/">uncategorized</a>
+  </div>
 
-indexerror: list index out of range
-indexerror:列表索引超出范围
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/11/vscode%E7%94%A8%E7%9A%84%E5%A4%AA%E5%A5%87%E6%80%AA%E4%BA%86/">VSCode用的太奇怪了</a>
+    </h1>
+  
 
-开始的认为原因前一期的博客我准备爬取盗版小说的的小说时，因为加载的字数太多
-我就想然后就是因为这个报了这个错误
-源代码（总）带上代码
-123456789101112131415161718192021222324252627282930313233343536import requests                            import re                                  import numpy as np                         from bs4 import BeautifulSoup              #目标url                                     url=&#x27;http://www.ibiqu.org/148_148106/&#x27;     #主页网站，不加的话还要后面分离链接            ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic.imgdb.cn/item/649c398a1ddac507cc775dba.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">木木em哈哈</div><div class="author-info__description">开卷</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/mumuhaha487/"><i class="fab fa-github"></i><span>我的github主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://githubfast.com/mumuhaha487" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/mumuemhaha" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=3420083632&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:3420083632@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的小窝</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2023/06/20/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%884-4%EF%BC%89/" title="c++红黑树（4/4）">c++红黑树（4/4）</a><time datetime="2023-06-19T16:13:55.000Z" title="发表于 2023-06-20 00:13:55">2023-06-20</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/06/16/%E5%92%95%E5%92%95%E5%92%95%E5%92%95/" title="咕咕咕咕">咕咕咕咕</a><time datetime="2023-06-16T03:16:06.000Z" title="发表于 2023-06-16 11:16:06">2023-06-16</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/06/13/%E7%BA%A2%E9%BB%91%E6%A0%91c%EF%BC%883-4%EF%BC%89/" title="c++红黑树（3/4）">c++红黑树（3/4）</a><time datetime="2023-06-13T09:13:32.000Z" title="发表于 2023-06-13 17:13:32">2023-06-13</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/06/11/vscode%E7%94%A8%E7%9A%84%E5%A4%AA%E5%A5%87%E6%80%AA%E4%BA%86/" title="VSCode用的太奇怪了">VSCode用的太奇怪了</a><time datetime="2023-06-11T15:59:56.000Z" title="发表于 2023-06-11 23:59:56">2023-06-11</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%882-4%EF%BC%89/" title="C++红黑树（2/4）">C++红黑树（2/4）</a><time datetime="2023-06-11T15:54:36.000Z" title="发表于 2023-06-11 23:54:36">2023-06-11</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>分类</span>
-            <a class="card-more-btn" href="/categories/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a>
-            </div>
-            <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/c-c/"><span class="card-category-list-name">c/c++</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/debian/"><span class="card-category-list-name">debian</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/python/"><span class="card-category-list-name">python</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/uncategorized/"><span class="card-category-list-name">uncategorized</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/yolo/"><span class="card-category-list-name">yolo</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><span class="card-category-list-name">人工智能</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E7%BD%91%E7%AB%99/"><span class="card-category-list-name">宝塔网站</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%84%9F%E6%85%A8/"><span class="card-category-list-name">感慨</span><span class="card-category-list-count">2</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E9%97%B2%E8%81%8A/" style="font-size: 1.42em; color: #99a6b7">闲聊</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 1.26em; color: #999fa8">运维</a> <a href="/tags/c-c/" style="font-size: 1.42em; color: #99a6b7">c/c++</a> <a href="/tags/python/" style="font-size: 1.5em; color: #99a9bf">python</a> <a href="/tags/docker/" style="font-size: 1.1em; color: #999">docker</a> <a href="/tags/debian/" style="font-size: 1.18em; color: #999ca1">debian</a> <a href="/tags/%E7%88%B1%E5%9B%BD%E6%84%9F%E5%8F%B9/" style="font-size: 1.1em; color: #999">爱国感叹</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.34em; color: #99a3b0">深度学习</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">27</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">17.9k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-06-28T14:02:20.300Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 木木em哈哈</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
-  init: (str) => {
-    window.typed = new Typed('#subtitle', Object.assign({
-      strings: str,
-      startDelay: 300,
-      typeSpeed: 150,
-      loop: true,
-      backSpeed: 50,
-    }, null))
-  },
-  run: (subtitleType) => {
-    if (true) {
-      if (typeof Typed === 'function') {
-        subtitleType()
-      } else {
-        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
-      }
-    } else {
-      subtitleType()
-    }
-  }
-}
-</script><script>function subtitleType () {
-  if (true) {
-    typedJSFn.init(["这是一个纯静态网站。","c瘾犯了，打打python。","不说了，开卷。","卷不动了，开摆。"])
-  } else {
-    document.getElementById("subtitle").textContent = "这是一个纯静态网站。"
-  }
-}
-typedJSFn.run(subtitleType)</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-POWERMODE.mobile = true;
-document.body.addEventListener('input', POWERMODE);
-</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,文明,和谐,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>VSCode用的太奇怪了，一些地方明明没有错，一个劲的给我报错，不是我能够驾驭的，我还是老老实实用VS2022吧！！！</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-28.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/11/vscode%E7%94%A8%E7%9A%84%E5%A4%AA%E5%A5%87%E6%80%AA%E4%BA%86/" data-id="cljfslc3e000uvouu42epcwbb" data-title="VSCode用的太奇怪了" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%B2%E8%81%8A/" rel="tag">闲聊</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-c红黑树（2-4）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%882-4%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-06-11T15:54:36.000Z" itemprop="datePublished">2023-06-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%882-4%EF%BC%89/">C++红黑树（2/4）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上一章</p>
+<p><a href="/index.php/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%881-4%EF%BC%89/">C++红黑树（1&#x2F;4）</a></p>
+<p>下一章</p>
+<p><a target="_blank" rel="noopener" href="http://blog.0ha.top/index.php/2023/06/13/%e7%ba%a2%e9%bb%91%e6%a0%91c%ef%bc%883-4%ef%bc%89/">c++红黑树（3&#x2F;4）</a></p>
+<p>上一章学到了红黑树的特点以及基本定义</p>
+<p>本章我们要学插入时候的第一类情况——父亲节点为红色叔叔节点也为红（当然祖父节点一定为黑色）</p>
+<h2 id="情况"><a href="#情况" class="headerlink" title="情况"></a>情况</h2><p>当我的红色节点插上去时因为特性二——红色节点不可以相邻出现从而要对整个树进行平衡性调整</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-23.png"></p>
+<p>我们可以把新节点的颜色不变，然后把父亲节点和叔叔节点的颜色变为黑色，然后把爷爷节点的颜色变为红色</p>
+<h2 id="局部解决办法"><a href="#局部解决办法" class="headerlink" title="局部解决办法"></a>局部解决办法</h2><p>从而达到这棵树的平衡</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-24.png"></p>
+<p>需要注意的是如果祖父是根节点的话要把祖父的颜色也调为黑色</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-25.png"></p>
+<h2 id="全局解决的思想"><a href="#全局解决的思想" class="headerlink" title="全局解决的思想"></a>全局解决的思想</h2><p> 然而不幸的是一颗树的深度不仅仅可以是3，他可以更深——4，5,，6，7…或者更多</p>
+<p>如图</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-26.png"></p>
+<p>要在这个红黑树上把插入一个新的红色节点</p>
+<p>那么还是安装之前的方法调整你会发现一个问题就是你插入节点的祖父节点的父亲节点（也就是你的曾祖父节点）是红色的且你祖父节点的叔叔节点是黑色不在这一类方法中</p>
+<p>如图</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-27.png"></p>
+<p><em>但是不要慌张，后面两节会讲到其他的情况以及应对的方法（需要注意的时在后续解决中你要把蓝圈部分当成一个整体【因为他已经平衡了】）</em></p>
+<p>现在恭喜你，你已经学到了红黑树插入时会遇到的第一种情况的解决办法</p>
+<p>接下来就是代码讲解了</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>首先我要创建一个RBTree（红黑树）的类</p>
+<p>分别有lchild（左孩子）rchild（右孩子）parent（父母节点）data（自身的数据）color（颜色）</p>
+<p>这几个类别除去color为RED（红色）其他全为空（nullptr）上一章讲过了</p>
+<h2 id="深入到叶子节点准备插入新数据"><a href="#深入到叶子节点准备插入新数据" class="headerlink" title="深入到叶子节点准备插入新数据"></a>深入到叶子节点准备插入新数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">while (point-&gt;data==nullptr)</span><br><span class="line">&#123;</span><br><span class="line">if (e == point-&gt;data)</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;该数据已经存在&quot;);</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br><span class="line">parent = point;</span><br><span class="line">if (e &gt;= point)</span><br><span class="line">point = point-&gt;rchild;</span><br><span class="line">else</span><br><span class="line">point = point-&gt;lchild;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>和其他的树一样，大的在右边，小的在左边重复数据插不了</p>
+<p>每次保存其父亲节点</p>
+<p>在一次次遍历中一直找到最深层</p>
+<h2 id="准备插入数据"><a href="#准备插入数据" class="headerlink" title="准备插入数据"></a>准备插入数据</h2><p>接下来就是初始化数据</p>
+<p>除了colour其他全为空</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">point = new RBNode&lt;T&gt;;</span><br><span class="line">point-&gt;data = e;</span><br><span class="line">point-&gt;lchild = nullptr;</span><br><span class="line">point-&gt;rchild = nullptr;</span><br><span class="line">point-&gt;parent = nullptr;</span><br><span class="line">point-&gt;colour = RED;</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是如果为根节点那么colour还是要改为黑色</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (parent == nullptr)</span><br><span class="line">&#123;</span><br><span class="line">//插入的是根节点</span><br><span class="line">point-&gt;colour = BLACK;</span><br><span class="line">tnode = point;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>插入，接下来就是链接他的父亲节点</p>
+<p>依照data的大小来判断插入左孩子还是右孩子</p>
+<p>并且当父亲节点为黑色时不用判断直接插入完成返回</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if (e &gt; parent-&gt;data)</span><br><span class="line">parent-&gt;rchild = point;</span><br><span class="line">else</span><br><span class="line">parent-&gt;lchild = point;</span><br><span class="line"> </span><br><span class="line">point-&gt;parent = parent;</span><br><span class="line">if (parent-&gt;colour == BLACK)</span><br><span class="line">&#123;</span><br><span class="line">count &lt;&lt; e &lt;&lt; &quot;插入完成&quot; &lt;&lt; endl;</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="出现本章情况"><a href="#出现本章情况" class="headerlink" title="出现本章情况"></a>出现本章情况</h2><p>那么首先要创建其叔叔节点以及祖父节点并开始赋值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RBNode&lt;T&gt;* uncle = nullptr;</span><br><span class="line">RBNode&lt;T&gt;* grandpa = nullptr;</span><br></pre></td></tr></table></figure>
+
+<h2 id="祖父节点赋值"><a href="#祖父节点赋值" class="headerlink" title="祖父节点赋值"></a>祖父节点赋值</h2><p>祖父节点简单就是父亲的父亲</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grandpa = point-&gt;parent-&gt;parent;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="叔叔节点赋值"><a href="#叔叔节点赋值" class="headerlink" title="叔叔节点赋值"></a>叔叔节点赋值</h2><p>而叔叔节点麻烦一点</p>
+<p>最好创建一个函数用来获取其叔叔节点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uncle = (parent-&gt;parent != nullptr) ? (getuncle(parent) :nullptr);</span><br></pre></td></tr></table></figure>
+
+<p>那么getuncle（）函数定义就为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">RBNode&lt;T&gt;* getuncle(RBNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">if (p-&gt;parent-&gt;lchild == p)</span><br><span class="line">return p-&gt;parent-&gt;rchild;</span><br><span class="line">else</span><br><span class="line">return p-&gt;parent-&gt;rchild;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是获取叔叔节点的函数最好放在private（确保函数是私有的）</p>
+<h2 id="变色——进行平衡性调整"><a href="#变色——进行平衡性调整" class="headerlink" title="变色——进行平衡性调整"></a>变色——进行平衡性调整</h2><p>最后变颜色</p>
+<p>在获取到了叔叔以及祖父节点后接下的工作就变得简单了</p>
+<p>按照上面的图片依葫芦画瓢去变色就行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">while (true)</span><br><span class="line">&#123;</span><br><span class="line">uncle = (parent-&gt;parent != nullptr) ? (getuncle(parent) :nullptr);</span><br><span class="line">grandpa = point-&gt;parent-&gt;parent;</span><br><span class="line">if grandpa == nullptr</span><br><span class="line">break;</span><br><span class="line">if (uncle != nullptr &amp;&amp; uncle-&gt;colour == RED)</span><br><span class="line">&#123;</span><br><span class="line">parent-&gt;colour = BLACK;</span><br><span class="line">uncle-&gt;colour = BLACK;</span><br><span class="line">grandpa-&gt;colour = RED;</span><br><span class="line">if (grandpa == root)</span><br><span class="line">grandpa-&gt;colour = BLACK;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">//无论如何根节点颜色为黑色</span><br><span class="line">root-&gt;colour = BLACK;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总代码"><a href="#总代码" class="headerlink" title="总代码"></a>总代码</h2><p>最后附上调整后的源代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">//定义一个颜色</span><br><span class="line">enum Colour</span><br><span class="line">&#123;</span><br><span class="line">RED,</span><br><span class="line">BLACK,</span><br><span class="line">&#125;;</span><br><span class="line">//定义一个模版T</span><br><span class="line">template&lt;typename T&gt;</span><br><span class="line">//一个节点的结构体</span><br><span class="line">struct RBNode</span><br><span class="line">&#123;</span><br><span class="line">RBNode* lchild,</span><br><span class="line">* rchild,</span><br><span class="line">* parent;</span><br><span class="line">Tdata;</span><br><span class="line">//初始化为RED也可以后面定义一个初始化函数</span><br><span class="line">Colour colour=RED;</span><br><span class="line">&#125;;</span><br><span class="line">//再定义一个模版T（template只能联系到下面一句语句）</span><br><span class="line">template &lt;typename T&gt;</span><br><span class="line">class RBTree//树</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">RBTree()</span><br><span class="line">&#123;</span><br><span class="line">root = nullptr;</span><br><span class="line">&#125;</span><br><span class="line">~RBTree()</span><br><span class="line">&#123;</span><br><span class="line">ReleaseNode(root);</span><br><span class="line">&#125;</span><br><span class="line">//插入元素</span><br><span class="line">void InsNode(const T&amp; e)</span><br><span class="line">&#123;</span><br><span class="line">InsNode(root, e);</span><br><span class="line">&#125;</span><br><span class="line">void InsNode(RBNode&lt;T&gt;*&amp; tnode, const T&amp; e)</span><br><span class="line">&#123;</span><br><span class="line">RBNode&lt;T&gt;* point = tnode;</span><br><span class="line">RBNode&lt;T&gt;* parent = nullptr;</span><br><span class="line">//深入到叶子节点准备插入新数据</span><br><span class="line">while (point-&gt;data==nullptr)</span><br><span class="line">&#123;</span><br><span class="line">if (e == point-&gt;data)</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;该数据已经存在&quot;);</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br><span class="line">parent = point;</span><br><span class="line">if (e &gt;= point)</span><br><span class="line">point = point-&gt;rchild;</span><br><span class="line">else</span><br><span class="line">point = point-&gt;lchild;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">//准备插入数据</span><br><span class="line">point = new RBNode&lt;T&gt;;</span><br><span class="line">point-&gt;data = e;</span><br><span class="line">point-&gt;lchild = nullptr;</span><br><span class="line">point-&gt;rchild = nullptr;</span><br><span class="line">point-&gt;parent = nullptr;</span><br><span class="line">point-&gt;colour = RED;</span><br><span class="line"></span><br><span class="line">if (parent == nullptr)</span><br><span class="line">&#123;</span><br><span class="line">//插入的是根节点</span><br><span class="line">point-&gt;colour = BLACK;</span><br><span class="line">tnode = point;</span><br><span class="line">&#125;</span><br><span class="line">//不是根节点</span><br><span class="line">if (e &gt; parent-&gt;data)</span><br><span class="line">parent-&gt;rchild = point;</span><br><span class="line">else</span><br><span class="line">parent-&gt;lchild = point;</span><br><span class="line"> </span><br><span class="line">point-&gt;parent = parent;</span><br><span class="line">if (parent-&gt;colour == BLACK)</span><br><span class="line">&#123;</span><br><span class="line">count &lt;&lt; e &lt;&lt; &quot;插入完成&quot; &lt;&lt; endl;</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br><span class="line">//接下来就是插入地方的父亲节点是红色的，且深度至少为3（因为第二层父亲节点颜色一定为黑色</span><br><span class="line">RBNode&lt;T&gt;* uncle = nullptr;</span><br><span class="line">RBNode&lt;T&gt;* grandpa = nullptr;</span><br><span class="line">while (true)</span><br><span class="line">&#123;</span><br><span class="line">uncle = (parent-&gt;parent != nullptr) ? (getuncle(parent) :nullptr);</span><br><span class="line">grandpa = point-&gt;parent-&gt;parent;</span><br><span class="line">if grandpa == nullptr</span><br><span class="line">break;</span><br><span class="line">if (uncle != nullptr &amp;&amp; uncle-&gt;colour == RED)</span><br><span class="line">&#123;</span><br><span class="line">parent-&gt;colour = BLACK;</span><br><span class="line">uncle-&gt;colour = BLACK;</span><br><span class="line">grandpa-&gt;colour = RED;</span><br><span class="line">if (grandpa == root)</span><br><span class="line">grandpa-&gt;colour = BLACK;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">//无论如何根节点颜色为黑色</span><br><span class="line">root-&gt;colour = BLACK;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">//删除节点，释放内存</span><br><span class="line">void ReleaseNode(RBNode&lt;T&gt;* pnode)</span><br><span class="line">&#123;</span><br><span class="line">if (pnode != nullptr)</span><br><span class="line">&#123;</span><br><span class="line">ReleaseNode(pnode-&gt;lchild);</span><br><span class="line">ReleaseNode(pnode-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line">delete pnode;</span><br><span class="line">&#125;</span><br><span class="line">RBNode&lt;T&gt;* getuncle(RBNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">if (p-&gt;parent-&gt;lchild == p)</span><br><span class="line">return p-&gt;parent-&gt;rchild;</span><br><span class="line">else</span><br><span class="line">return p-&gt;parent-&gt;rchild;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">//根节点</span><br><span class="line">RBNode &lt;T&gt;* root;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">//还没有到定义的时候</span><br><span class="line">printf(&quot;OK&quot;);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>需要注意的是，代码打上去目前还不能跑，原因就和上面说的一样——还有一些其他情况我们无法解决，需要继续学习接下来的两类情况。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>恭喜你，已经初步学会了红黑树的第一种平衡性调整，即使还有一些情况还不知道，但是请不要担心，后面的文章会教你如何去做。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%882-4%EF%BC%89/" data-id="cljfslc330006vouucgf4heeh" data-title="C++红黑树（2/4）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-c红黑树（1-4）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%881-4%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-06-11T05:37:28.000Z" itemprop="datePublished">2023-06-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%881-4%EF%BC%89/">C++红黑树（1/4）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="下一篇博客"><a href="#下一篇博客" class="headerlink" title="下一篇博客"></a>下一篇博客</h2><p><a target="_blank" rel="noopener" href="http://blog.0ha.top/index.php/2023/06/11/c%e7%ba%a2%e9%bb%91%e6%a0%91%ef%bc%882-4%ef%bc%89/">C++红黑树（2&#x2F;4）</a></p>
+<h2 id="红黑树的优点以及特点"><a href="#红黑树的优点以及特点" class="headerlink" title="红黑树的优点以及特点"></a>红黑树的优点以及特点</h2><p>_红黑树是一种自平衡二叉查找树，它能够保证在最坏情况下基本动态集合操作（插入、删除、查找）的时间复杂度为O(log n)。红黑树通过在每个节点上增加一个存储位来表示节点的颜色，可以将树保持黑平衡，具体来说就是满足任何一条从根到叶子节点的路径上的黑节点数量相等。红黑树的性质包括：根节点是黑色的；每个叶子节点都是黑色的空节点；如果一个节点是红色的，则它的两个子节点都是黑色的；任意一节点到其每个叶子的所有路径都包含相同数目的黑色节点。这些性质保证了红黑树的平衡性和查找效率。<br>_</p>
+<h2 id="红黑树的定义-x2F-特性"><a href="#红黑树的定义-x2F-特性" class="headerlink" title="红黑树的定义&#x2F;特性"></a>红黑树的定义&#x2F;特性</h2><ul>
+<li>1.红黑树只会出现红色节点以及黑色节点且根节点一定是黑色</li>
+<li>2.红色节点不能相邻出现（黑色可以）</li>
+<li>3.所有叶子节点到根节点所经过的黑色节点一定相同</li>
+<li>4.最短路径的两倍不会超过最长路径</li>
+</ul>
+<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>如图</p>
+<p>这是一棵红黑树</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-20.png"></p>
+<p>而下面都不是红黑树</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-21.png"></p>
+<p>不符合第三个条件</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-22.png"></p>
+<p>不符合第二个条件</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>则我们可以看到写出c++&#x2F;c的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">enum Colour//定义一个颜色</span><br><span class="line">&#123;</span><br><span class="line">RED,</span><br><span class="line">BLACK,</span><br><span class="line">&#125;;</span><br><span class="line">template&lt;typename T&gt;//定义一个模版T</span><br><span class="line">struct RBNode//一个节点的结构体</span><br><span class="line">&#123;</span><br><span class="line">RBNode* lchild,</span><br><span class="line">* rchild,</span><br><span class="line">* parent;</span><br><span class="line">Tdata;</span><br><span class="line">Colour colour=RED;//初始化为RED也可以后面定义一个初始化函数</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">template &lt;typename T&gt;//再定义一个模版T（template只能联系到下面一句语句）</span><br><span class="line">class RBTree//树</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">RBTree()</span><br><span class="line">&#123;</span><br><span class="line">root = nullptr;</span><br><span class="line">&#125;</span><br><span class="line">~RBTree()</span><br><span class="line">&#123;</span><br><span class="line">ReleaseNode(root);</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">void ReleaseNode(RBNode&lt;T&gt;* pnode)//删除节点，释放内存</span><br><span class="line">&#123;</span><br><span class="line">if (pnode != nullptr)</span><br><span class="line">&#123;</span><br><span class="line">ReleaseNode(pnode-&gt;lchild);</span><br><span class="line">ReleaseNode(pnode-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line">delete pnode;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">RBNode &lt;T&gt;* root;//根节点</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;OK&quot;);//还没有到定义的时候</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如图，其实到目前为止定义一个红黑树以及初始化和普通的二叉树并没有什么区别。</p>
+<h2 id="为什么新定义的叶子结点的初始值为红色而不为黑色"><a href="#为什么新定义的叶子结点的初始值为红色而不为黑色" class="headerlink" title="为什么新定义的叶子结点的初始值为红色而不为黑色"></a>为什么新定义的叶子结点的初始值为红色而不为黑色</h2><ul>
+<li>  这里需要主要注意为什么新定义的叶子结点的初始值为红色而不为黑色</li>
+<li>因为如果为黑色，由于红黑树的第三条特性，没插入之前红黑树各个的叶子结点已保持了平衡</li>
+<li>而插入数据之后平衡一定会被打破</li>
+<li>从而造成每次插入数据之后都要进行一次平衡性调整</li>
+<li>而如果红色只会在父亲节点为红色是因为第二条特性要进行平衡性调整，而在父亲节点为黑色时则直接插入，无需进行平衡性调整。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p> 本篇博客介绍了红黑树的优点以及红黑树定义，接下来的三篇会讲到当父亲节点为红色时的几种情况以及一些平衡性调整。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%881-4%EF%BC%89/" data-id="cljfslc320005vouu9ou92fbu" data-title="C++红黑树（1/4）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-c中的pair-和make-pair的用法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/10/c%E4%B8%AD%E7%9A%84pair-%E5%92%8Cmake-pair%E7%9A%84%E7%94%A8%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2023-06-10T08:52:35.000Z" itemprop="datePublished">2023-06-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/c-c/">c/c++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/10/c%E4%B8%AD%E7%9A%84pair-%E5%92%8Cmake-pair%E7%9A%84%E7%94%A8%E6%B3%95/">C++中的pair 和make_pair的用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="pair的基础用法概念"><a href="#pair的基础用法概念" class="headerlink" title="pair的基础用法概念"></a>pair的基础用法概念</h2><p>pair可以把两个数据整合到一个变量中</p>
+<blockquote>
+<ul>
+<li>注意只能是两个，多不行，少也不行</li>
+<li>数据类型可同可不同</li>
+</ul>
+</blockquote>
+<p>可以方便的进行数据管理</p>
+<h2 id="pair的基础定义以及逻辑关系"><a href="#pair的基础定义以及逻辑关系" class="headerlink" title="pair的基础定义以及逻辑关系"></a>pair的基础定义以及逻辑关系</h2><ul>
+<li>pair p1; &#x2F;&#x2F;创建一个空的pair对象（使用默认构造），它的两个元素分别是T1和T2类型，采用值初始化。</li>
+<li>pair p1(v1, v2); &#x2F;&#x2F;创建一个pair对象，它的两个元素分别是T1和T2类型，其中first成员初始化为v1，second成员初始化为v2。</li>
+<li>make_pair(v1, v2); &#x2F;&#x2F; 以v1和v2的值创建一个新的pair对象，其元素类型分别是v1和v2的类型。</li>
+<li>p1 &lt; p2; &#x2F;&#x2F; 两个pair对象间的小于运算，其定义遵循字典次序：如 p1.first &lt; p2.first 或者 !(p2.first &lt; p1.first) &amp;&amp; (p1.second &lt; p2.second) 则返回true。</li>
+<li>p1 &#x3D;&#x3D; p2； &#x2F;&#x2F; 如果两个对象的first和second依次相等，则这两个对象相等；该运算使用元素的&#x3D;&#x3D;操作符。</li>
+<li>p1.first; &#x2F;&#x2F; 返回对象p1中名为first的公有数据成员</li>
+<li>p1.second; &#x2F;&#x2F; 返回对象p1中名为second的公有数据成员</li>
+</ul>
+<p>通过p1 &lt; p2;这个可以通俗的理解为第一个元素也就是first元素他的权重要比second的元素权重要大（也就是比大小优先比较他）</p>
+<p>在定义少量的pair类型时可以用pair p1;或者是pair p1(v1, v2);来进行定义</p>
+<p>如果要进行多个定义是可以用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typedef struct pair&lt;int,float&gt; PAIR_X;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>学到这里我才知道定义结构体的typedef是用于后面定义结构图时不用加struct（无关提及）</li>
+</ul>
+<h2 id="实战（代码）"><a href="#实战（代码）" class="headerlink" title="实战（代码）"></a>实战（代码）</h2><p>为了方便理解我这用段代码来定义一个pair类型的变量并且赋值然后打印它的第一个元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef struct pair&lt;int,float&gt; PAIR_X;</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    PAIR_X pair_1 =make_pair(0,3.14f);</span><br><span class="line">    cout&lt;&lt;pair_1.first&lt;&lt;endl;  </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>pair定义可以更加方便并且快速的定制自己想要的数据类型（比如红黑树的类型定义…）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/10/c%E4%B8%AD%E7%9A%84pair-%E5%92%8Cmake-pair%E7%9A%84%E7%94%A8%E6%B3%95/" data-id="cljfslc2y0001vouubz2xbl49" data-title="C++中的pair 和make_pair的用法" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-学点c-c？？？？" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/10/%E5%AD%A6%E7%82%B9c-c%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F/" class="article-date">
+  <time class="dt-published" datetime="2023-06-10T03:22:14.000Z" itemprop="datePublished">2023-06-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%84%9F%E6%85%A8/">感慨</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/10/%E5%AD%A6%E7%82%B9c-c%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F/">学点c/c++？？？？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>c瘾犯了，学点python c&#x2F;c++？？？</p>
+<p>工具就用pycharm vscode？？？</p>
+<p>😀😀😀</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/10/%E5%AD%A6%E7%82%B9c-c%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F/" data-id="cljfslc3j001bvouufdf67cu8" data-title="学点c/c++？？？？" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%B2%E8%81%8A/" rel="tag">闲聊</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-用python爬取博客的图片链接（入个门）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/09/%E7%94%A8python%E7%88%AC%E5%8F%96%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%EF%BC%88%E5%85%A5%E4%B8%AA%E9%97%A8%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-06-09T15:19:36.000Z" itemprop="datePublished">2023-06-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/09/%E7%94%A8python%E7%88%AC%E5%8F%96%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%EF%BC%88%E5%85%A5%E4%B8%AA%E9%97%A8%EF%BC%89/">用python爬取博客的图片链接（入个门）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>学了一个晚上学了一点点皮毛可能还有很多地方有不足但是思想大概搞懂了（python的re库把我脑袋搞晕了QAQ）</p>
+<p>这个大佬轻喷，有什么改进可以指出十分感谢</p>
+<p>请求网页的源代码</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>定义头文件</p>
+<p>许多网站为了防止有人恶意爬取，网站就会做反爬取</p>
+<p>就要自己定义头文件，以便于可以正常显示源代码</p>
+<p>比如csdn不定义User-Agent返回的源代码就为空</p>
+<p>按f12打开控制台，打开网络（network）刷新网页，随便点击一个链接在请求的文件里有</p>
+<p><img src="http://zhuye.0ha.top:8849/wp-content/uploads/2023/06/image-19.png"></p>
+<blockquote>
+<p>一般用到的就是User-Agent，host,cookie，Accept和connection</p>
+</blockquote>
+<p>这边我就定义一个头文件变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">headers_dict=&#123;</span><br><span class="line"> </span><br><span class="line">        &#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36 Edg/114.0.1823.37&#x27;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="爬取源代码"><a href="#爬取源代码" class="headerlink" title="爬取源代码"></a>爬取源代码</h2><p>然后开始爬取网页源代码</p>
+<p>并且把源代码存起来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">response = requests.get(&#x27;https://blog.csdn.net/mumuemhaha/article/details/131031052?spm=1001.2014.3001.5501&#x27;,headers=headers_dict)</span><br><span class="line">html_1=response.text</span><br></pre></td></tr></table></figure>
+
+<h1 id="开始选取所需要的部分"><a href="#开始选取所需要的部分" class="headerlink" title="开始选取所需要的部分"></a>开始选取所需要的部分</h1><h2 id="用PyQuery选择相应的区块（分支可看可不看）"><a href="#用PyQuery选择相应的区块（分支可看可不看）" class="headerlink" title="用PyQuery选择相应的区块（分支可看可不看）"></a>用PyQuery选择相应的区块（分支可看可不看）</h2><blockquote>
+<p>PyQuery可以把源代码中的</p>
+<p>…和</p>
+<p>，和的部分筛选出来</p>
+<p>可以用</p>
+<p>doc &#x3D; pq(html)</p>
+<p>print(doc(‘.a_1 #b_1’).find(“c_1”))</p>
+<p>其中a_1代表的就是.（英文句号）+div class&#x3D;” “空的值</p>
+<p>b_1代表的就是ul id &#x3D; “ “空的值</p>
+<p>c_1代表得到就是两个标签名称上面就””</p>
+</blockquote>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>是语法相对比较简单</p>
+<p>可以快速选择所需要的区域</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>只凭这个无法定位标签栏里面的元素，尤其是图片链接</p>
+<h2 id="开始定位链接的位置"><a href="#开始定位链接的位置" class="headerlink" title="开始定位链接的位置"></a>开始定位链接的位置</h2><p>这时候就要用re库来选择连接内容了</p>
+<p>这里选择一个简单正则表达式的方便理解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ex = &#x27;.*? src=&quot;(.*?)&quot; .*?&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>这里.*?代表的随机的值</p>
+<p>而加个()就是要选择的值</p>
+<p>这里的意思就是所有src&#x3D;”x_1”中x_1的值</p>
+<p>然后调用re.findall()进行选择并且打印（或者存入txt文件也行）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ex = &#x27;src=&quot;(.*?)&quot;&#x27;</span><br><span class="line">imglist = re.findall(ex, html_2)</span><br><span class="line">print(imglist)</span><br><span class="line">#[&#x27;https://csdnimg.cn/release/blogv2/dist/mobile/img/iconLeftArrow.png&#x27;, &#x27;https://profile-avatar.csdnimg.cn/7611198b454e45eab7a77034fbc1c227_mumuemhaha.jpg!1&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="出现的奇怪的问题"><a href="#出现的奇怪的问题" class="headerlink" title="出现的奇怪的问题"></a>出现的奇怪的问题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;D:\python\os\main_request.py&quot;, line 22, in &lt;module&gt;</span><br><span class="line">    imglist = re.findall(ex, html_1)</span><br><span class="line">  File &quot;C:\Users\mumuemhaha\AppData\Local\Programs\Python\Python39\lib\re.py&quot;, line 241, in findall</span><br><span class="line">    return _compile(pattern, flags).findall(string)</span><br><span class="line">TypeError: expected string or bytes-like object</span><br></pre></td></tr></table></figure>
+
+<p>这里就是因为PyQuery选取的区域格式不是string的</p>
+<p>request获取的源代码时“&lt;class ‘str’&gt;”而PyQuery选取出来的区域是&lt;class ‘pyquery.pyquery.PyQuery’&gt;不过问题不大</p>
+<p>强制格式转换就行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html_1=str(html_1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="所有源代码（包括我验证PyQuery是不是string的语句也在上面）"><a href="#所有源代码（包括我验证PyQuery是不是string的语句也在上面）" class="headerlink" title="所有源代码（包括我验证PyQuery是不是string的语句也在上面）"></a>所有源代码（包括我验证PyQuery是不是string的语句也在上面）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line"> </span><br><span class="line">from pyquery import PyQuery as pq</span><br><span class="line"> </span><br><span class="line">headers_dict=&#123;</span><br><span class="line"> </span><br><span class="line">        &#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36 Edg/114.0.1823.37&#x27;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">response = requests.get(&#x27;https://blog.csdn.net/mumuemhaha/article/details/131031052?spm=1001.2014.3001.5501&#x27;,headers=headers_dict)</span><br><span class="line">html_1=response.text</span><br><span class="line">html_2=response.text</span><br><span class="line"> </span><br><span class="line">doc=pq(html_1)</span><br><span class="line"> </span><br><span class="line">html_1=doc(&#x27;.aside-header-fixed .aside-left&#x27;)</span><br><span class="line">html_1=str(html_1)</span><br><span class="line">print(type(html_2))</span><br><span class="line">print(type(html_1))</span><br><span class="line">ex = &#x27;src=&quot;(.*?)&quot;&#x27;</span><br><span class="line">imglist = re.findall(ex, html_1)</span><br><span class="line">print(imglist)</span><br><span class="line"># print(html_1)</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/09/%E7%94%A8python%E7%88%AC%E5%8F%96%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%EF%BC%88%E5%85%A5%E4%B8%AA%E9%97%A8%EF%BC%89/" data-id="cljfslc3l001mvouu3bpmcmf6" data-title="用python爬取博客的图片链接（入个门）" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python爬虫indexerror-list-index-out-of-range错误及其解决办法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/08/python%E7%88%AC%E8%99%ABindexerror-list-index-out-of-range%E9%94%99%E8%AF%AF%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2023-06-08T15:22:41.000Z" itemprop="datePublished">2023-06-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/06/08/python%E7%88%AC%E8%99%ABindexerror-list-index-out-of-range%E9%94%99%E8%AF%AF%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">python爬虫“indexerror: list index out of range”错误及其解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h2><p>在写<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%88%AC%E8%99%AB&spm=1001.2101.3001.7020">爬虫</a>代码时候代码报错</p>
+<blockquote>
+<p>indexerror: list index out of range</p>
+<p>indexerror:列表索引超出范围</p>
+</blockquote>
+<h2 id="开始的认为原因"><a href="#开始的认为原因" class="headerlink" title="开始的认为原因"></a>开始的认为原因</h2><p>前一期的博客我准备爬取盗版小说的的小说时，因为加载的字数太多</p>
+<p>我就想然后就是因为这个报了这个错误</p>
+<h2 id="源代码（总）"><a href="#源代码（总）" class="headerlink" title="源代码（总）"></a>源代码（总）</h2><p>带上代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import requests                            </span><br><span class="line">import re                                  </span><br><span class="line">import numpy as np                         </span><br><span class="line">from bs4 import BeautifulSoup              </span><br><span class="line">#目标url                                     </span><br><span class="line">url=&#x27;http://www.ibiqu.org/148_148106/&#x27;     </span><br><span class="line">#主页网站，不加的话还要后面分离链接                         </span><br><span class="line">url2=&#x27;http://www.ibiqu.org&#x27;                </span><br><span class="line">#定义头文件                                     </span><br><span class="line">head_bqg=&#123;                                 </span><br><span class="line">        &#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Linux; A</span><br><span class="line">&#125;                                          </span><br><span class="line">html_zhuye=requests.get(url,headers=head_bq</span><br><span class="line">html_1=BeautifulSoup(html_zhuye.text,&#x27;html.</span><br><span class="line">html_1.select(&#x27;body &gt; div.cover &gt; ul &gt; a &gt;h</span><br><span class="line">html_1=str(html_1)                         </span><br><span class="line">ex=&#x27;&lt;dd&gt;&lt;a href=&quot;(.*?)&quot;.*?&#x27;                </span><br><span class="line">ex=re.compile(ex)                          </span><br><span class="line">imglists = re.findall(ex, html_1)          </span><br><span class="line">url_lists=np.array([])                     </span><br><span class="line">for imglist in imglists:                   </span><br><span class="line">        url_max=f&#x27;&#123;url2&#125;&#123;imglist&#125;&#x27;         </span><br><span class="line">        url_lists=np.append(url_lists,url_m</span><br><span class="line">                                           </span><br><span class="line">print(url_lists)                           </span><br><span class="line">file_1= open(&#x27;114514.txt&#x27;,&#x27;w&#x27;)             </span><br><span class="line">for url_list in url_lists:                 </span><br><span class="line">        txt_novel=requests.get(url_list,hea</span><br><span class="line">        ex=&#x27;&lt;div id=&quot;content&quot;&gt;(.*?)&lt;/div&gt;&#x27; </span><br><span class="line">        re.compile(ex)                     </span><br><span class="line">        txt_2=re.findall(ex,txt_novel.text)</span><br><span class="line">        ex_1=&#x27;&lt;p&gt;\u3000\u3000&lt;/p&gt;&#x27;        </span><br><span class="line">        re.compile(ex_1)                   </span><br><span class="line">        txt_2=re.sub(ex_1,&#x27;&#x27;,txt_2[0])     </span><br><span class="line">        txt_2=str(txt_2)[2:-2]             </span><br><span class="line">        file_1.writelines(f&#x27;&#123;txt_2&#125;\n&#x27;)    </span><br></pre></td></tr></table></figure>
+
+<h2 id="真正原因"><a href="#真正原因" class="headerlink" title="真正原因"></a>真正原因</h2><p>后来我想到那为什么还有其他的文字的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=python%E9%A1%B9%E7%9B%AE&spm=1001.2101.3001.7020">python项目</a>比我长了好几倍的确依然不会报错</p>
+<p>不对劲，我感觉</p>
+<p>后来想到是不是因为我的一些数据下标没有，导致下面代码</p>
+<blockquote>
+<p>        txt_2&#x3D;re.sub(ex_1,’’,txt_2[0])     <br>        txt_2&#x3D;str(txt_2)[2:-2] </p>
+</blockquote>
+<p>根本找不到下标</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>最后不图省事了直接遍历列表，这样空的列表也就会跳过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for txt_3 in txt_2:                       </span><br><span class="line">        txt_3=re.sub(ex_1,&#x27;&#x27;,txt_3)       </span><br><span class="line">        file_1.writelines(f&#x27;&#123;txt_3&#125;\n&#x27;)   </span><br></pre></td></tr></table></figure>
+
+<p>所以最后总代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import numpy as np</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">#目标url</span><br><span class="line">url=&#x27;http://www.ibiqu.org/148_148106/&#x27;</span><br><span class="line">#主页网站，不加的话还要后面分离链接</span><br><span class="line">url2=&#x27;http://www.ibiqu.org&#x27;</span><br><span class="line">#定义头文件</span><br><span class="line">head_bqg=&#123;</span><br><span class="line">        &#x27;User-Agent&#x27;:&#x27;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36 Edg/114.0.1823.37&#x27;</span><br><span class="line">&#125;</span><br><span class="line">html_zhuye=requests.get(url,headers=head_bqg)</span><br><span class="line">html_1=BeautifulSoup(html_zhuye.text,&#x27;html.parser&#x27;)</span><br><span class="line">html_1.select(&#x27;body &gt; div.cover &gt; ul &gt; a &gt;href&#x27;)</span><br><span class="line">html_1=str(html_1)</span><br><span class="line">ex=&#x27;&lt;dd&gt;&lt;a href=&quot;(.*?)&quot;.*?&#x27;</span><br><span class="line">ex=re.compile(ex)</span><br><span class="line">imglists = re.findall(ex, html_1)</span><br><span class="line">url_lists=np.array([])</span><br><span class="line">for imglist in imglists:</span><br><span class="line">        url_max=f&#x27;&#123;url2&#125;&#123;imglist&#125;&#x27;</span><br><span class="line">        url_lists=np.append(url_lists,url_max)</span><br><span class="line"> </span><br><span class="line">print(url_lists)</span><br><span class="line">file_1= open(&#x27;114514.txt&#x27;,&#x27;w&#x27;)</span><br><span class="line">for url_list in url_lists:</span><br><span class="line">        txt_novel=requests.get(url_list,headers=head_bqg)</span><br><span class="line">        ex=&#x27;&lt;div id=&quot;content&quot;&gt;(.*?)&lt;/div&gt;&#x27;</span><br><span class="line">        re.compile(ex)</span><br><span class="line">        txt_2=re.findall(ex,txt_novel.text)</span><br><span class="line">        ex_1=&#x27;&lt;p&gt;\u3000\u3000&lt;/p&gt;&#x27;</span><br><span class="line">        re.compile(ex_1)</span><br><span class="line">        for txt_3 in txt_2:</span><br><span class="line">                txt_3=re.sub(ex_1,&#x27;&#x27;,txt_3)</span><br><span class="line">                file_1.writelines(f&#x27;&#123;txt_3&#125;\n&#x27;)</span><br><span class="line">        # for txt_3 in txt_2:</span><br><span class="line">        #     file_1.writelines(f&#x27;&#123;txt_3&#125;\n&#x27;)</span><br><span class="line"> </span><br><span class="line">file_1.close()</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h2 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h2><p>python列表为空的原因导致索引错误，继而导致找不到索引</p>
+<h2 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h2><p>不要图省事，至少在报错的时候最好用最基础的方法试一遍</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/08/python%E7%88%AC%E8%99%ABindexerror-list-index-out-of-range%E9%94%99%E8%AF%AF%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" data-id="cljfslc36000ivouuh1io5iml" data-title="python爬虫“indexerror: list index out of range”错误及其解决办法" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/c-c/">c/c++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/debian/">debian</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/uncategorized/">uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/yolo/">yolo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9D%E5%A1%94%E7%BD%91%E7%AB%99/">宝塔网站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%84%9F%E6%85%A8/">感慨</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-c/" rel="tag">c&#x2F;c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%B1%E5%9B%BD%E6%84%9F%E5%8F%B9/" rel="tag">爱国感叹</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E8%81%8A/" rel="tag">闲聊</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/c-c/" style="font-size: 18px;">c/c++</a> <a href="/tags/debian/" style="font-size: 12px;">debian</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 16px;">深度学习</a> <a href="/tags/%E7%88%B1%E5%9B%BD%E6%84%9F%E5%8F%B9/" style="font-size: 10px;">爱国感叹</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 14px;">运维</a> <a href="/tags/%E9%97%B2%E8%81%8A/" style="font-size: 18px;">闲聊</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/06/20/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%884-4%EF%BC%89/">c++红黑树（4/4）</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/16/%E5%92%95%E5%92%95%E5%92%95%E5%92%95/">咕咕咕咕</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/13/%E7%BA%A2%E9%BB%91%E6%A0%91c%EF%BC%883-4%EF%BC%89/">c++红黑树（3/4）</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/11/vscode%E7%94%A8%E7%9A%84%E5%A4%AA%E5%A5%87%E6%80%AA%E4%BA%86/">VSCode用的太奇怪了</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/11/c%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%882-4%EF%BC%89/">C++红黑树（2/4）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 木木em哈哈<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
