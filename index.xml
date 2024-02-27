@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>木哈文轩</title>
-    <link>https://mumuhaha487.github.io/</link>
+    <link>https://0ha.top/</link>
     <description>Recent content on 木哈文轩</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Dec 2023 09:03:35 +0800</lastBuildDate>
-    <atom:link href="https://mumuhaha487.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://0ha.top/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sillyGirl（傻妞机器人）安装以及对接 go-cqhttp（2023 年 12 月）_新版傻妞对接机器人</title>
-      <link>https://mumuhaha487.github.io/posts/sillygirl%E5%82%BB%E5%A6%9E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%AF%B9%E6%8E%A5-go-cqhttp2023-%E5%B9%B4-12-%E6%9C%88_%E6%96%B0%E7%89%88%E5%82%BB%E5%A6%9E%E5%AF%B9%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
+      <link>https://0ha.top/posts/sillygirl%E5%82%BB%E5%A6%9E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%AF%B9%E6%8E%A5-go-cqhttp2023-%E5%B9%B4-12-%E6%9C%88_%E6%96%B0%E7%89%88%E5%82%BB%E5%A6%9E%E5%AF%B9%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
       <pubDate>Sat, 23 Dec 2023 09:03:35 +0800</pubDate>
-      <guid>https://mumuhaha487.github.io/posts/sillygirl%E5%82%BB%E5%A6%9E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%AF%B9%E6%8E%A5-go-cqhttp2023-%E5%B9%B4-12-%E6%9C%88_%E6%96%B0%E7%89%88%E5%82%BB%E5%A6%9E%E5%AF%B9%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
+      <guid>https://0ha.top/posts/sillygirl%E5%82%BB%E5%A6%9E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%AF%B9%E6%8E%A5-go-cqhttp2023-%E5%B9%B4-12-%E6%9C%88_%E6%96%B0%E7%89%88%E5%82%BB%E5%A6%9E%E5%AF%B9%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
       <description>目录
 编写的原因
 下载傻妞
@@ -37,9 +37,9 @@ http:// 你 linux 服务器端的 ip:8080
     </item>
     <item>
       <title>局域网从服务器获取已连接用户的列表（linux to linux.）</title>
-      <link>https://mumuhaha487.github.io/posts/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E5%B7%B2%E8%BF%9E%E6%8E%A5%E7%94%A8%E6%88%B7%E7%9A%84%E5%88%97%E8%A1%A8linux-to-linux/</link>
+      <link>https://0ha.top/posts/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E5%B7%B2%E8%BF%9E%E6%8E%A5%E7%94%A8%E6%88%B7%E7%9A%84%E5%88%97%E8%A1%A8linux-to-linux/</link>
       <pubDate>Sun, 26 Nov 2023 09:38:35 +0800</pubDate>
-      <guid>https://mumuhaha487.github.io/posts/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E5%B7%B2%E8%BF%9E%E6%8E%A5%E7%94%A8%E6%88%B7%E7%9A%84%E5%88%97%E8%A1%A8linux-to-linux/</guid>
+      <guid>https://0ha.top/posts/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E5%B7%B2%E8%BF%9E%E6%8E%A5%E7%94%A8%E6%88%B7%E7%9A%84%E5%88%97%E8%A1%A8linux-to-linux/</guid>
       <description>目录
 服务器端
 代码
@@ -57,9 +57,9 @@ http:// 你 linux 服务器端的 ip:8080
     </item>
     <item>
       <title>go-cqhttp 作者停止维护——替代品 OpenShamrock 的使用方法</title>
-      <link>https://mumuhaha487.github.io/posts/go-cqhttp-%E4%BD%9C%E8%80%85%E5%81%9C%E6%AD%A2%E7%BB%B4%E6%8A%A4%E6%9B%BF%E4%BB%A3%E5%93%81-openshamrock-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <link>https://0ha.top/posts/go-cqhttp-%E4%BD%9C%E8%80%85%E5%81%9C%E6%AD%A2%E7%BB%B4%E6%8A%A4%E6%9B%BF%E4%BB%A3%E5%93%81-openshamrock-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mumuhaha487.github.io/posts/go-cqhttp-%E4%BD%9C%E8%80%85%E5%81%9C%E6%AD%A2%E7%BB%B4%E6%8A%A4%E6%9B%BF%E4%BB%A3%E5%93%81-openshamrock-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://0ha.top/posts/go-cqhttp-%E4%BD%9C%E8%80%85%E5%81%9C%E6%AD%A2%E7%BB%B4%E6%8A%A4%E6%9B%BF%E4%BB%A3%E5%93%81-openshamrock-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>目录
 前言
 解决办法
