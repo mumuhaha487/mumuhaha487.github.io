@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <title>局域网从服务器获取已连接用户的列表（linux to linux.） // 木哈文轩</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
@@ -44,7 +44,7 @@
 总结
 服务器端 代码 #include &lt;sys/types.h&gt; #include &lt;sys/socket.h&gt; #include &lt;stdio.h&gt; #include &lt;netinet/in.h&gt; #include &lt;arpa/inet.h&gt; #include &lt;unistd.h&gt; #include &lt;string.h&gt; #include &lt;stdlib.h&gt; #include &lt;fcntl.h&gt; #include &lt;sys/shm.h&gt; #include &lt;iostream&gt; #include &lt;thread&gt; #include &lt;list&gt; using namespace std; #define PORT 8806 #define IP &#34;127.0.0.1&#34; int msocket; struct sockaddr_in servaddr; socklen_t m_len; list&lt;int&gt; connList; void addPerson(){ while(1){ int f_socket=accept(msocket,(struct sockaddr *) &amp;servaddr,&amp;m_len); connList.push_back(f_socket); cout&lt;&lt;&#34;玩家&#34;&lt;&lt;f_socket&lt;&lt;&#34;:进入房间&#34;&lt;&lt;endl; } } void sendList(int f_socket){ for(int i=0;i&lt;=connList." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/posts/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E5%B7%B2%E8%BF%9E%E6%8E%A5%E7%94%A8%E6%88%B7%E7%9A%84%E5%88%97%E8%A1%A8linux-to-linux/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://mumuhaha487.github.io/posts/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E5%B7%B2%E8%BF%9E%E6%8E%A5%E7%94%A8%E6%88%B7%E7%9A%84%E5%88%97%E8%A1%A8linux-to-linux/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-11-26T09:38:35+08:00" />
 <meta property="article:modified_time" content="2023-11-26T09:38:35+08:00" />
 
@@ -53,7 +53,7 @@
   </head>
   <body>
     <header class="app-header">
-      <a href="http://localhost:1313/"><img class="app-header-avatar" src="https://s3.bmp.ovh/imgs/2024/02/27/ebc3b3191cd37c75.jpg" alt="木木em哈哈" /></a>
+      <a href="https://mumuhaha487.github.io/"><img class="app-header-avatar" src="https://s3.bmp.ovh/imgs/2024/02/27/ebc3b3191cd37c75.jpg" alt="木木em哈哈" /></a>
       <span class="app-header-title">木哈文轩</span>
       <nav class="app-header-menu">
           <a class="app-header-menu-item" href="/c&#43;&#43;/">c&#43;&#43;</a>
