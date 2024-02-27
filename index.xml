@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>https://example.org/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Dec 2023 09:03:35 +0800</lastBuildDate>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sillyGirl（傻妞机器人）安装以及对接 go-cqhttp（2023 年 12 月）_新版傻妞对接机器人.md</title>
+      <link>https://example.org/posts/sillygirl%E5%82%BB%E5%A6%9E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%AF%B9%E6%8E%A5-go-cqhttp2023-%E5%B9%B4-12-%E6%9C%88_%E6%96%B0%E7%89%88%E5%82%BB%E5%A6%9E%E5%AF%B9%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
+      <pubDate>Sat, 23 Dec 2023 09:03:35 +0800</pubDate>
+      <guid>https://example.org/posts/sillygirl%E5%82%BB%E5%A6%9E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%AF%B9%E6%8E%A5-go-cqhttp2023-%E5%B9%B4-12-%E6%9C%88_%E6%96%B0%E7%89%88%E5%82%BB%E5%A6%9E%E5%AF%B9%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
+      <description>目录
+编写的原因
+下载傻妞
+注意！！注意！！！注意！！！！
+同样的下载 go-cqhttp
+安装以及配置 go-cqhttp
+下载 screen
+创建 go-cqhttp 窗口
+创建 sillyGirl 窗口
+常见错误
+编写的原因 暑假的时候安装教程安装过傻妞机器人，但是最近安装的时候发现出了问题，结果一看傻妞的版本好像更新了而且对接 QQ 的方法不一样了，一看 csdn 没有教程，那我就自己摸索终于搞出来了
+下载傻妞 废话不多说
+首先创建一个文件夹名字随意，创建的文件夹名称是 sillyGirl
+mkdir /root/sillyGirl 然后下载傻妞的源文件，由于 github 半墙，下载困难，我这里直接给出分享连接了，可以的话还是去 github 上下载支持作者，但是好像作者的博客删了 QAQ
+傻妞下载链接
+注意一下，给出的下载链接的配置环境为 x86_64 架构的 linux 系统，如果其他的系统环境要另外的去下载，由于 wget 不支持断点续传（maybe）所以建议在自己的 windows 上下载好然后传给 linux 的 / root/sillyGirl 上面（如果你创建了文件夹的话）。
+之后进入文件夹
+cd /root/sillyGirl 给予权限并且运行可执行文件
+chmod 777 sillyGirl ./sillyGirl 之后进入网页后台
+http:// 你 linux 服务器端的 ip:8080
+注意！！注意！！！注意！！！！ 傻妞机器人更新之后不支持 OnebotV11 协议标准机器人的反向 wesocket 的方式接入</description>
+    </item>
+    <item>
+      <title>go-cqhttp 作者停止维护——替代品 OpenShamrock 的使用方法</title>
+      <link>https://example.org/posts/go-cqhttp-%E4%BD%9C%E8%80%85%E5%81%9C%E6%AD%A2%E7%BB%B4%E6%8A%A4%E6%9B%BF%E4%BB%A3%E5%93%81-openshamrock-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/go-cqhttp-%E4%BD%9C%E8%80%85%E5%81%9C%E6%AD%A2%E7%BB%B4%E6%8A%A4%E6%9B%BF%E4%BB%A3%E5%93%81-openshamrock-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>目录
+前言
+解决办法
+配置要求
+实操
+刷入面具
+安装 lsp 框架
+安装 OpenShamrock 和 QQ
+注意
+大功告成
+前言 由于 QQ 官方针对协议库的围追堵截，go-cqhttp 已经无力维护下去了
+原文连接
+QQ Bot 的未来以及迁移建议 · Issue #2471 · Mrs4s/go-cqhttp (github.com) https://github.com/Mrs4s/go-cqhttp/issues/2471 目前签名服务器挂了，也就只有手表协议勉强可以跑，但是手表协议只要一天发了 20 多条消息就会风控发不了消息，这显然不能满足我们的需求。
+那么还有没有解决办法呢？
+解决办法 答案是有，可以借助 OpenShamrock 软件进行配置，当作 qq 的接收端以及发送端
+OpenShamrock 官网连接
+首页 | OpenShamrock (whitechi73.github.io) https://whitechi73.github.io/OpenShamrock/
+配置要求 这里要求的配置要比之前部署的要高得多
+首先部署的条件以及思想的利用手机 app（需要 lsp 框架）来获取 qq 的消息以及发送消息
+那么必然是需要完整的安卓环境的
+那么有四个方法
+利用 pve 来虚拟一个 BlissOS 虚拟机（安卓系统）并且 root 刷入 lsp 框架后安装 OpenShamrock 在 windows10 中安装模拟器 root 后刷入 lsp 框架，安装 OpenShamrock，然后登录 qq 获取消息 pve 系统中安装 windows 并且开启嵌套虚拟化（用 pvetools 一键实现），再安装模拟器（最好有显卡直通，不然性能一言难尽），然后如上一个方法一样即可 有多余的手机 root 后刷入 lsp 安装 OpenShamrock 获取消息 当然不一定要 root，LSPatch 的免 root 也是一个不错的选择</description>
+    </item>
+  </channel>
+</rss>
