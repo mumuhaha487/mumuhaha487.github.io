@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>（win10)yolov5训练自己的数据集 | 木哈文轩</title>
+<meta name="keywords" content="windows, 使用cpu, 运行yolo5自己的数据">
+<meta name="description" content="文章浏览阅读416次。打开上面的标注数据的工具（原来用于dnf挂机的脚本工具，用了发现他的自动截图功能不错，而且标记出来的数据labels可以直接用，不用xml转txt了）选择使用GPU还是CPU。最后再试试调小 --batch-size，降低 --epoch。文件夹用于放置你标记的数据集的数据xml或者是txt，再在VOCData文件夹里面创建一个。epochs：指的就是训练过程中整个数据集将被迭代（训练）了多少次，显卡不行你就调小点。因为是用刚刚的应用程序来标注的图片文件所以就不需要把xml转为yolo格式的文件了。_windows 使用cpu 运行yolo5自己的数据">
+<meta name="author" content="木木Em哈哈 Csdn认证博客专家 Csdn认证企业博客 码龄3年 Python领域新星创作者">
+<link rel="canonical" href="https://0ha.top/posts/130999472/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1f32c844f2d5be7933a69a506945f44f4c61e4a145b9ab585974513f8cf24f81.css" integrity="sha256-HzLIRPLVvnkzpppQaUX0T0xh5KFFuatYWXRRP4zyT4E=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://0ha.top/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://0ha.top/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://0ha.top/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://0ha.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://0ha.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://0ha.top/posts/130999472/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="（win10)yolov5训练自己的数据集" />
+<meta property="og:description" content="文章浏览阅读416次。打开上面的标注数据的工具（原来用于dnf挂机的脚本工具，用了发现他的自动截图功能不错，而且标记出来的数据labels可以直接用，不用xml转txt了）选择使用GPU还是CPU。最后再试试调小 --batch-size，降低 --epoch。文件夹用于放置你标记的数据集的数据xml或者是txt，再在VOCData文件夹里面创建一个。epochs：指的就是训练过程中整个数据集将被迭代（训练）了多少次，显卡不行你就调小点。因为是用刚刚的应用程序来标注的图片文件所以就不需要把xml转为yolo格式的文件了。_windows 使用cpu 运行yolo5自己的数据" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://0ha.top/posts/130999472/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-02T01:50:05+00:00" />
+<meta property="article:modified_time" content="2023-06-02T01:50:05+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="（win10)yolov5训练自己的数据集"/>
+<meta name="twitter:description" content="文章浏览阅读416次。打开上面的标注数据的工具（原来用于dnf挂机的脚本工具，用了发现他的自动截图功能不错，而且标记出来的数据labels可以直接用，不用xml转txt了）选择使用GPU还是CPU。最后再试试调小 --batch-size，降低 --epoch。文件夹用于放置你标记的数据集的数据xml或者是txt，再在VOCData文件夹里面创建一个。epochs：指的就是训练过程中整个数据集将被迭代（训练）了多少次，显卡不行你就调小点。因为是用刚刚的应用程序来标注的图片文件所以就不需要把xml转为yolo格式的文件了。_windows 使用cpu 运行yolo5自己的数据"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://0ha.top/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "（win10)yolov5训练自己的数据集",
+      "item": "https://0ha.top/posts/130999472/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "（win10)yolov5训练自己的数据集",
+  "name": "（win10)yolov5训练自己的数据集",
+  "description": "文章浏览阅读416次。打开上面的标注数据的工具（原来用于dnf挂机的脚本工具，用了发现他的自动截图功能不错，而且标记出来的数据labels可以直接用，不用xml转txt了）选择使用GPU还是CPU。最后再试试调小 --batch-size，降低 --epoch。文件夹用于放置你标记的数据集的数据xml或者是txt，再在VOCData文件夹里面创建一个。epochs：指的就是训练过程中整个数据集将被迭代（训练）了多少次，显卡不行你就调小点。因为是用刚刚的应用程序来标注的图片文件所以就不需要把xml转为yolo格式的文件了。_windows 使用cpu 运行yolo5自己的数据",
+  "keywords": [
+    "windows", "使用cpu", "运行yolo5自己的数据"
+  ],
+  "articleBody": "目录\n环境：\npython包的配置\n文件夹路径\n标注数据\n获取电脑/视频里的图片\n开始标记数据\n划分划分训练集、验证集、测试集\n把相应的文件路径存入txt文件中，xml转为txt\n创建配置文件\n聚类获得先验框\n开始训练\n运行文件：\n用gpu训练\n查看cuda版本\n​编辑\n安装pytorch\n训练\n问题\n如果出现 （页面太小，无法完成操作）的相关问题\n参考文章：\n环境： windows 10 yolov5的源文件（链接yolov5） 标注工具（链接标注） python包的配置 打开pycharm的终端 运行\npip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple 文件夹路径 在data文件中创建一个VOCData文件\n进入VOCData文件夹里面创建一个Annotations文件夹用于放置你标记的数据集的数据xml或者是txt，再在VOCData文件夹里面创建一个images的文件夹里面用于放你的训练的图片\n先创建好，有没有还没有关系。\n标注数据 接下来就是标注数据集了\n打开上面的标注数据的工具（原来用于dnf挂机的脚本工具，用了发现他的自动截图功能不错，而且标记出来的数据labels可以直接用，不用xml转txt了）\n获取电脑/视频里的图片 打开自动截图\n要设置区域可以按照上面的文字来设置截图区域\n然后开启全屏，之后直接ctrl+q键开始截图就行了（默认时间是3秒自动截图一次）\n默认是png，我用的jpg，为了防止后面代码报错，最好也改成这个吧\n截图文件在软件目录下的的\"截图\"文件夹\n开始标记数据 点击\"打开图库\"\n把刚刚 截图的图片给复制进去\n然后重启一次软件就可以开始标记了\n需要注意的是最后要把没有任何标记的图片删除，以防后面执行代码时报错\n划分划分训练集、验证集、测试集 在data/VOCData文件目录下面创建一个py文件（名字随意，认得出来就行）\n# coding:utf-8 import os import random import argparse parser = argparse.ArgumentParser() #xml文件的地址，根据自己的数据进行修改 xml一般存放在Annotations下 parser.add_argument('--xml_path', default='Annotations', type=str, help='input xml label path') #数据集的划分，地址选择自己数据下的ImageSets/Main parser.add_argument('--txt_path', default='ImageSets/Main', type=str, help='output txt label path') opt = parser.parse_args() trainval_percent = 1.0 # 训练集和验证集所占比例。 这里没有划分测试集 train_percent = 0.9 # 训练集所占比例，可自己进行调整 xmlfilepath = opt.xml_path txtsavepath = opt.txt_path total_xml = os.listdir(xmlfilepath) if not os.path.exists(txtsavepath): os.makedirs(txtsavepath) num = len(total_xml) list_index = range(num) tv = int(num * trainval_percent) tr = int(tv * train_percent) trainval = random.sample(list_index, tv) train = random.sample(trainval, tr) file_trainval = open(txtsavepath + '/trainval.txt', 'w') file_test = open(txtsavepath + '/test.txt', 'w') file_train = open(txtsavepath + '/train.txt', 'w') file_val = open(txtsavepath + '/val.txt', 'w') for i in list_index: name = total_xml[i][:-4] + '\\n' if i in trainval: file_trainval.write(name) if i in train: file_train.write(name) else: file_val.write(name) else: file_test.write(name) file_trainval.close() file_train.close() file_val.close() file_test.close() 然后在data/VOCData/ImageSets/Main目录下可以看到三个文件，就是划分的数据集合\n把相应的文件路径存入txt文件中，xml转为txt 因为是用刚刚的应用程序来标注的图片文件所以就不需要把xml转为yolo格式的文件了\n在VOCData目录下创建一个py文件（名称随意）\nimport os from os import getcwd abs_path = os.getcwd() print(abs_path) wd = getcwd() for image_set in sets: image_ids = open('D:/yolov5/data/VOCData/ImageSets/Main/%s.txt' % (image_set)).read().strip().split() if not os.path.exists('D:/yolov5/data/VOCData/dataSet_path/'): os.makedirs('D:/yolov5/data/VOCData/dataSet_path/') list_file = open('dataSet_path/%s.txt' % (image_set), 'w') # 这行路径不需更改，这是相对路径 for image_id in image_ids: list_file.write('D:/yolov5/data/VOCData/images/%s.jpg\\n' % (image_id)) convert_annotation(image_id) list_file.close() 这样就会在VOCData下出现这样一个文件夹\n打开\n里面有各个文件的路径（因为没有划分test文件所以打开test.txt是空的）\n最后需要把data/VOCData/Annotations的文件移到文件夹labels文件夹中（没有文件夹就自己创建）\n创建配置文件 在 yolov5 目录下的 data 文件夹下 新建一个 myvoc_1.yaml文件（可以自定义命名），用记事本打开。\n内容是：\ntrain: D:/yolov5/data/VOCData/dataSet_path/train.txt val: D:/yolov5/data/VOCData/dataSet_path/val.txt #文件的绝对路径（要改，注意是斜杠不是反斜杠） #如果划分了test数据也需要加上去 # number of classes nc: 2 #类别个数（要改） # class names names: [\"light\", \"post\"] #类别（要改） 聚类获得先验框 因为什么提供的yolo版本很新所以一定在yolov5/utils下有 autoanchor.py文件（不用运行）\n在model的文件夹中选择一个模型配置文件我选择的是yolov5s.yaml\n官方的表格：\n打开yolov5s.yaml\n把nc的值改成标注的种类个数就行了\n开始训练 打开根目录的train.py\n有很多的数据\nweights：权重文件路径\ncfg：存储模型结构的配置文件\ndata：存储训练、测试数据的文件\nepochs：指的就是训练过程中整个数据集将被迭代（训练）了多少次，显卡不行你就调小点。\nbatch-size：训练完多少张图片才进行权重更新，显卡不行就调小点。\nimg-size：输入图片宽高，显卡不行就调小点。\ndevice：cuda device, i.e. 0 or 0,1,2,3 or cpu。选择使用GPU还是CPU\nworkers：线程数。默认是8。\nnoautoanchor：不自动检验更新anchors rect：进行矩形训练\nresume：恢复最近保存的模型开始训练\nnosave：仅保存最终checkpoint\nnotest：仅测试最后的epoch\nevolve：进化超参数\nbucket：gsutil bucket\ncache-images：缓存图像以加快训练速度\nname： 重命名results.txt to results_name.txt\nadam：使用adam优化\nmulti-scale：多尺度训练，img-size +/- 50%\nsingle-cls：单类别的训练集\n运行文件： python train.py --weights weights/yolov5s.pt --cfg models/yolov5s.yaml --data data/myvoc.yaml --epoch 200 --batch-size 8 --img 640 --device cpu 用gpu训练 查看cuda版本 首先看看自己的gpu型号（a卡跑不了ai）\n输入\nnvidia-smi 选择高于他的版本的pytorch\n安装pytorch 打开pytorch官网\nPyTorch\n把这个117改成你要安装的版本11.6就改成116\n训练 最后开始训练\n其实就是把–device的值改一下\n打开任务管理器——性能\n0号gpu就写–device 0\npython train.py --weights weights/yolov5s.pt --cfg models/yolov5s.yaml --data data/myvoc.yaml --epoch 200 --batch-size 8 --img 640 --device cpu 问题 如果出现 （页面太小，无法完成操作）的相关问题 打开train.py\n降低线程 –workes (默认是8) 。最后再试试调小 –batch-size，降低 –epoch\n然后把刚刚运行的命令改一下参数我把worker改成1才可以跑\n参考文章： 文章链接\n",
+  "wordCount" : "372",
+  "inLanguage": "en",
+  "datePublished": "2023-06-02T01:50:05Z",
+  "dateModified": "2023-06-02T01:50:05Z",
+  "author":{
+    "@type": "Person",
+    "name": "木木Em哈哈 Csdn认证博客专家 Csdn认证企业博客 码龄3年 Python领域新星创作者"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://0ha.top/posts/130999472/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "木哈文轩",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://0ha.top/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://0ha.top/" accesskey="h" title="木哈文轩 (Alt + H)">木哈文轩</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://0ha.top/search" title="🔍搜索">
+                    <span>🔍搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://0ha.top/" title="🏠主页">
+                    <span>🏠主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://0ha.top/posts" title="📚文章">
+                    <span>📚文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://0ha.top/archives/" title="⏱时间轴">
+                    <span>⏱时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://0ha.top/tags" title="🔖标签">
+                    <span>🔖标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://0ha.top/about" title="🙋🏻‍♂️关于">
+                    <span>🙋🏻‍♂️关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://0ha.top/links" title="🤝友链">
+                    <span>🤝友链</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://0ha.top/">Home</a>&nbsp;»&nbsp;<a href="https://0ha.top/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      （win10)yolov5训练自己的数据集
+    </h1>
+    <div class="post-description">
+      文章浏览阅读416次。打开上面的标注数据的工具（原来用于dnf挂机的脚本工具，用了发现他的自动截图功能不错，而且标记出来的数据labels可以直接用，不用xml转txt了）选择使用GPU还是CPU。最后再试试调小 --batch-size，降低 --epoch。文件夹用于放置你标记的数据集的数据xml或者是txt，再在VOCData文件夹里面创建一个。epochs：指的就是训练过程中整个数据集将被迭代（训练）了多少次，显卡不行你就调小点。因为是用刚刚的应用程序来标注的图片文件所以就不需要把xml转为yolo格式的文件了。_windows 使用cpu 运行yolo5自己的数据
+    </div>
+    <div class="post-meta"><span title='2023-06-02 01:50:05 +0000 UTC'>2023-06-02</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;木木Em哈哈 Csdn认证博客专家 Csdn认证企业博客 码龄3年 Python领域新星创作者
+
+</div>
+
+    
+    <div style="display: flex; justify-content: center;">
+      
+  </div>
+
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e7%8e%af%e5%a2%83" aria-label="环境：">环境：</a></li>
+                <li>
+                    <a href="#python%e5%8c%85%e7%9a%84%e9%85%8d%e7%bd%ae" aria-label="python包的配置">python包的配置</a></li>
+                <li>
+                    <a href="#%e6%96%87%e4%bb%b6%e5%a4%b9%e8%b7%af%e5%be%84" aria-label="文件夹路径">文件夹路径</a></li>
+                <li>
+                    <a href="#%e6%a0%87%e6%b3%a8%e6%95%b0%e6%8d%ae" aria-label="标注数据">标注数据</a><ul>
+                        
+                <li>
+                    <a href="#%e8%8e%b7%e5%8f%96%e7%94%b5%e8%84%91%e8%a7%86%e9%a2%91%e9%87%8c%e7%9a%84%e5%9b%be%e7%89%87" aria-label="获取电脑/视频里的图片">获取电脑/视频里的图片</a></li>
+                <li>
+                    <a href="#%e5%bc%80%e5%a7%8b%e6%a0%87%e8%ae%b0%e6%95%b0%e6%8d%ae" aria-label="开始标记数据">开始标记数据</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%88%92%e5%88%86%e5%88%92%e5%88%86%e8%ae%ad%e7%bb%83%e9%9b%86%e9%aa%8c%e8%af%81%e9%9b%86%e6%b5%8b%e8%af%95%e9%9b%86" aria-label="划分划分训练集、验证集、测试集">划分划分训练集、验证集、测试集</a></li>
+                <li>
+                    <a href="#%e6%8a%8a%e7%9b%b8%e5%ba%94%e7%9a%84%e6%96%87%e4%bb%b6%e8%b7%af%e5%be%84%e5%ad%98%e5%85%a5txt%e6%96%87%e4%bb%b6%e4%b8%adxml%e8%bd%ac%e4%b8%batxt" aria-label="把相应的文件路径存入txt文件中，xml转为txt">把相应的文件路径存入txt文件中，xml转为txt</a></li>
+                <li>
+                    <a href="#%e5%88%9b%e5%bb%ba%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" aria-label="创建配置文件">创建配置文件</a></li>
+                <li>
+                    <a href="#%e8%81%9a%e7%b1%bb%e8%8e%b7%e5%be%97%e5%85%88%e9%aa%8c%e6%a1%86" aria-label="聚类获得先验框">聚类获得先验框</a></li>
+                <li>
+                    <a href="#%e5%bc%80%e5%a7%8b%e8%ae%ad%e7%bb%83" aria-label="开始训练">开始训练</a><ul>
+                        
+                <li>
+                    <a href="#%e8%bf%90%e8%a1%8c%e6%96%87%e4%bb%b6" aria-label="运行文件：">运行文件：</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e7%94%a8gpu%e8%ae%ad%e7%bb%83" aria-label="用gpu训练">用gpu训练</a><ul>
+                        
+                <li>
+                    <a href="#%e6%9f%a5%e7%9c%8bcuda%e7%89%88%e6%9c%ac" aria-label="查看cuda版本">查看cuda版本</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85pytorch" aria-label="安装pytorch">安装pytorch</a></li>
+                <li>
+                    <a href="#%e8%ae%ad%e7%bb%83" aria-label="训练">训练</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%97%ae%e9%a2%98" aria-label="问题">问题</a><ul>
+                        
+                <li>
+                    <a href="#%e5%a6%82%e6%9e%9c%e5%87%ba%e7%8e%b0-%e9%a1%b5%e9%9d%a2%e5%a4%aa%e5%b0%8f%e6%97%a0%e6%b3%95%e5%ae%8c%e6%88%90%e6%93%8d%e4%bd%9c%e7%9a%84%e7%9b%b8%e5%85%b3%e9%97%ae%e9%a2%98" aria-label="如果出现 （页面太小，无法完成操作）的相关问题">如果出现 （页面太小，无法完成操作）的相关问题</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%8f%82%e8%80%83%e6%96%87%e7%ab%a0" aria-label="参考文章：">参考文章：</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p><strong>目录</strong></p>
+<p><a href="#%e7%8e%af%e5%a2%83%ef%bc%9a">环境：</a></p>
+<p><a href="#python%e5%8c%85%e7%9a%84%e9%85%8d%e7%bd%ae">python包的配置</a></p>
+<p><a href="#%e6%96%87%e4%bb%b6%e5%a4%b9%e8%b7%af%e5%be%84">文件夹路径</a></p>
+<p><a href="#%e6%a0%87%e6%b3%a8%e6%95%b0%e6%8d%ae">标注数据</a></p>
+<p><a href="#%e8%8e%b7%e5%8f%96%e7%94%b5%e8%84%91%2f%e8%a7%86%e9%a2%91%e9%87%8c%e7%9a%84%e5%9b%be%e7%89%87">获取电脑/视频里的图片</a></p>
+<p><a href="#%e5%bc%80%e5%a7%8b%e6%a0%87%e8%ae%b0%e6%95%b0%e6%8d%ae">开始标记数据</a></p>
+<p><a href="#%e5%88%92%e5%88%86%e5%88%92%e5%88%86%e8%ae%ad%e7%bb%83%e9%9b%86%e3%80%81%e9%aa%8c%e8%af%81%e9%9b%86%e3%80%81%e6%b5%8b%e8%af%95%e9%9b%86">划分划分训练集、验证集、测试集</a></p>
+<p><a href="#%c2%a0%e6%8a%8a%e7%9b%b8%e5%ba%94%e7%9a%84%e6%96%87%e4%bb%b6%e8%b7%af%e5%be%84%e5%ad%98%e5%85%a5txt%e6%96%87%e4%bb%b6%e4%b8%ad%ef%bc%8cxml%e8%bd%ac%e4%b8%batxt">把相应的文件路径存入txt文件中，xml转为txt</a></p>
+<p><a href="#%e5%88%9b%e5%bb%ba%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">创建配置文件</a></p>
+<p><a href="#%e8%81%9a%e7%b1%bb%e8%8e%b7%e5%be%97%e5%85%88%e9%aa%8c%e6%a1%86">聚类获得先验框</a></p>
+<p><a href="#%c2%a0%e5%bc%80%e5%a7%8b%e8%ae%ad%e7%bb%83">开始训练</a></p>
+<p><a href="#%c2%a0%e8%bf%90%e8%a1%8c%e6%96%87%e4%bb%b6%ef%bc%9a">运行文件：</a></p>
+<p><a href="#%e7%94%a8gpu%e8%ae%ad%e7%bb%83">用gpu训练</a></p>
+<p><a href="#%e6%9f%a5%e7%9c%8bcuda%e7%89%88%e6%9c%ac">查看cuda版本</a></p>
+<p><a href="#%e2%80%8b%e7%bc%96%e8%be%91">​编辑</a></p>
+<p><a href="#%e5%ae%89%e8%a3%85pytorch">安装pytorch</a></p>
+<p><a href="#%e8%ae%ad%e7%bb%83">训练</a></p>
+<p><a href="#%e9%97%ae%e9%a2%98">问题</a></p>
+<p><a href="#%e5%a6%82%e6%9e%9c%e5%87%ba%e7%8e%b0%20%ef%bc%88%e9%a1%b5%e9%9d%a2%e5%a4%aa%e5%b0%8f%ef%bc%8c%e6%97%a0%e6%b3%95%e5%ae%8c%e6%88%90%e6%93%8d%e4%bd%9c%ef%bc%89%e7%9a%84%e7%9b%b8%e5%85%b3%e9%97%ae%e9%a2%98">如果出现 （页面太小，无法完成操作）的相关问题</a></p>
+<p><a href="#%c2%a0%e5%8f%82%e8%80%83%e6%96%87%e7%ab%a0%ef%bc%9a">参考文章：</a></p>
+<h2 id="环境">环境：<a hidden class="anchor" aria-hidden="true" href="#环境">#</a></h2>
+<ul>
+<li>windows 10</li>
+<li>yolov5的源文件（链接<a href="https://www.123pan.com/s/HrkuVv-F9IX.html" title="yolov5">yolov5</a>）</li>
+<li>标注工具（链接<a href="https://www.123pan.com/s/HrkuVv-Y9IX.html" title="标注">标注</a>）</li>
+</ul>
+<h2 id="python包的配置">python包的配置<a hidden class="anchor" aria-hidden="true" href="#python包的配置">#</a></h2>
+<p>打开pycharm的终端<img loading="lazy" src="https://:0ha.top/img/c59abeb4cbf648bfa2dbc3df90b68a73.png" alt=""  />
+</p>
+<p>运行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pip install <span style="color:#f92672">-</span>r requirements<span style="color:#f92672">.</span>txt <span style="color:#f92672">-</span>i https:<span style="color:#f92672">//</span>mirrors<span style="color:#f92672">.</span>aliyun<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>pypi<span style="color:#f92672">/</span>simple
+</span></span></code></pre></div><h2 id="文件夹路径">文件夹路径<a hidden class="anchor" aria-hidden="true" href="#文件夹路径">#</a></h2>
+<p>在data文件中创建一个VOCData文件</p>
+<p>进入VOCData文件夹里面创建一个Annotations文件夹用于放置你标记的数据集的数据xml或者是txt，再在VOCData文件夹里面创建一个images的文件夹里面用于放你的训练的图片</p>
+<p>先创建好，有没有还没有关系。</p>
+<h2 id="标注数据">标注数据<a hidden class="anchor" aria-hidden="true" href="#标注数据">#</a></h2>
+<p>接下来就是标注数据集了</p>
+<p>打开上面的标注数据的工具（原来用于dnf挂机的脚本工具，用了发现他的自动截图功能不错，而且标记出来的数据labels可以直接用，不用xml转txt了）</p>
+<p><img loading="lazy" src="https://:0ha.top/img/00c7ebf35afe4f96bb5d0d5b8f4381e4.png" alt=""  />
+</p>
+<h3 id="获取电脑视频里的图片">获取电脑/视频里的图片<a hidden class="anchor" aria-hidden="true" href="#获取电脑视频里的图片">#</a></h3>
+<p>打开自动截图</p>
+<p>要设置区域可以按照上面的文字来设置截图区域</p>
+<p>然后开启全屏，之后直接ctrl+q键开始截图就行了（默认时间是3秒自动截图一次）</p>
+<p><img loading="lazy" src="https://:0ha.top/img/7491b22b67ff4642956b09770e30d005.png" alt=""  />
+</p>
+<p>默认是png，我用的jpg，为了防止后面代码报错，最好也改成这个吧</p>
+<p>截图文件在软件目录下的的&quot;截图&quot;文件夹</p>
+<p><img loading="lazy" src="https://:0ha.top/img/500c77bfdf63434c9a1a74b22c414523.png" alt=""  />
+</p>
+<h3 id="开始标记数据">开始标记数据<a hidden class="anchor" aria-hidden="true" href="#开始标记数据">#</a></h3>
+<p><img loading="lazy" src="https://:0ha.top/img/0725c77e2bf341c7a4b06e25626a0418.png" alt=""  />
+</p>
+<p>点击&quot;打开图库&quot;</p>
+<p><img loading="lazy" src="https://:0ha.top/img/7feef0d81b8c4c8e8b02f30e944bc877.png" alt=""  />
+</p>
+<p>把刚刚 截图的图片给复制进去</p>
+<p>然后重启一次软件就可以开始标记了</p>
+<p><img loading="lazy" src="https://:0ha.top/img/82a04931ed184dc58c31ba6d7ad6cb80.png" alt=""  />
+</p>
+<p>需要注意的是最后要把没有任何标记的图片删除，以防后面执行代码时报错</p>
+<h2 id="划分划分训练集验证集测试集">划分划分训练集、验证集、测试集<a hidden class="anchor" aria-hidden="true" href="#划分划分训练集验证集测试集">#</a></h2>
+<p>在data/VOCData文件目录下面创建一个py文件（名字随意，认得出来就行）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># coding:utf-8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> argparse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">.</span>ArgumentParser()
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#xml文件的地址，根据自己的数据进行修改 xml一般存放在Annotations下</span>
+</span></span><span style="display:flex;"><span>parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--xml_path&#39;</span>, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Annotations&#39;</span>, type<span style="color:#f92672">=</span>str, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;input xml label path&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#数据集的划分，地址选择自己数据下的ImageSets/Main</span>
+</span></span><span style="display:flex;"><span>parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--txt_path&#39;</span>, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ImageSets/Main&#39;</span>, type<span style="color:#f92672">=</span>str, help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;output txt label path&#39;</span>)
+</span></span><span style="display:flex;"><span>opt <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>trainval_percent <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span>  <span style="color:#75715e"># 训练集和验证集所占比例。 这里没有划分测试集</span>
+</span></span><span style="display:flex;"><span>train_percent <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.9</span>     <span style="color:#75715e"># 训练集所占比例，可自己进行调整</span>
+</span></span><span style="display:flex;"><span>xmlfilepath <span style="color:#f92672">=</span> opt<span style="color:#f92672">.</span>xml_path
+</span></span><span style="display:flex;"><span>txtsavepath <span style="color:#f92672">=</span> opt<span style="color:#f92672">.</span>txt_path
+</span></span><span style="display:flex;"><span>total_xml <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(xmlfilepath)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(txtsavepath):
+</span></span><span style="display:flex;"><span>    os<span style="color:#f92672">.</span>makedirs(txtsavepath)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>num <span style="color:#f92672">=</span> len(total_xml)
+</span></span><span style="display:flex;"><span>list_index <span style="color:#f92672">=</span> range(num)
+</span></span><span style="display:flex;"><span>tv <span style="color:#f92672">=</span> int(num <span style="color:#f92672">*</span> trainval_percent)
+</span></span><span style="display:flex;"><span>tr <span style="color:#f92672">=</span> int(tv <span style="color:#f92672">*</span> train_percent)
+</span></span><span style="display:flex;"><span>trainval <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(list_index, tv)
+</span></span><span style="display:flex;"><span>train <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(trainval, tr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>file_trainval <span style="color:#f92672">=</span> open(txtsavepath <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/trainval.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>)
+</span></span><span style="display:flex;"><span>file_test <span style="color:#f92672">=</span> open(txtsavepath <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/test.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>)
+</span></span><span style="display:flex;"><span>file_train <span style="color:#f92672">=</span> open(txtsavepath <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/train.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>)
+</span></span><span style="display:flex;"><span>file_val <span style="color:#f92672">=</span> open(txtsavepath <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/val.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list_index:
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> total_xml[i][:<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">in</span> trainval:
+</span></span><span style="display:flex;"><span>        file_trainval<span style="color:#f92672">.</span>write(name)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> i <span style="color:#f92672">in</span> train:
+</span></span><span style="display:flex;"><span>            file_train<span style="color:#f92672">.</span>write(name)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            file_val<span style="color:#f92672">.</span>write(name)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        file_test<span style="color:#f92672">.</span>write(name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>file_trainval<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>file_train<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>file_val<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>file_test<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><p>然后在data/VOCData/ImageSets/Main目录下可以看到三个文件，就是划分的数据集合</p>
+<p><img loading="lazy" src="https://:0ha.top/img/7d9f307921f7459192924249ad400e8c.png" alt=""  />
+</p>
+<p><img loading="lazy" src="https://:0ha.top/img/4dff454320264605acf6cc06fcaeb8d8.png" alt=""  />
+</p>
+<h2 id="把相应的文件路径存入txt文件中xml转为txt">把相应的文件路径存入txt文件中，xml转为txt<a hidden class="anchor" aria-hidden="true" href="#把相应的文件路径存入txt文件中xml转为txt">#</a></h2>
+<p>因为是用刚刚的应用程序来标注的图片文件所以就不需要把xml转为yolo格式的文件了</p>
+<p>在VOCData目录下创建一个py文件（名称随意）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> os <span style="color:#f92672">import</span> getcwd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>abs_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getcwd()
+</span></span><span style="display:flex;"><span>print(abs_path)
+</span></span><span style="display:flex;"><span>wd <span style="color:#f92672">=</span> getcwd()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> image_set <span style="color:#f92672">in</span> sets:
+</span></span><span style="display:flex;"><span>    image_ids <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;D:/yolov5/data/VOCData/ImageSets/Main/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">.txt&#39;</span> <span style="color:#f92672">%</span> (image_set))<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(<span style="color:#e6db74">&#39;D:/yolov5/data/VOCData/dataSet_path/&#39;</span>):
+</span></span><span style="display:flex;"><span>        os<span style="color:#f92672">.</span>makedirs(<span style="color:#e6db74">&#39;D:/yolov5/data/VOCData/dataSet_path/&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    list_file <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;dataSet_path/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">.txt&#39;</span> <span style="color:#f92672">%</span> (image_set), <span style="color:#e6db74">&#39;w&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 这行路径不需更改，这是相对路径</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> image_id <span style="color:#f92672">in</span> image_ids:
+</span></span><span style="display:flex;"><span>        list_file<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#39;D:/yolov5/data/VOCData/images/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">.jpg</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> (image_id))
+</span></span><span style="display:flex;"><span>        convert_annotation(image_id)
+</span></span><span style="display:flex;"><span>    list_file<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><p>这样就会在VOCData下出现这样一个文件夹</p>
+<p><img loading="lazy" src="https://:0ha.top/img/8dd3565cc4994b9bb1eb25c86baeb754.png" alt=""  />
+</p>
+<p>打开</p>
+<p><img loading="lazy" src="https://:0ha.top/img/8e3f00d3b87c4c64b811f2aabfb3f8cc.png" alt=""  />
+</p>
+<p>里面有各个文件的路径（因为没有划分test文件所以打开test.txt是空的）</p>
+<p>最后需要把data/VOCData/Annotations的文件移到文件夹labels文件夹中（没有文件夹就自己创建）</p>
+<h2 id="创建配置文件">创建配置文件<a hidden class="anchor" aria-hidden="true" href="#创建配置文件">#</a></h2>
+<p>在 yolov5 目录下的 data 文件夹下 <strong>新建一个 myvoc_1.yaml文件</strong>（可以自定义命名），用记事本打开。</p>
+<p>内容是：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>train: D:<span style="color:#f92672">/</span>yolov5<span style="color:#f92672">/</span>data<span style="color:#f92672">/</span>VOCData<span style="color:#f92672">/</span>dataSet_path<span style="color:#f92672">/</span>train<span style="color:#f92672">.</span>txt
+</span></span><span style="display:flex;"><span>val: D:<span style="color:#f92672">/</span>yolov5<span style="color:#f92672">/</span>data<span style="color:#f92672">/</span>VOCData<span style="color:#f92672">/</span>dataSet_path<span style="color:#f92672">/</span>val<span style="color:#f92672">.</span>txt
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#文件的绝对路径（要改，注意是斜杠不是反斜杠）</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#如果划分了test数据也需要加上去</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># number of classes</span>
+</span></span><span style="display:flex;"><span>nc: <span style="color:#ae81ff">2</span>          <span style="color:#75715e">#类别个数（要改）</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># class names</span>
+</span></span><span style="display:flex;"><span>names: [<span style="color:#e6db74">&#34;light&#34;</span>, <span style="color:#e6db74">&#34;post&#34;</span>] <span style="color:#75715e">#类别（要改）</span>
+</span></span></code></pre></div><h2 id="聚类获得先验框">聚类获得先验框<a hidden class="anchor" aria-hidden="true" href="#聚类获得先验框">#</a></h2>
+<p>因为什么提供的yolo版本很新所以一定在yolov5/utils下有 autoanchor.py文件（不用运行）</p>
+<p>在model的文件夹中选择一个模型配置文件我选择的是yolov5s.yaml</p>
+<p>官方的表格：</p>
+<p><img loading="lazy" src="https://:0ha.top/img/47b5db61edec43b199e83385d3352d42.png" alt=""  />
+</p>
+<p>打开yolov5s.yaml</p>
+<p><img loading="lazy" src="https://:0ha.top/img/ecc96b0bc89146148a844088d58aa430.png" alt=""  />
+</p>
+<p>把nc的值改成标注的种类个数就行了</p>
+<h2 id="开始训练">开始训练<a hidden class="anchor" aria-hidden="true" href="#开始训练">#</a></h2>
+<p>打开根目录的train.py</p>
+<p><img loading="lazy" src="https://:0ha.top/img/ca244b750ad3460c9e1870c8ecd854b8.png" alt=""  />
+</p>
+<p>有很多的数据</p>
+<p>weights：权重文件路径</p>
+<p>cfg：存储模型结构的配置文件</p>
+<p>data：存储训练、测试数据的文件</p>
+<p>epochs：指的就是训练过程中整个数据集将被迭代（训练）了多少次，显卡不行你就调小点。</p>
+<p>batch-size：训练完多少张图片才进行权重更新，显卡不行就调小点。</p>
+<p>img-size：输入图片宽高，显卡不行就调小点。</p>
+<p>device：cuda device, i.e. 0 or 0,1,2,3 or cpu。选择使用GPU还是CPU</p>
+<p>workers：线程数。默认是8。</p>
+<p>noautoanchor：不自动检验更新anchors
+rect：进行矩形训练</p>
+<p>resume：恢复最近保存的模型开始训练</p>
+<p>nosave：仅保存最终checkpoint</p>
+<p>notest：仅测试最后的epoch</p>
+<p>evolve：进化超参数</p>
+<p>bucket：gsutil bucket</p>
+<p>cache-images：缓存图像以加快训练速度</p>
+<p>name： 重命名results.txt to results_name.txt</p>
+<p>adam：使用adam优化</p>
+<p>multi-scale：多尺度训练，img-size +/- 50%</p>
+<p>single-cls：单类别的训练集</p>
+<h3 id="运行文件">运行文件：<a hidden class="anchor" aria-hidden="true" href="#运行文件">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>python train<span style="color:#f92672">.</span>py <span style="color:#f92672">--</span>weights weights<span style="color:#f92672">/</span>yolov5s<span style="color:#f92672">.</span>pt  <span style="color:#f92672">--</span>cfg models<span style="color:#f92672">/</span>yolov5s<span style="color:#f92672">.</span>yaml  <span style="color:#f92672">--</span>data data<span style="color:#f92672">/</span>myvoc<span style="color:#f92672">.</span>yaml <span style="color:#f92672">--</span>epoch <span style="color:#ae81ff">200</span> <span style="color:#f92672">--</span>batch<span style="color:#f92672">-</span>size <span style="color:#ae81ff">8</span> <span style="color:#f92672">--</span>img <span style="color:#ae81ff">640</span>   <span style="color:#f92672">--</span>device cpu
+</span></span></code></pre></div><h2 id="用gpu训练">用gpu训练<a hidden class="anchor" aria-hidden="true" href="#用gpu训练">#</a></h2>
+<h3 id="查看cuda版本">查看cuda版本<a hidden class="anchor" aria-hidden="true" href="#查看cuda版本">#</a></h3>
+<p>首先看看自己的gpu型号（a卡跑不了ai）</p>
+<p>输入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>nvidia<span style="color:#f92672">-</span>smi
+</span></span></code></pre></div><h2 id="https0hatopimg329530eb0b0949d2be70674e9f59d4d6png"><img loading="lazy" src="https://:0ha.top/img/329530eb0b0949d2be70674e9f59d4d6.png" alt=""  />
+</h2>
+<p>选择高于他的版本的pytorch</p>
+<h3 id="安装pytorch">安装pytorch<a hidden class="anchor" aria-hidden="true" href="#安装pytorch">#</a></h3>
+<p>打开pytorch官网</p>
+<p><a href="https://pytorch.org/" title="PyTorch">PyTorch</a></p>
+<p><img loading="lazy" src="https://:0ha.top/img/b13caa0a7fe54ff481c8888eaa42682e.png" alt=""  />
+</p>
+<p>把这个117改成你要安装的版本11.6就改成116</p>
+<h3 id="训练">训练<a hidden class="anchor" aria-hidden="true" href="#训练">#</a></h3>
+<p>最后开始训练</p>
+<p>其实就是把&ndash;device的值改一下</p>
+<p>打开任务管理器——性能</p>
+<p><img loading="lazy" src="https://:0ha.top/img/2c762c24bad949ebb2b955f5034c852c.png" alt=""  />
+</p>
+<p>0号gpu就写&ndash;device 0</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>python train<span style="color:#f92672">.</span>py <span style="color:#f92672">--</span>weights weights<span style="color:#f92672">/</span>yolov5s<span style="color:#f92672">.</span>pt  <span style="color:#f92672">--</span>cfg models<span style="color:#f92672">/</span>yolov5s<span style="color:#f92672">.</span>yaml  <span style="color:#f92672">--</span>data data<span style="color:#f92672">/</span>myvoc<span style="color:#f92672">.</span>yaml <span style="color:#f92672">--</span>epoch <span style="color:#ae81ff">200</span> <span style="color:#f92672">--</span>batch<span style="color:#f92672">-</span>size <span style="color:#ae81ff">8</span> <span style="color:#f92672">--</span>img <span style="color:#ae81ff">640</span>   <span style="color:#f92672">--</span>device cpu
+</span></span></code></pre></div><h2 id="问题">问题<a hidden class="anchor" aria-hidden="true" href="#问题">#</a></h2>
+<h3 id="如果出现-页面太小无法完成操作的相关问题">如果出现 （页面太小，无法完成操作）的相关问题<a hidden class="anchor" aria-hidden="true" href="#如果出现-页面太小无法完成操作的相关问题">#</a></h3>
+<p>打开train.py</p>
+<p>降低线程 &ndash;workes (默认是8) 。最后再试试调小 &ndash;batch-size，降低 &ndash;epoch</p>
+<p>然后把刚刚运行的命令改一下参数我把worker改成1才可以跑</p>
+<h2 id="参考文章">参考文章：<a hidden class="anchor" aria-hidden="true" href="#参考文章">#</a></h2>
+<p><a href="https://blog.csdn.net/qq_45945548/article/details/121701492" title="文章链接">文章链接</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://0ha.top/posts/131021670/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>用python实现划分自定义划分训练集，测试集和验证集</span>
+  </a>
+  <a class="next" href="https://0ha.top/posts/130904547/">
+    <span class="title">Next »</span>
+    <br>
+    <span>一篇就够了——宝塔安装nextcloud以及一系列的软件（ocdownload，onlyoffice）安装,以及会遇到的一系列问题（持续更新）</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share （win10)yolov5训练自己的数据集 on x"
+            href="https://x.com/intent/tweet/?text=%ef%bc%88win10%29yolov5%e8%ae%ad%e7%bb%83%e8%87%aa%e5%b7%b1%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86&amp;url=https%3a%2f%2f0ha.top%2fposts%2f130999472%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share （win10)yolov5训练自己的数据集 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2f0ha.top%2fposts%2f130999472%2f&amp;title=%ef%bc%88win10%29yolov5%e8%ae%ad%e7%bb%83%e8%87%aa%e5%b7%b1%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86&amp;summary=%ef%bc%88win10%29yolov5%e8%ae%ad%e7%bb%83%e8%87%aa%e5%b7%b1%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86&amp;source=https%3a%2f%2f0ha.top%2fposts%2f130999472%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share （win10)yolov5训练自己的数据集 on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2f0ha.top%2fposts%2f130999472%2f&title=%ef%bc%88win10%29yolov5%e8%ae%ad%e7%bb%83%e8%87%aa%e5%b7%b1%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share （win10)yolov5训练自己的数据集 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0ha.top%2fposts%2f130999472%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share （win10)yolov5训练自己的数据集 on whatsapp"
+            href="https://api.whatsapp.com/send?text=%ef%bc%88win10%29yolov5%e8%ae%ad%e7%bb%83%e8%87%aa%e5%b7%b1%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86%20-%20https%3a%2f%2f0ha.top%2fposts%2f130999472%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share （win10)yolov5训练自己的数据集 on telegram"
+            href="https://telegram.me/share/url?text=%ef%bc%88win10%29yolov5%e8%ae%ad%e7%bb%83%e8%87%aa%e5%b7%b1%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86&amp;url=https%3a%2f%2f0ha.top%2fposts%2f130999472%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share （win10)yolov5训练自己的数据集 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=%ef%bc%88win10%29yolov5%e8%ae%ad%e7%bb%83%e8%87%aa%e5%b7%b1%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86&u=https%3a%2f%2f0ha.top%2fposts%2f130999472%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<p style="text-align: center;"><a href="https://beian.miit.gov.cn/">备案号：赣ICP备2023004523号-1</a></p>
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://0ha.top/">木哈文轩</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+</body>
+
+</html>

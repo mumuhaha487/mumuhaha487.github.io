@@ -6,82 +6,448 @@
     <description>Recent content in Posts on 木哈文轩</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Dec 2023 09:03:35 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 29 Feb 2024 13:54:19 +0000</lastBuildDate>
     <atom:link href="https://0ha.top/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>sillyGirl（傻妞机器人）安装以及对接 go-cqhttp（2023 年 12 月）_新版傻妞对接机器人</title>
-      <link>https://0ha.top/posts/sillygirl%E5%82%BB%E5%A6%9E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%AF%B9%E6%8E%A5-go-cqhttp2023-%E5%B9%B4-12-%E6%9C%88_%E6%96%B0%E7%89%88%E5%82%BB%E5%A6%9E%E5%AF%B9%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
-      <pubDate>Sat, 23 Dec 2023 09:03:35 +0800</pubDate>
-      <guid>https://0ha.top/posts/sillygirl%E5%82%BB%E5%A6%9E%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%AF%B9%E6%8E%A5-go-cqhttp2023-%E5%B9%B4-12-%E6%9C%88_%E6%96%B0%E7%89%88%E5%82%BB%E5%A6%9E%E5%AF%B9%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
-      <description>目录
-编写的原因
-下载傻妞
-注意！！注意！！！注意！！！！
-同样的下载 go-cqhttp
-安装以及配置 go-cqhttp
-下载 screen
-创建 go-cqhttp 窗口
-创建 sillyGirl 窗口
-常见错误
-编写的原因 暑假的时候安装教程安装过傻妞机器人，但是最近安装的时候发现出了问题，结果一看傻妞的版本好像更新了而且对接 QQ 的方法不一样了，一看 csdn 没有教程，那我就自己摸索终于搞出来了
-下载傻妞 废话不多说
-首先创建一个文件夹名字随意，创建的文件夹名称是 sillyGirl
-mkdir /root/sillyGirl 然后下载傻妞的源文件，由于 github 半墙，下载困难，我这里直接给出分享连接了，可以的话还是去 github 上下载支持作者，但是好像作者的博客删了 QAQ
-傻妞下载链接
-注意一下，给出的下载链接的配置环境为 x86_64 架构的 linux 系统，如果其他的系统环境要另外的去下载，由于 wget 不支持断点续传（maybe）所以建议在自己的 windows 上下载好然后传给 linux 的 / root/sillyGirl 上面（如果你创建了文件夹的话）。
-之后进入文件夹
-cd /root/sillyGirl 给予权限并且运行可执行文件
-chmod 777 sillyGirl ./sillyGirl 之后进入网页后台
-http:// 你 linux 服务器端的 ip:8080
-注意！！注意！！！注意！！！！ 傻妞机器人更新之后不支持 OnebotV11 协议标准机器人的反向 wesocket 的方式接入</description>
+      <title>利用python爬取本站的所有博客链接</title>
+      <link>https://0ha.top/posts/136375650/</link>
+      <pubDate>Thu, 29 Feb 2024 13:54:19 +0000</pubDate>
+      <guid>https://0ha.top/posts/136375650/</guid>
+      <description>文章浏览阅读285次，点赞3次，收藏10次。定义一个json配置文件方便管理现在文件只有用户名称,后续可加配置读取用户名称，并且将其拼接成csdn个人博客链接type=blog&amp;#34;</description>
     </item>
     <item>
-      <title>局域网从服务器获取已连接用户的列表（linux to linux.）</title>
-      <link>https://0ha.top/posts/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E5%B7%B2%E8%BF%9E%E6%8E%A5%E7%94%A8%E6%88%B7%E7%9A%84%E5%88%97%E8%A1%A8linux-to-linux/</link>
-      <pubDate>Sun, 26 Nov 2023 09:38:35 +0800</pubDate>
-      <guid>https://0ha.top/posts/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96%E5%B7%B2%E8%BF%9E%E6%8E%A5%E7%94%A8%E6%88%B7%E7%9A%84%E5%88%97%E8%A1%A8linux-to-linux/</guid>
-      <description>目录
-服务器端
-代码
-客户端
-代码解析
-服务器端
-原理
-遇到的阻碍以及解决办法
-客户端
-原理
-遇到的阻碍以及解决办法
-运行结果截图
-总结
-服务器端 代码 #include &amp;lt;sys/types.h&amp;gt; #include &amp;lt;sys/socket.h&amp;gt; #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;netinet/in.h&amp;gt; #include &amp;lt;arpa/inet.h&amp;gt; #include &amp;lt;unistd.h&amp;gt; #include &amp;lt;string.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;fcntl.h&amp;gt; #include &amp;lt;sys/shm.h&amp;gt; #include &amp;lt;iostream&amp;gt; #include &amp;lt;thread&amp;gt; #include &amp;lt;list&amp;gt; using namespace std; #define PORT 8806 #define IP &amp;#34;127.0.0.1&amp;#34; int msocket; struct sockaddr_in servaddr; socklen_t m_len; list&amp;lt;int&amp;gt; connList; void addPerson(){ while(1){ int f_socket=accept(msocket,(struct sockaddr *) &amp;amp;servaddr,&amp;amp;m_len); connList.push_back(f_socket); cout&amp;lt;&amp;lt;&amp;#34;玩家&amp;#34;&amp;lt;&amp;lt;f_socket&amp;lt;&amp;lt;&amp;#34;:进入房间&amp;#34;&amp;lt;&amp;lt;endl; } } void sendList(int f_socket){ for(int i=0;i&amp;lt;=connList.</description>
+      <title>sillyGirl（傻妞机器人）安装以及对接go-cqhttp（2023年12月）</title>
+      <link>https://0ha.top/posts/134980875/</link>
+      <pubDate>Wed, 28 Feb 2024 15:20:00 +0000</pubDate>
+      <guid>https://0ha.top/posts/134980875/</guid>
+      <description>文章浏览阅读401次，点赞4次，收藏3次。如果其他的系统环境要另外的去下载，由于wget不支持断点续传（maybe）所以建议在自己的windows上下载好然后传给linux的/root/sillyGirl上面（如果你创建了文件夹的话）。暑假的时候安装教程安装过傻妞机器人，但是最近安装的时候发现出了问题，结果一看傻妞的版本好像更新了而且对接QQ的方法不一样了，一看csdn没有教程，那我就自己摸索终于搞出来了。这里的8080端口为你的傻妞机器人的默认端口，如果换了端口记得把这个8080换了。http://你linux服务器端的ip:8080。_新版傻妞对接机器人</description>
     </item>
     <item>
-      <title>go-cqhttp 作者停止维护——替代品 OpenShamrock 的使用方法</title>
-      <link>https://0ha.top/posts/go-cqhttp-%E4%BD%9C%E8%80%85%E5%81%9C%E6%AD%A2%E7%BB%B4%E6%8A%A4%E6%9B%BF%E4%BB%A3%E5%93%81-openshamrock-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://0ha.top/posts/go-cqhttp-%E4%BD%9C%E8%80%85%E5%81%9C%E6%AD%A2%E7%BB%B4%E6%8A%A4%E6%9B%BF%E4%BB%A3%E5%93%81-openshamrock-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
-      <description>目录
-前言
-解决办法
-配置要求
-实操
-刷入面具
-安装 lsp 框架
-安装 OpenShamrock 和 QQ
-注意
-大功告成
-前言 由于 QQ 官方针对协议库的围追堵截，go-cqhttp 已经无力维护下去了
-原文连接
-QQ Bot 的未来以及迁移建议 · Issue #2471 · Mrs4s/go-cqhttp (github.com) https://github.com/Mrs4s/go-cqhttp/issues/2471 目前签名服务器挂了，也就只有手表协议勉强可以跑，但是手表协议只要一天发了 20 多条消息就会风控发不了消息，这显然不能满足我们的需求。
-那么还有没有解决办法呢？
-解决办法 答案是有，可以借助 OpenShamrock 软件进行配置，当作 qq 的接收端以及发送端
-OpenShamrock 官网连接
-首页 | OpenShamrock (whitechi73.github.io) https://whitechi73.github.io/OpenShamrock/
-配置要求 这里要求的配置要比之前部署的要高得多
-首先部署的条件以及思想的利用手机 app（需要 lsp 框架）来获取 qq 的消息以及发送消息
-那么必然是需要完整的安卓环境的
-那么有四个方法
-利用 pve 来虚拟一个 BlissOS 虚拟机（安卓系统）并且 root 刷入 lsp 框架后安装 OpenShamrock 在 windows10 中安装模拟器 root 后刷入 lsp 框架，安装 OpenShamrock，然后登录 qq 获取消息 pve 系统中安装 windows 并且开启嵌套虚拟化（用 pvetools 一键实现），再安装模拟器（最好有显卡直通，不然性能一言难尽），然后如上一个方法一样即可 有多余的手机 root 后刷入 lsp 安装 OpenShamrock 获取消息 当然不一定要 root，LSPatch 的免 root 也是一个不错的选择</description>
+      <title>Wordpress博客在做内网穿透时候输入网址后面会带端口号的解决办法</title>
+      <link>https://0ha.top/posts/131609600/</link>
+      <pubDate>Wed, 28 Feb 2024 12:53:10 +0000</pubDate>
+      <guid>https://0ha.top/posts/131609600/</guid>
+      <description>文章浏览阅读197次。在网站的目录下的wp-config.php文件下末尾输入下面的内容。在我输入域名是会跳转到我在内网映射的端口，这时候就要忽略端口号。_访问地址生成二维码带了端口</description>
+    </item>
+    <item>
+      <title>用python从零开始做一个最简单的小说爬虫带GUI界面（3/3）</title>
+      <link>https://0ha.top/posts/132471796/</link>
+      <pubDate>Wed, 28 Feb 2024 09:07:46 +0000</pubDate>
+      <guid>https://0ha.top/posts/132471796/</guid>
+      <description>文章浏览阅读6.1k次，点赞8次，收藏22次。本章内容讲的是给出了小说文章链接的情况下，如何爬取小说异步是一种比多线程高效得多的并发模型，是无序的，为了完成某个任务，在执行的过程中，不同程序单元之间过程中无需通信协调，也能完成任务的方式，也就是说不相关的程序单元之间可以是异步的。简单来说就是可以类比小学的一种数学——你可以再烧开水的时候洗菜，在煮饭的时候切菜的那类问题在python程序中就是你在等待网络回复的数据包时候可以继续发送其他的数据包起到资源利用趋于最大化的趋势。_python gui怎么接入写好的小说</description>
+    </item>
+    <item>
+      <title>关于我组件家庭服务器，挑选硬件设备的经历</title>
+      <link>https://0ha.top/posts/131825238/</link>
+      <pubDate>Tue, 27 Feb 2024 22:19:31 +0000</pubDate>
+      <guid>https://0ha.top/posts/131825238/</guid>
+      <description>文章浏览阅读475次。之前看cpu的时候发现了e5这一款香到爆炸的cpu——价格低，核心多，虽然单核性能不高，但是对我服务器的影响真不大，多核性能力压群雄，仅需某宝售价7块钱的cpu，多核性能直接乱杀。到手后我安装好linux后折腾了许多东西，什么网站服务器，视频播放器，私人云盘，许多的docker项目，我的许多四月底之后的博客大部分都是这么来的。玩客云虽然性能够用，但是还是有挺多地方用的不舒服的（比如usb2.0的口，cpu性能跑不满千兆，8G存储虽然很多但是还是不够用之类的）_e3v3 x99</description>
+    </item>
+    <item>
+      <title>python库的etree函数转换源代码时只有一行代码</title>
+      <link>https://0ha.top/posts/131117661/</link>
+      <pubDate>Tue, 27 Feb 2024 16:26:02 +0000</pubDate>
+      <guid>https://0ha.top/posts/131117661/</guid>
+      <description>文章浏览阅读123次。-注意 这里少了一个标签--&amp;gt;因为为utf-8格式所以在输入中文是打印出来的也不是中文，而是一个诸如。，但是etree基于c语言编写运行的速度一般来说比前者要快。原因也十分简单，因为etree函数需要传递的编码格式为既然要utf-8，那我就把编码格式转成utf-8不就行了。所以我铁了心了要用它有什么办法吗？而python中变量的编码格式为。格式不同，传递的时候当然会出错。_etree.tostring编码问题</description>
+    </item>
+    <item>
+      <title>pve安装ikuai并设置，同时把pve的网络连接到ikuai虚拟机</title>
+      <link>https://0ha.top/posts/131976028/</link>
+      <pubDate>Tue, 27 Feb 2024 11:53:11 +0000</pubDate>
+      <guid>https://0ha.top/posts/131976028/</guid>
+      <description>文章浏览阅读7.2k次，点赞3次，收藏15次。第一个是单拨（就是一个宽带账号拨号一次），第二个就是多拨（一个宽带账号或者是多个宽带账号拨多次，实现宽带叠加（叠加速率上限看光猫的网口速率/拨号成不成功看当地运营商支不支持多拨））之后安装ikuai就是正常的安装其他系统一样，安装过了不上图了（别跟我提这个你也不会操作，接下来安装系统也就两步——选择安装硬盘-&amp;gt;yes）pve安装好后，如果你有不止一个网口,pve连接虚拟机ikuai的网络以及其他虚拟机连接ikuai的网络_pve安装ikuai</description>
+    </item>
+    <item>
+      <title>记录linux建站时看依据网上教程可能疏漏的地方（docker篇）</title>
+      <link>https://0ha.top/posts/130881434/</link>
+      <pubDate>Tue, 27 Feb 2024 05:57:26 +0000</pubDate>
+      <guid>https://0ha.top/posts/130881434/</guid>
+      <description>文章浏览阅读31次。这个时候然后不设置开机自启就会出现但不限于————账号密码重置，挂载的存储丢失（应该是所有的设置全部初始化）由于有一部分冷门的教程比较少，有一些博主可能一疏忽，小白就会遇到一些各种各样的奇怪问题。所以无论容器会不会自启最好在创建的时候加一句这个命令，或者创建好了就马上设置自启。只要你想让你容器每次开机时或者因一些意外而终止时自动开启就必须要加上。就比如docker在创建时不设置开机自启。在创建容器是看看有没有这一行代码。比如我要创建一个alist的云盘。</description>
+    </item>
+    <item>
+      <title>linux下hexo利用脚本快速部署到自己服务器的宝塔面板上</title>
+      <link>https://0ha.top/posts/131397992/</link>
+      <pubDate>Tue, 27 Feb 2024 05:29:11 +0000</pubDate>
+      <guid>https://0ha.top/posts/131397992/</guid>
+      <description>文章浏览阅读348次。用处用于不想把hexo部署在GitHub（因为网络问题）从而部署到自己的服务器上。_宝塔怎么部署hexo</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;中的pair 和make_pair的用法</title>
+      <link>https://0ha.top/posts/131140285/</link>
+      <pubDate>Mon, 26 Feb 2024 12:17:37 +0000</pubDate>
+      <guid>https://0ha.top/posts/131140285/</guid>
+      <description>文章浏览阅读281次。/创建一个空的pair对象（使用默认构造），它的两个元素分别是T1和T2类型，采用值初始化。//创建一个pair对象，它的两个元素分别是T1和T2类型，其中first成员初始化为v1，second成员初始化为v2。// 以v1和v2的值创建一个新的pair对象，其元素类型分别是v1和v2的类型。p1 &amp;lt; p2;// 两个pair对象间的小于运算，其定义遵循字典次序：如 p1.first &amp;lt; p2.first 或者!_c&#43;&#43;中make_pair的用法</description>
+    </item>
+    <item>
+      <title>【已成功验证】debian/PVE安装好后拔显卡后连接不了网络（pve无显卡启动遇到的问题）</title>
+      <link>https://0ha.top/posts/131796920/</link>
+      <pubDate>Wed, 17 Jan 2024 09:14:43 +0000</pubDate>
+      <guid>https://0ha.top/posts/131796920/</guid>
+      <description>文章浏览阅读2.5k次，点赞5次，收藏9次。前几天装了个​Proxmox​ ve当做一个服务器7*24开机但是由于转好系统后，显卡就不需要了加上它耗电的原因（我的gtx650平时空载有10w左右的功耗）我在想拔显卡拔了，我用xshell进行ssh连接不就可以了然后我一拔，一开机，果然！连接不上后台和ssh看了一眼路由器，发现根本没他的网络地址。_pve网口不亮</description>
+    </item>
+    <item>
+      <title>go-cqhttp作者停止维护——替代品OpenShamrock的使用方法</title>
+      <link>https://0ha.top/posts/135416998/</link>
+      <pubDate>Fri, 05 Jan 2024 12:37:55 +0000</pubDate>
+      <guid>https://0ha.top/posts/135416998/</guid>
+      <description>文章浏览阅读1.9k次，点赞24次，收藏23次。由于QQ官方针对协议库的围追堵截，go-cqhttp已经无力维护下去了原文连接QQ Bot的未来以及迁移建议 · Issue #2471 · Mrs4s/go-cqhttp (github.com)目前签名服务器挂了，也就只有手表协议勉强可以跑，但是手表协议只要一天发了20多条消息就会风控发不了消息，这显然不能满足我们的需求。那么还有没有解决办法呢？_openshamrock</description>
+    </item>
+    <item>
+      <title>PVE（Proxmox）8.0的一些问题汇总（持续更新中</title>
+      <link>https://0ha.top/posts/133893950/</link>
+      <pubDate>Thu, 04 Jan 2024 03:49:30 +0000</pubDate>
+      <guid>https://0ha.top/posts/133893950/</guid>
+      <description>文章浏览阅读6.3k次，点赞6次，收藏19次。目录前言杂谈pve和esxi选啥直通类显卡怎么直通win10显卡报错43直通后进不去系统或者系统有问题自救pci类拔了显卡开机了但是进不去系统虚拟机类虚拟机显示问号，而且创建不了新的虚拟机我想用pve的虚拟机ikuai来连接pve怎么搞_pve8.0</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;局域网从服务器获取已连接用户的列表（linux to linux）</title>
+      <link>https://0ha.top/posts/134625871/</link>
+      <pubDate>Sun, 26 Nov 2023 04:20:21 +0000</pubDate>
+      <guid>https://0ha.top/posts/134625871/</guid>
+      <description>文章浏览阅读264次。一个基于C&#43;&#43;入门教程（18）socket 实现简单聊天室_std socket_爱我呦呦的博客-CSDN博客本节通过socket实现一个简单的聊天室功能聊天室中如果有人说话，则服务器负责将内容传送给聊天室的其他人那么就需要客户端和服务端两个程序，客户端负责发送消息，服务端负责接收和转发消息客户端代码：#include#include#include#include#include的拓展功能。并且把一些不足之处给指出来了。</description>
+    </item>
+    <item>
+      <title>【C&#43;&#43;】多线程的学习笔记（3）——白话文版（bushi</title>
+      <link>https://0ha.top/posts/134416481/</link>
+      <pubDate>Sat, 18 Nov 2023 02:04:09 +0000</pubDate>
+      <guid>https://0ha.top/posts/134416481/</guid>
+      <description>文章浏览阅读382次。官方原文解释翻译就是条件变量是一个对象，它能够阻止调用线程，直到通知恢复。当调用线程的一个等待函数时，它使用 （mutex ） 来锁定线程。该线程将保持阻塞状态，直到被另一个线程唤醒，该线程对同一对象调用通知函数。这里我们可以看到Condition Variable一般是要和mute锁配合使用来发挥他的最大用处。</description>
+    </item>
+    <item>
+      <title>【C&#43;&#43;】多线程的学习笔记——白话文版（bushi</title>
+      <link>https://0ha.top/posts/133468825/</link>
+      <pubDate>Wed, 04 Oct 2023 13:35:04 +0000</pubDate>
+      <guid>https://0ha.top/posts/133468825/</guid>
+      <description>文章浏览阅读252次。C&#43;&#43; 作为一种强大的编程语言，为多线程编程提供了丰富而灵活的支持。C&#43;&#43; 的标准库提供了头文件，其中包含了用于创建、启动和管理线程的类和函数。通过使用这些多线程库和功能，开发人员可以轻松地引入并发性到自己的应用程序中，实现多线程的并行处理。thread函数中定义线程的语法规如下std::thread 变量名 (函数，传递的参数1，传递的参数2，传递的参数3...）【如果前面加了using namespace std;可以删除std::】</description>
+    </item>
+    <item>
+      <title>【C&#43;&#43;】多线程的学习笔记（2）——白话文版（bushi</title>
+      <link>https://0ha.top/posts/133554220/</link>
+      <pubDate>Wed, 04 Oct 2023 09:27:48 +0000</pubDate>
+      <guid>https://0ha.top/posts/133554220/</guid>
+      <description>文章浏览阅读202次。lock_guard是模板类，对比于mutex的区别是lock_guard在创建时会尝试获得锁的所有权（注意时尝试，如果获取不到就相当于没有用，并且不会报错），在作用域结束时会自动析构，无需手动解锁该类不可中途上锁和解锁，不可复制unique_lock的用法和lock_guard的用法类似，主要的区别在于他可以中途上锁以及解锁对比于lock_guard会更加的灵活但是所需要的内存空间会更大同时它的也有adopt_lock参数用法一样，而且他还拥有其他的第二参数。</description>
+    </item>
+    <item>
+      <title>我的创作纪念日</title>
+      <link>https://0ha.top/posts/133235248/</link>
+      <pubDate>Sun, 24 Sep 2023 03:28:05 +0000</pubDate>
+      <guid>https://0ha.top/posts/133235248/</guid>
+      <description>文章浏览阅读86次。成就就不说了，可以看看我的博客，没啥能拿出手的，都是一些入门的教程以及一些bug错误调试。目前是在校不知名二本大学生——大三，计算机专业，大二的时候有一段时间搞网站的相关维护。域名，DNS，以及路由器交换机都是那个时候学到的，几乎算是把大部分时间花在那上面了。现在的话更新频率少了（主要是现在在刷算法题目以及备战考研，没太多时间去写了）挺感慨的，记得那时候也是什么都不懂的小白，甚至搜索的内容都看不懂。至于我的第一篇博客现在看看对比与现在可以说是变化比较大了。（虽然现在依旧不咋地。学习的知识可以分享出来。</description>
+    </item>
+    <item>
+      <title>只用纯python实现一次函数的梯度下降</title>
+      <link>https://0ha.top/posts/130772714/</link>
+      <pubDate>Sun, 17 Sep 2023 15:10:45 +0000</pubDate>
+      <guid>https://0ha.top/posts/130772714/</guid>
+      <description>文章浏览阅读76次。或者可以安装教程来应用其他的库来求偏导（但是这与标题不符去掉了）可以稍微改一改求二次类推，前提知道损失函数的导数。或者可以用导数的定义来求。_一次函数没有梯度吗</description>
+    </item>
+    <item>
+      <title>【力扣】三角形最小路径和</title>
+      <link>https://0ha.top/posts/132921886/</link>
+      <pubDate>Sat, 16 Sep 2023 10:43:30 +0000</pubDate>
+      <guid>https://0ha.top/posts/132921886/</guid>
+      <description>文章浏览阅读540次。本题是动态规划的一道经典题目，最早出现在1994年的ioi比赛中经过了20多年的时间，如今已经变成了动态规划的入门必做题。_力扣提交代码</description>
+    </item>
+    <item>
+      <title>超详细——在WordPress网站上添加看板娘</title>
+      <link>https://0ha.top/posts/131050625/</link>
+      <pubDate>Thu, 14 Sep 2023 03:45:01 +0000</pubDate>
+      <guid>https://0ha.top/posts/131050625/</guid>
+      <description>文章浏览阅读807次。首先去下载相应的文件mumuhaha487/KanBanMusume: WordPress添加看板娘 (github.com)把压缩包里面的文件改成“live2d”之后上传到你的站点的目录下这里用宝塔举例。_wordpress看板娘</description>
+    </item>
+    <item>
+      <title>[C&#43;&#43;]杨辉三角</title>
+      <link>https://0ha.top/posts/132730011/</link>
+      <pubDate>Thu, 07 Sep 2023 02:10:50 +0000</pubDate>
+      <guid>https://0ha.top/posts/132730011/</guid>
+      <description>文章浏览阅读586次。给定一个非负整数numRows ，生成「杨辉三角」的前numRows行。在「杨辉三角」中，每个数是它左上方和右上方的数的和。_c&#43;&#43;杨辉三角解题思路</description>
+    </item>
+    <item>
+      <title>【力扣】两数相除（c/c&#43;&#43;)</title>
+      <link>https://0ha.top/posts/132647290/</link>
+      <pubDate>Sun, 03 Sep 2023 04:30:50 +0000</pubDate>
+      <guid>https://0ha.top/posts/132647290/</guid>
+      <description>文章浏览阅读712次。给你两个整数，被除数dividend和除数divisor。将两数相除，要求乘法、除法和取余运算。整数除法应该向零截断，也就是截去（truncate）其小数部分。例如，8.345将被截断为8-2.7335将被截断至-2。返回被除数dividend除以除数divisor得到的。假设我们的环境只能存储有符号整数，其数值范围是。本题中，如果商231 − 1，则返回231 − 1；如果商-231，则返回-231。310/3 = 3.33333.. ，向零截断后得到 3。-2。_c&#43;&#43;求两个整数除</description>
+    </item>
+    <item>
+      <title>把c&#43;&#43;的函数导出为dll文件</title>
+      <link>https://0ha.top/posts/132636931/</link>
+      <pubDate>Sat, 02 Sep 2023 10:07:38 +0000</pubDate>
+      <guid>https://0ha.top/posts/132636931/</guid>
+      <description>文章浏览阅读486次。DLL（Dynamic Link Library，动态链接库）是一种包含可被多个程序共享的代码和数据的文件格式。它可以被动态链接到程序中，在程序运行时提供所需的功能和服务。DLL 文件通常包含函数、类、变量和资源等，可以被其他程序调用和使用。使用 DLL 可以实现代码的复用、模块化开发和提高程序性能等好处。_如何将cpp生成dll</description>
+    </item>
+    <item>
+      <title>简单的学习一下用python做一些后台挂机的项目</title>
+      <link>https://0ha.top/posts/132549220/</link>
+      <pubDate>Mon, 28 Aug 2023 14:42:38 +0000</pubDate>
+      <guid>https://0ha.top/posts/132549220/</guid>
+      <description>文章浏览阅读403次。由于自己最近在玩崩铁近几年的米家游戏都不能跳过剧情（烦~按键精灵是个好东西，但是他必须要前台挂着（得寸进尺。。。我想要做的是我一边挂着剧情后台自动点击，一边做其他的事情（很美好嘞然后一如既往出了一系列问题（不然我觉得早就有人做出来了，目前就卡在这，以下是我的探索过程）_pyautogui 后台</description>
+    </item>
+    <item>
+      <title>【力扣】盛最多水的容器</title>
+      <link>https://0ha.top/posts/132513438/</link>
+      <pubDate>Sat, 26 Aug 2023 09:27:02 +0000</pubDate>
+      <guid>https://0ha.top/posts/132513438/</guid>
+      <description>文章浏览阅读583次。给定一个长度为n的整数数组height。有n条垂线，第i条线的两个端点是(i, 0)和。找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。返回容器可以储存的最大水量。你不能倾斜容器。49图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。_容器容纳最多得水 力扣</description>
+    </item>
+    <item>
+      <title>用python从零开始做一个最简单的小说爬虫带GUI界面（1/3)</title>
+      <link>https://0ha.top/posts/132394257/</link>
+      <pubDate>Thu, 24 Aug 2023 04:27:29 +0000</pubDate>
+      <guid>https://0ha.top/posts/132394257/</guid>
+      <description>文章浏览阅读605次。而且当时的爬虫代码有许多问题但是最近学了PyQt5想着搞个带界面的爬虫玩玩那就啥也不说开搞！！！_python爬虫和gui</description>
+    </item>
+    <item>
+      <title>用python从零开始做一个最简单的小说爬虫带GUI界面（2/3）</title>
+      <link>https://0ha.top/posts/132457770/</link>
+      <pubDate>Thu, 24 Aug 2023 03:30:46 +0000</pubDate>
+      <guid>https://0ha.top/posts/132457770/</guid>
+      <description>文章浏览阅读763次。前一章博客我们讲了怎么通过PyQt5来制作图形化界面，并且进行一些基本设置接下来两章我们主要讲核心爬虫代码的实现。_python爬取书旗小说代码gui</description>
+    </item>
+    <item>
+      <title>用python来爬取某鱼的商品信息（2/2）</title>
+      <link>https://0ha.top/posts/132260466/</link>
+      <pubDate>Sun, 13 Aug 2023 09:05:51 +0000</pubDate>
+      <guid>https://0ha.top/posts/132260466/</guid>
+      <description>文章浏览阅读8.5k次，点赞19次，收藏66次。首先要说的是这个通过python不如通过app抓包来的稳定页面中你登录的cookie的失效时间是不确定的，所以你可能需要经常更新cookie（看个人情况）无法频繁（比如5分钟一次）搜索，否则会跳滑块验证，或者你有多个账号也可以搞（大概也就这个流程）写出来的代码只是提取出来网页源代码——其实都提取出网页源代码了，使用就只有一个筛选了（csdn上有大把的优质博主和大佬教你通过源代码过滤有用的信息）当然如果需要的话我可以再水一篇博客。_鱼类 数据 爬取</description>
+    </item>
+    <item>
+      <title>用python来爬取某鱼的商品信息（1/2）</title>
+      <link>https://0ha.top/posts/132238660/</link>
+      <pubDate>Sun, 13 Aug 2023 08:58:53 +0000</pubDate>
+      <guid>https://0ha.top/posts/132238660/</guid>
+      <description>文章浏览阅读9.3k次，点赞21次，收藏115次。本章讲理论，后面一节讲代码拿来练练手的，练练selenium包，实战一下（本来想拿来练手的，没想到他喵的有挺多防爬的，直接开局就困难难度我靠，凸(艹皿艹 )）找到可以爬取的网站然后添加cookie然后刷新界面就可以发现搜索结果出来了这一次实战经历真的让我遇到了selenium许多奇奇怪怪的反爬手段，也是让我可以大幅度提升自己实战经验的一个经历，前前后后排bug，绕反爬，这一个项目打了整整两天。累diet_如何python获取闲鱼报价</description>
+    </item>
+    <item>
+      <title>2022蓝桥杯题目——“山”</title>
+      <link>https://0ha.top/posts/132124484/</link>
+      <pubDate>Sat, 05 Aug 2023 13:22:18 +0000</pubDate>
+      <guid>https://0ha.top/posts/132124484/</guid>
+      <description>文章浏览阅读308次。这天小明正在学数数。他突然发现有些正整数的形状像一挫 “山”, 比如 123565321、145541123565321它 们左右对称 (回文) 且数位上的数字先单调不减, 后单调不增。小朋数了衣久也没有数完, 他惒让你告诉他在区间[2022,2022222022] 中有 多少个数的形状像一座 “山”。_蓝桥杯山东省题目山数</description>
+    </item>
+    <item>
+      <title>2019蓝桥杯省赛题目——“数的分解”</title>
+      <link>https://0ha.top/posts/132119564/</link>
+      <pubDate>Sat, 05 Aug 2023 12:54:33 +0000</pubDate>
+      <guid>https://0ha.top/posts/132119564/</guid>
+      <description>文章浏览阅读171次。就是elseint main()i</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;智能指针（3/3）</title>
+      <link>https://0ha.top/posts/131743884/</link>
+      <pubDate>Sat, 15 Jul 2023 15:14:35 +0000</pubDate>
+      <guid>https://0ha.top/posts/131743884/</guid>
+      <description>文章浏览阅读168次。public:cout</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;的智能指针（1/3）</title>
+      <link>https://0ha.top/posts/131668974/</link>
+      <pubDate>Sat, 15 Jul 2023 12:42:01 +0000</pubDate>
+      <guid>https://0ha.top/posts/131668974/</guid>
+      <description>文章浏览阅读102次。auto_ptr 是c&#43;&#43; 98定义的智能指针模板，其定义了管理指针的对象，可以将new 获得（直接或间接）的地址赋给这种对象。自动释放内存：智能指针使用了RAII（资源获取即初始化）的原则，在创建时分配内存，在销毁时自动释放内存，无需手动管理内存释放，避免了因为忘记释放内存而造成的内存泄漏问题。避免悬挂指针：智能指针会在其所管理的对象不再需要时自动释放内存，并将指针置为空，避免了悬挂指针问题，即指向已经释放的内存区域。智能指针是一种封装了原始指针的对象，它提供了自动内存管理的功能。_cpp智能指针特性。_进程17760已退出,代码为0</description>
+    </item>
+    <item>
+      <title>用python爬取博客的图片链接（入个门）</title>
+      <link>https://0ha.top/posts/131056725/</link>
+      <pubDate>Thu, 13 Jul 2023 02:12:41 +0000</pubDate>
+      <guid>https://0ha.top/posts/131056725/</guid>
+      <description>文章浏览阅读108次。许多网站为了防止有人恶意爬取，网站就会做反爬取就要自己定义头文件，以便于可以正常显示源代码比如csdn不定义User-Agent返回的源代码就为空按f12打开控制台，打开网络（network）刷新网页，随便点击一个链接在请求的文件里有一般用到的就是User-Agent，host,cookie，Accept和connection这边我就定义一个头文件变量。_网页源码没有图片链接</description>
+    </item>
+    <item>
+      <title>玩客云安装好armbian5.9后后续安装宝塔7.x版本</title>
+      <link>https://0ha.top/posts/130301456/</link>
+      <pubDate>Thu, 13 Jul 2023 02:10:26 +0000</pubDate>
+      <guid>https://0ha.top/posts/130301456/</guid>
+      <description>文章浏览阅读2.9k次。下好后用xftp来链接你本地的ip地址然后传输到/root目录下（也可以传输到其他目录，方便起见还是传到/root），可能会提示无法访问从xftp中打开xshell。但是因为armbian版本是32位的，因为CPU是s805是32位的，虽然可以安装宝塔最后一个32位的5.9的版本，但是有很多的配置如Nginx好像安装失败。在通过烧录u盘安装好armbian后如果新手要搭建网站的话就要安装宝塔面板了。输入sudo -i，然后输入你的root密码。nano没安装的去安装。好了之后直接执行安装脚本。_armbian安装宝塔</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;智能指针（2/3）</title>
+      <link>https://0ha.top/posts/131689322/</link>
+      <pubDate>Thu, 13 Jul 2023 02:03:55 +0000</pubDate>
+      <guid>https://0ha.top/posts/131689322/</guid>
+      <description>文章浏览阅读203次。自动释放内存：智能指针使用了RAII（资源获取即初始化）的原则，在创建时分配内存，在销毁时自动释放内存，无需手动管理内存释放，避免了因为忘记释放内存而造成的内存泄漏问题。unique_ptr是一种独占所有权的智能指针，同一时间只能有一个unique_ptr指向一个对象，当unique_ptr被销毁时，对象也会被释放。在这之中开始时p1托管str的指针，后面p2接管str指针的同时会把p1的托管给取消，这样p1指针指向的就是NULL（空），从而报错。这是因为auto_ptr与unique_ptr的排他性。</description>
+    </item>
+    <item>
+      <title>光猫拨号有公网ipv6但是路由器没有下发ipv6的功能怎么办</title>
+      <link>https://0ha.top/posts/131504367/</link>
+      <pubDate>Sun, 02 Jul 2023 11:50:57 +0000</pubDate>
+      <guid>https://0ha.top/posts/131504367/</guid>
+      <description>文章浏览阅读5.6k次，点赞2次，收藏8次。因为家里的路由器没有ipv6；但是当我连接光猫的时候，我发现我居然有ipv6的公网。然后我在路由器上找开启ipv6的选项，遗憾的是我没有找到_光猫有ipv6但是路由器没法用</description>
+    </item>
+    <item>
+      <title>本地路由器封80与443但是可以用端口映射，所以用宝塔创建指定端口的网站</title>
+      <link>https://0ha.top/posts/130423372/</link>
+      <pubDate>Wed, 21 Jun 2023 13:44:45 +0000</pubDate>
+      <guid>https://0ha.top/posts/130423372/</guid>
+      <description>文章浏览阅读964次。前几天发过一个博客。_宝塔映射端口</description>
+    </item>
+    <item>
+      <title>什么是docker以及一些有趣的docker项目</title>
+      <link>https://0ha.top/posts/131325482/</link>
+      <pubDate>Wed, 21 Jun 2023 10:03:27 +0000</pubDate>
+      <guid>https://0ha.top/posts/131325482/</guid>
+      <description>文章浏览阅读1k次。Docker是基于linux内核的一个自由开发，打包，运行程序的平台，Dcoker可以让我们将程序从环境中分离出来从而实现快速迁移我们的项目。通过Docker，管理我们的应用就像管理我们的环境一样简单（我觉得在实际开发中哪个都不简单，对于刚毕业的我来说），通过利用docker技术可以快速打包，测试，部署我们的代码，你可以显著的减少在编写代码以及将它运行在生产环境中的时间损耗。他是真正让我意识到linux方便之处的开始简单狭义的来说docker就是一个轻量的虚拟机。_docker项目推荐</description>
+    </item>
+    <item>
+      <title>如何查看自己的ssh端口是否被攻击</title>
+      <link>https://0ha.top/posts/131324962/</link>
+      <pubDate>Wed, 21 Jun 2023 05:19:27 +0000</pubDate>
+      <guid>https://0ha.top/posts/131324962/</guid>
+      <description>文章浏览阅读352次。如果改了ssh端口的话，一般情况下恶意ip不会花这么多的时间成本来扫描ip开放端口然后再一个一个端口试。而且由于黑客可以换ip地址，所以即使经常更新ip黑名单被黑入的概率还是挺大的。这么做缺点就是如果到一台新的电脑上，你没有备份密钥的话登录就比较麻烦。或者可以把恶意的ip拉入黑名单，这样就可以禁止它访问我们的ip地址。恶意ip往往是批量扫描ip的22号端口来判断是否开启ssh登入。看到一些开启日志的解决方法，但是我也懒得搞了。我的ssh端口好像一直被别人用弱密码爆破。恶意ip会变化所以要经常更新ip地址。_185.224.128.141</description>
+    </item>
+    <item>
+      <title>通过设置训练集，交叉验证集和测试集来选择模型，优化算法（吴恩达机械学习部分课程总结）</title>
+      <link>https://0ha.top/posts/129390567/</link>
+      <pubDate>Tue, 20 Jun 2023 12:34:41 +0000</pubDate>
+      <guid>https://0ha.top/posts/129390567/</guid>
+      <description>文章浏览阅读213次。小白第一次发文，有错误欢迎指出。看吴恩达老师机器学习的模型选择与交叉验证训练集之后的总结在通过数据来拟合图像的时候会遇到一个这么一个问题。		如图此函数虽然可以几乎完美的拟合训练集但是他的泛性可能会很低，这就是拟合中的常见问题——过拟合。				通过训练集来求代价函数的最小值，从而得出来d(函数的最大次方)为4，听起来好像是对的，解决了问题，but，训练集只能用来训练w和b，不能用来判断w的最高次也就是d等于多少，这个方法就是用训练集来优化d，而d是一个老师设置的另外的参数，不_数据集调整的w和b在交叉的时候选模型</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;红黑树（1/4）</title>
+      <link>https://0ha.top/posts/131152321/</link>
+      <pubDate>Tue, 20 Jun 2023 12:25:50 +0000</pubDate>
+      <guid>https://0ha.top/posts/131152321/</guid>
+      <description>文章浏览阅读191次。红黑树只会出现红色节点以及黑色节点且根节点一定是黑色红色节点不能相邻出现（黑色可以）所有叶子节点到根节点所经过的黑色节点一定相同最短路径的两倍不会超过最长路径这里需要主要注意为什么新定义的叶子结点的初始值为红色而不为黑色因为如果为黑色，由于红黑树的第三条特性，没插入之前红黑树各个的叶子结点已保持了平衡而插入数据之后平衡一定会被打破从而造成每次插入数据之后都要进行一次平衡性调整而如果红色只会在父亲节点为红色是因为第二条特性要进行平衡性调整，而在父亲节点为黑色时则直接插入。</description>
+    </item>
+    <item>
+      <title>c&#43;&#43;红黑树（4/4）</title>
+      <link>https://0ha.top/posts/131296981/</link>
+      <pubDate>Tue, 20 Jun 2023 12:15:47 +0000</pubDate>
+      <guid>https://0ha.top/posts/131296981/</guid>
+      <description>文章浏览阅读92次。这四节课主要学了什么是红黑树，以及如何进行红黑树进行平衡性调整学习了这四节你可以更加得心应手的去理解指针以及树的概念并且在学习其他类型的树时会非常非常的得心应手最后，恭喜你看到这里。t=N5F7c&#43;&#43;红黑树（3/4）_木木em哈哈的博客-CSDN博客https://blog.csdn.net/mumuemhaha/article/details/131191005?</description>
+    </item>
+    <item>
+      <title>c&#43;&#43;红黑树（3/4）</title>
+      <link>https://0ha.top/posts/131191005/</link>
+      <pubDate>Mon, 19 Jun 2023 16:15:27 +0000</pubDate>
+      <guid>https://0ha.top/posts/131191005/</guid>
+      <description>文章浏览阅读109次。再次恭喜你，了解了红黑树的第二种情况的处理方法，接下来的最后一章的要讲剩下来的三种情况——因为设计左旋的代码和右旋其实相差不多，我们理解了右旋代码可以很快的理解并且使用左旋代码。t=N4P3C&#43;&#43;红黑树（2/4）_木木em哈哈的博客-CSDN博客https://blog.csdn.net/mumuemhaha/article/details/131159253?</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;红黑树（2/4）</title>
+      <link>https://0ha.top/posts/131159253/</link>
+      <pubDate>Tue, 13 Jun 2023 09:14:20 +0000</pubDate>
+      <guid>https://0ha.top/posts/131159253/</guid>
+      <description>文章浏览阅读113次。恭喜你，已经初步学会了红黑树的第一种平衡性调整，即使还有一些情况还不知道，但是请不要担心，后面的文章会教你如何去做。t=N4P3C&#43;&#43;红黑树（1/4）_木木em哈哈的博客-CSDN博客https://blog.csdn.net/mumuemhaha/article/details/131152321?</description>
+    </item>
+    <item>
+      <title>通过python用超级简单和基本的方法实现求导数</title>
+      <link>https://0ha.top/posts/130782037/</link>
+      <pubDate>Sun, 11 Jun 2023 03:03:50 +0000</pubDate>
+      <guid>https://0ha.top/posts/130782037/</guid>
+      <description>文章浏览阅读692次。优点是泛用性非常好，也十分好理解，在合适的范围，函数可以变得不规则，但是依旧可以求出导数的大约值，并不会与真实值差的很多。缺点很明显在数据十分大的时候误差也会越来越大，原因就是MIN的值还是太大了。直接用导数的定义就行。_python求导数的代码</description>
+    </item>
+    <item>
+      <title>python爬虫“indexerror: list index out of range”错误及其解决办法</title>
+      <link>https://0ha.top/posts/131097025/</link>
+      <pubDate>Sat, 10 Jun 2023 04:10:23 +0000</pubDate>
+      <guid>https://0ha.top/posts/131097025/</guid>
+      <description>文章浏览阅读1.8k次。python列表为空的原因导致索引错误，继而导致找不到索引不要图省事，至少在报错的时候最好用最基础的方法试一遍。_爬取网站内容indexerror: list index out of range</description>
+    </item>
+    <item>
+      <title>pip永久换源和临时换源的方法</title>
+      <link>https://0ha.top/posts/131077450/</link>
+      <pubDate>Tue, 06 Jun 2023 14:56:33 +0000</pubDate>
+      <guid>https://0ha.top/posts/131077450/</guid>
+      <description>文章浏览阅读2k次。因为在pip下载python包时由于服务器架设在国外这样国内访问掉包率和速度会很慢后一种还好，前一种下载体积大的包不可避免会超时，这样就要用到国内的镜像源了可能还会出现错误ERROR: Could not find a version that satisfies the requirement pandas (from versions: none)ERROR: No matching distribution found for pandas。_临时换源</description>
+    </item>
+    <item>
+      <title>Xftp“无法显示远程文件夹”</title>
+      <link>https://0ha.top/posts/131031052/</link>
+      <pubDate>Sun, 04 Jun 2023 05:02:18 +0000</pubDate>
+      <guid>https://0ha.top/posts/131031052/</guid>
+      <description>文章浏览阅读3.5k次，点赞2次，收藏7次。（csdn上一些的博主说是要改为被动模式，当时xftp默认就是开启的被动模式所以目前问题不在这里，至少我不是）如图打开xftp点开root文件夹或者是其他的一些目录准备传输文件时会出现，无法显示远程文件夹。那就在xftp上重新打开xshell，注意！后面的/root文件夹可以改为你要访问文件的绝对路径。要注意的是普通模式默认进入的是/home/你的主机名称。root模式下目录是&amp;#34;/root&amp;#34;，不是“/”根目录。比如我要xftp访问/root文件夹就输入。这是因为xftp没有访问目录权限导致的。_xftp无法显示远程文件夹</description>
+    </item>
+    <item>
+      <title>“13”行纯python代码把目录下相应后缀名称的文件写入txt中</title>
+      <link>https://0ha.top/posts/131015437/</link>
+      <pubDate>Sun, 04 Jun 2023 04:00:23 +0000</pubDate>
+      <guid>https://0ha.top/posts/131015437/</guid>
+      <description>文章浏览阅读89次。可以用于yolo项目中所需要的写入图片的绝对路径那一个环节。也可以用于其他的情况（博主想不出来）_python 将一个目录下的.txt文件写入指向的txt文件里</description>
+    </item>
+    <item>
+      <title>用python实现划分自定义划分训练集，测试集和验证集</title>
+      <link>https://0ha.top/posts/131021670/</link>
+      <pubDate>Sun, 04 Jun 2023 03:58:36 +0000</pubDate>
+      <guid>https://0ha.top/posts/131021670/</guid>
+      <description>文章浏览阅读1.3k次，点赞3次，收藏5次。用于yolo分配训练集测试集以及验证集。_python划分训练集和验证集</description>
+    </item>
+    <item>
+      <title>（win10)yolov5训练自己的数据集</title>
+      <link>https://0ha.top/posts/130999472/</link>
+      <pubDate>Fri, 02 Jun 2023 01:50:05 +0000</pubDate>
+      <guid>https://0ha.top/posts/130999472/</guid>
+      <description>文章浏览阅读416次。打开上面的标注数据的工具（原来用于dnf挂机的脚本工具，用了发现他的自动截图功能不错，而且标记出来的数据labels可以直接用，不用xml转txt了）选择使用GPU还是CPU。最后再试试调小 --batch-size，降低 --epoch。文件夹用于放置你标记的数据集的数据xml或者是txt，再在VOCData文件夹里面创建一个。epochs：指的就是训练过程中整个数据集将被迭代（训练）了多少次，显卡不行你就调小点。因为是用刚刚的应用程序来标注的图片文件所以就不需要把xml转为yolo格式的文件了。_windows 使用cpu 运行yolo5自己的数据</description>
+    </item>
+    <item>
+      <title>一篇就够了——宝塔安装nextcloud以及一系列的软件（ocdownload，onlyoffice）安装,以及会遇到的一系列问题（持续更新）</title>
+      <link>https://0ha.top/posts/130904547/</link>
+      <pubDate>Tue, 30 May 2023 13:17:52 +0000</pubDate>
+      <guid>https://0ha.top/posts/130904547/</guid>
+      <description>文章浏览阅读2.2k次。宝塔是一款用于 Linux 服务器管理的开源面板软件，其提供了网站管理、数据库管理、FTP管理、SSL证书申请等功能，可以方便地进行服务器管理和网站运营。它支持多语言界面，易于安装和使用，受到了广大开发者和网站管理员的喜爱。尽管宝塔相比于其他一些方式建站占用的空间和cpu资源会比较大但是其简单的部署方式和一体化的管理十分方便后续管理和拓展Nextcloud是一种开源的云存储平台，它可以让你在自己的服务器上存储、同步和分享文件、日历、联系人等信息。_nextcloud download</description>
+    </item>
+    <item>
+      <title>可道云修改配置优化上传下载速度</title>
+      <link>https://0ha.top/posts/130956982/</link>
+      <pubDate>Tue, 30 May 2023 13:10:20 +0000</pubDate>
+      <guid>https://0ha.top/posts/130956982/</guid>
+      <description>文章浏览阅读1.7k次。不久前我做nextcloud的时候说过好像可道云下载和上传速度没有nextcloud大，而且在上传文件的时候cpu占用率到达百分之百。我的四代i3虽然不高，但是当个私人网盘的处理器这配置绰绰有余啊？后面我就在想是可道云的问题还是设置的问题后面我nextcloud上传大文件的时候报错在一步步查原因是刚好把可道云的设置问题给找到了。_可道云上传速度慢</description>
+    </item>
+    <item>
+      <title>记录PIP安装出现的一系列错误</title>
+      <link>https://0ha.top/posts/130396342/</link>
+      <pubDate>Sun, 28 May 2023 11:28:15 +0000</pubDate>
+      <guid>https://0ha.top/posts/130396342/</guid>
+      <description>文章浏览阅读982次。反应过来这是因为用的是国内源所以下载速度慢，而且容易丢包，而且要命的是pip不支持断点续传结果文件下载失败，文件都不完整，安装出现时候自然出现一系列错误。注意看，我在打代码时忘记打-i原本应该为。因为过于愚蠢结果百度的搜不出来。执行前面的命令终于安装成功了。那好办我用国内源不就行了？在安装pandas时运行。我还没发现，结果出现报错。_status=run_func(*args)报错pip</description>
+    </item>
+    <item>
+      <title>数据处理——用numpy的empty等方法把许多numpy数组变为一个大的每个独立的数组</title>
+      <link>https://0ha.top/posts/130755371/</link>
+      <pubDate>Sat, 20 May 2023 07:11:28 +0000</pubDate>
+      <guid>https://0ha.top/posts/130755371/</guid>
+      <description>文章浏览阅读101次。在数据处理的过程有时我们为了方便管理会把多个小数组合并为一个大数组，但是初学者用简单的多个array[]合并会遇到一个问题。需要注意的是在empty中如果np.empty([x,y])x不为0的话新生成x个1*y维数组，值随机所以最好用0。这样也许不是我们想要的，我们想要的是多个二维数组而不是一个单一的一维数组。同样你可以在输入数据的时候就把多少个存储下来然后用其他的函数去修改形状也行。缺点是他好像他只可以用来固定1*n维的数组（有知道的评论区说一下）之前不为0给我创建了x个1*y的随机值。_np.empty([0,2])</description>
+    </item>
+    <item>
+      <title>debian安装docker(通用方法）</title>
+      <link>https://0ha.top/posts/130344753/</link>
+      <pubDate>Fri, 19 May 2023 01:59:12 +0000</pubDate>
+      <guid>https://0ha.top/posts/130344753/</guid>
+      <description>文章浏览阅读2.6k次，点赞3次，收藏14次。不代表网络上其他的方法没用，我的另一台主机按照教程安装成功了，但是这台不行，如果其他的方法没用并且老是报错安装失败的话不妨试一试我的方法。_debian安装docker</description>
+    </item>
+    <item>
+      <title>armbian的换源</title>
+      <link>https://0ha.top/posts/130322147/</link>
+      <pubDate>Fri, 19 May 2023 01:59:02 +0000</pubDate>
+      <guid>https://0ha.top/posts/130322147/</guid>
+      <description>文章浏览阅读4.7k次。安装好armbian和众多Linux一样，最重要的就是把原来的官方源给替换掉，换成国内的源，当然个人建议还是把官方的源备份一下以防出错。不用全复制，挑一个就行，我用的是163源（网易源）_armbian换源</description>
+    </item>
+    <item>
+      <title>anaconda导出离线包在新设备上安装python环境</title>
+      <link>https://0ha.top/posts/130754033/</link>
+      <pubDate>Thu, 18 May 2023 13:48:01 +0000</pubDate>
+      <guid>https://0ha.top/posts/130754033/</guid>
+      <description>文章浏览阅读433次。前不久在学校做项目的时候用学校的电脑，但是学校的python环境需要配置，不巧的是学校网络不好而且每次开机都会重置电脑，所以我萌生出要做一个离线包拷贝到u盘里随插随用。（虽然pycharm做项目可以保存环境，但是我导入到新版本的pycharm就失效了不知道是不是因为版本的问题）正好我自己的电脑上有anaconda的环境我只要把他导入出来就行了。或者把他粘贴到pycahrm的env目录下的Scripts也行。先进入搭建出来的环境(env_name为你搭建环境的名称 ）然后导入配置的环境的列表。</description>
+    </item>
+    <item>
+      <title>花生壳，nat123，srkura frp内网穿透对比（有主观成分</title>
+      <link>https://0ha.top/posts/130376644/</link>
+      <pubDate>Fri, 28 Apr 2023 04:01:42 +0000</pubDate>
+      <guid>https://0ha.top/posts/130376644/</guid>
+      <description>文章浏览阅读1.3k次。缺点为要使用http协议要交钱，而且申请的是一个奇怪的二级域名并且不支持指定，要指定需要另外收费并且要付域名费用，带宽都为1m，花生壳每月1G，nat123不限流量。缺点：国内的http路线域名要备案，不管你是不是二级域名（二级域名不用也不能备案），但是可以走国外的线路，不过宽带速度和丢包率会有点高。花生壳和nat123优缺点差不多一样，优点为部署简单不用再次申请域名，而且http协议是国内路线不用备案。优点：免费10m的带宽，支持也只能用你自己单独申请的域名（可以二级域名也可一级域名），_frp和nat有什么区别</description>
+    </item>
+    <item>
+      <title>路由器端口映射和dmz无法访问内网搭建的网站</title>
+      <link>https://0ha.top/posts/130284390/</link>
+      <pubDate>Fri, 21 Apr 2023 03:44:08 +0000</pubDate>
+      <guid>https://0ha.top/posts/130284390/</guid>
+      <description>文章浏览阅读812次。路由器把80端口封了，要开启就要去备案了（改成其他的端口外网应该也访问不了）昨天想着不用内网穿透用路由器端口映射打开或者路由器dmz做全端口映射。但是外网访问不了，后来我想是不是我的路由器是不是不是公网ip。结果百度搜索ip出现的ip和我路由器的wlan ip一样。然后我在手机开流量用我公网的ip用ssh链接了一下。（注意：依旧用外网或者流量访问）查看我开放的端口。然后匪夷所思的是搭建宝塔网站外网可以访问。结果外网访问不了我宝塔搭建的网站。内网可以进（用的也是公网ip）为什么访问不了我的网站。_路由器端口映射到内网无法访问</description>
+    </item>
+    <item>
+      <title>JAVA （1）</title>
+      <link>https://0ha.top/posts/124517416/</link>
+      <pubDate>Thu, 05 May 2022 09:37:44 +0000</pubDate>
+      <guid>https://0ha.top/posts/124517416/</guid>
+      <description>文章浏览阅读457次。代码public class HelloWorld{	public static void main(String[] args){		System.out.println(&amp;#34;HelloWorld!&amp;#34;);	}}链接208</description>
     </item>
   </channel>
 </rss>
