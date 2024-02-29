@@ -1,278 +1,86 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>C&#43;&#43;智能指针（3/3） // 木哈文轩</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.123.3">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="木木em哈哈" />
+    <meta name="description" content="文章浏览阅读168次。public:cout" />
+    <link rel="stylesheet" href="/css/main.min.a545955c4c2a15328ae3f208fda979c3a40146d5a6d4f95e0ab1a00e48cd1ff2.css" />
+    
 
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>C&#43;&#43;智能指针（3/3） | 木哈文轩</title>
-<meta name="keywords" content="C&#43;&#43;智能指针（3/3）">
-<meta name="description" content="文章浏览阅读168次。public:cout">
-<meta name="author" content="木木Em哈哈 Csdn认证博客专家 Csdn认证企业博客 码龄3年 Python领域新星创作者">
-<link rel="canonical" href="https://0ha.top/posts/131743884/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.1f32c844f2d5be7933a69a506945f44f4c61e4a145b9ab585974513f8cf24f81.css" integrity="sha256-HzLIRPLVvnkzpppQaUX0T0xh5KFFuatYWXRRP4zyT4E=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://0ha.top/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://0ha.top/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://0ha.top/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://0ha.top/apple-touch-icon.png">
-<link rel="mask-icon" href="https://0ha.top/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://0ha.top/posts/131743884/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+    
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="C&#43;&#43;智能指针（3/3）"/>
+<meta name="twitter:description" content="文章浏览阅读168次。public:cout"/>
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript><meta property="og:title" content="C&#43;&#43;智能指针（3/3）" />
+    <meta property="og:title" content="C&#43;&#43;智能指针（3/3）" />
 <meta property="og:description" content="文章浏览阅读168次。public:cout" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://0ha.top/posts/131743884/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-07-15T15:14:35+00:00" />
 <meta property="article:modified_time" content="2023-07-15T15:14:35+00:00" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="C&#43;&#43;智能指针（3/3）"/>
-<meta name="twitter:description" content="文章浏览阅读168次。public:cout"/>
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://0ha.top/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "C++智能指针（3/3）",
-      "item": "https://0ha.top/posts/131743884/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "C++智能指针（3/3）",
-  "name": "C\u002b\u002b智能指针（3\/3）",
-  "description": "文章浏览阅读168次。public:cout",
-  "keywords": [
-    "C++智能指针（3/3）"
-  ],
-  "articleBody": "目录\n上一节内容\n例子（类定义）\n主函数代码\n执行的结果\n解释说明\n赋值\n主动释放\n重置指针\n交换指针的值\n原因\n解决办法之一\nweak_ptr智能指针（弱指针）\nweak智能指针的用法\n注意\n弱指针到共享指针的转化\n特别感谢\n上一节内容 C++智能指针（2/3）_木木em哈哈的博客-CSDN博客自动释放内存：智能指针使用了RAII（资源获取即初始化）的原则，在创建时分配内存，在销毁时自动释放内存，无需手动管理内存释放，避免了因为忘记释放内存而造成的内存泄漏问题。unique_ptr是一种独占所有权的智能指针，同一时间只能有一个unique_ptr指向一个对象，当unique_ptr被销毁时，对象也会被释放。在这之中开始时p1托管str的指针，后面p2接管str指针的同时会把p1的托管给取消，这样p1指针指向的就是NULL（空），从而报错。这是因为auto_ptr与unique_ptr的排他性。 https://blog.csdn.net/mumuemhaha/article/details/131689322?spm=1001.2014.3001.5502 ;这一节我们来学最后的share_ptr和weak_ptr\nshared_ptr使用引用计数的方式来管理资源，即每个shared_ptr对象都有一个关联的计数器，记录有多少个shared_ptr对象共享同一块内存资源。当计数器为0时，资源会被自动释放。\n当复制或拷贝时， 引用计数加1，当智能指针析构时， 引用计数减1，如果计数为零，代表已经没有指针指向这块内存，那么我们就释放它！这就是 shared_ptr 采用的策略！\n例子（类定义） class Person { public: Person(int v) { this-\u003eno = v; cout \u003c\u003c \"构造函数 \\t no = \" \u003c\u003c this-\u003eno \u003c\u003c endl; } ~Person() { cout \u003c\u003c \"析构函数 \\t no = \" \u003c\u003c this-\u003eno \u003c\u003c endl; } private: int no; }; 主函数代码 int main() { //定义两个share指针同时第二个由于已经构造好了，引用次数+1 shared_ptr sp1; shared_ptr sp2(new Person(2)); // 获取智能指针管控的共享指针的数量\tuse_count()：引用计数 cout \u003c\u003c \"sp1引用计数 = \" \u003c\u003c sp1.use_count() \u003c\u003c endl; cout \u003c\u003c \"sp2引用计数 = \" \u003c\u003c sp2.use_count() \u003c\u003c endl \u003c\u003c endl; // 共享同时也共享引用次数 sp1 = sp2; //打印出来引用次数同时验证猜想 cout \u003c\u003c \"sp1引用计数 = \" \u003c\u003c sp1.use_count() \u003c\u003c endl; cout \u003c\u003c \"sp2引用计数 = \" \u003c\u003c sp2.use_count() \u003c\u003c endl \u003c\u003c endl; shared_ptr sp3(sp1); cout \u003c\u003c \"sp1引用计数 = \" \u003c\u003c sp1.use_count() \u003c\u003c endl; cout \u003c\u003c \"sp2引用计数 = \" \u003c\u003c sp2.use_count() \u003c\u003c endl; cout \u003c\u003c \"sp2引用计数 = \" \u003c\u003c sp3.use_count() \u003c\u003c endl \u003c\u003c endl; return 0; } 执行的结果 构造函数 no = 2 sp1引用计数 = 0 sp2引用计数 = 1 sp1引用计数 = 2 sp2引用计数 = 2 sp1引用计数 = 3 sp2引用计数 = 3 sp2引用计数 = 3 析构函数 no = 2 D:\\C++\\调试\\x64\\Debug\\调试.exe (进程 1536)已退出，代码为 0。 要在调试停止时自动关闭控制台，请启用\"工具\"-\u003e\"选项\"-\u003e\"调试\"-\u003e\"调试停止时自动关闭控制台\"。 按任意键关闭此窗口. . . 解释说明 注释中说的很明白了，只要引用了share_ptr所指向的变量，他的引用计数就会加一\n同时在函数中sp1,sp2,sp3共同管理一个share_ptr指针\nshared_ptr sp1; Person *person_1 = new Person(1); sp1.reset(person_1);\t// 托管person1 shared_ptr sp2(new Person(2)); shared_ptr sp3(sp1); shared_ptr sp4; shared_ptr sp5(new Person[5] { 1, 2, 3, 4, 5 }); 创建一个有五个Person元素的数组分别为1,2,3,4,5也就是Person(1),Person(2)……\n假设删除函数为\nclass Person { public: Person(int v) { this-\u003eno = v; cout \u003c\u003c \"构造函数 \\t no = \" \u003c\u003c this-\u003eno \u003c\u003c endl; } ~Person() { cout \u003c\u003c \"析构函数 \\t no = \" \u003c\u003c this-\u003eno \u003c\u003c endl; } private: int no; }; // 仿函数，内存删除 class DestructPerson { public: void operator() (Person *pt) { cout \u003c\u003c \"DestructPerson...\" \u003c\u003c endl; delete pt; } }; 则用法为\nshared_ptr sp6(NULL, DestructPerson()); shared_ptr sp7(new Person(8), DestructPerson()); shared_ptr up1(new Person(10)); // Person(10) 的引用计数为1 shared_ptr up2(up1); // 使用智能指针up1构造up2, 此时Person(10) 引用计数为2 shared_ptr up3 = make_shared(2); // 多个参数以逗号','隔开，最多接受十个 赋值 shared_ptrr up1(new int(10)); // int(10) 的引用计数为1 shared_ptr up2(new int(11)); // int(11) 的引用计数为1 up1 = up2;\t// 因为为赋值，故int(10) 的引用计数减1,计数归零内存释放，up2共享int(11)给up1, int(11)的引用计数为2 主动释放 shared_ptrr up1(new int(10)); up1 = nullptr ;\t// int(10) 的引用计数减1,计数归零内存释放 // 或 up1 = NULL; // 作用同上 重置指针 p.reset() ; 将p重置为空指针，所管理对象引用计数 减1 p.reset(p1); 将p重置为p1（的值）,p 管控的对象计数减1，p接管对p1指针的管控 p.reset(p1,d); 将p重置为p1（的值），p 管控的对象计数减1并使用d作为删除器 p1是一个指针！\n交换指针的值 std::swap(p1,p2); // 交换p1 和p2 管理的对象，原对象的引用计数不变 p1.swap(p2); // 交换p1 和p2 管理的对象，原对象的引用计数不变 小心因循环引用造成无法释放资源!\n如下代码： Boy类中有Girl的智能指针； Girl类中有Boy的智能指针； 当他们交叉互相持有对方的管理对象时…（借用大佬写的代码）\n#include #include #include using namespace std; class Girl; class Boy { public: Boy() { cout \u003c\u003c \"Boy 构造函数\" \u003c\u003c endl; } ~Boy() { cout \u003c\u003c \"~Boy 析构函数\" \u003c\u003c endl; } void setGirlFriend(shared_ptr _girlFriend) { this-\u003egirlFriend = _girlFriend; } private: shared_ptr girlFriend; }; class Girl { public: Girl() { cout \u003c\u003c \"Girl 构造函数\" \u003c\u003c endl; } ~Girl() { cout \u003c\u003c \"~Girl 析构函数\" \u003c\u003c endl; } void setBoyFriend(shared_ptr _boyFriend) { this-\u003eboyFriend = _boyFriend; } private: shared_ptr boyFriend; }; void useTrap() { shared_ptr spBoy(new Boy()); shared_ptr spGirl(new Girl()); // 陷阱用法 spBoy-\u003esetGirlFriend(spGirl); spGirl-\u003esetBoyFriend(spBoy); // 此时boy和girl的引用计数都是2 } int main(void) { useTrap(); system(\"pause\"); return 0; } 这里是一个boy里有个girl的指针，而girl里也有个boy的指针\n到最后\nBoy 构造函数 Girl 构造函数 请按任意键继续. . . 空间都没有释放出来（没有析构函数）\n原因 这里由于都各有对方的类，故引用计数为2\n但是当程序结束的时候\n函数中的智能指针清理掉了，但是类中嵌套的智能指针无法释放，所有类无法调用析构函数\n解决办法之一 如果不用两个类中的指针互相关联，而是一方单方面获得管理对方的共享指针，这样可以正常释放\n假设还是上面的那个例子\n由于因为开始释放boy是引用次数为2，函数结束计数减一变为一\n之后开始释放girl，girl引用次数为1，函数结束计数减一变为零\n这是开始析构girl，同时就会把boy类也析构掉，计数再次减一\n这是boy引用次数为零，则boy也开始析构了\nvoid useTrap() { shared_ptr spBoy(new Boy()); shared_ptr spGirl(new Girl()); // 单方获得管理 //spBoy-\u003esetGirlFriend(spGirl); spGirl-\u003esetBoyFriend(spBoy); } weak_ptr智能指针（弱指针） weak_ptr 设计的目的是为配合 shared_ptr 而引入的一种智能指针来协助 shared_ptr 工作, 它只可以从一个 shared_ptr 或另一个 weak_ptr 对象构造, 它的构造和析构不会引起引用记数的增加或减少。 同时weak_ptr 没有重载*和-\u003e但可以使用 lock 获得一个可用的 shared_ptr 对象。\nweak智能指针的用法 weak_ptr的定义空指针(weak_ptr\n同时和share_ptr一样可以用 .count()来查看引用次数\n注意 弱指针不支持 * 和 -\u003e 对指针的访问\n弱指针到共享指针的转化 弱指针到共享指针的转化可以用.lock()来表示\n例如\nshared_ptr sp_girl; sp_girl = wpGirl_1.lock(); // 使用完之后，再将共享指针置NULL即可 sp_girl = NULL; 上面share_ptr发生的问题的另一种解决办法\n#include #include #include using namespace std; class Girl; class Boy { public: Boy() { cout \u003c\u003c \"Boy 构造函数\" \u003c\u003c endl; } ~Boy() { cout \u003c\u003c \"~Boy 析构函数\" \u003c\u003c endl; } void setGirlFriend(shared_ptr _girlFriend) { this-\u003egirlFriend = _girlFriend; // 在必要的使用可以转换成共享指针 shared_ptr sp_girl; sp_girl = this-\u003egirlFriend.lock(); cout \u003c\u003c sp_girl.use_count() \u003c\u003c endl; // 使用完之后，再将共享指针置NULL即可 sp_girl = NULL; } private: weak_ptr girlFriend; }; class Girl { public: Girl() { cout \u003c\u003c \"Girl 构造函数\" \u003c\u003c endl; } ~Girl() { cout \u003c\u003c \"~Girl 析构函数\" \u003c\u003c endl; } void setBoyFriend(shared_ptr _boyFriend) { this-\u003eboyFriend = _boyFriend; } private: shared_ptr boyFriend; }; void useTrap() { shared_ptr spBoy(new Boy()); shared_ptr spGirl(new Girl()); spBoy-\u003esetGirlFriend(spGirl); spGirl-\u003esetBoyFriend(spBoy); } int main(void) { useTrap(); system(\"pause\"); return 0; } 再次感谢大佬的代码\n在这一串代码中主要变的就是各两个类中的对方函数的指针变为了弱指针（在需要的时候用.lock()给变回共享指针，使用完后置空）\n这样就避免了双方都没有权限去析构对方类\n特别感谢 （本章中用了不少这位大佬的代码，如有不妥，联系改正）\nC++ 智能指针 - 全部用法详解_cpp智能指针特性_cpp_learners的博客-CSDN博客血的教训？不学智能指针，本人丢了一份工作。_cpp智能指针特性 https://blog.csdn.net/cpp_learner/article/details/118912592 ;\n",
-  "wordCount" : "685",
-  "inLanguage": "en",
-  "datePublished": "2023-07-15T15:14:35Z",
-  "dateModified": "2023-07-15T15:14:35Z",
-  "author":{
-    "@type": "Person",
-    "name": "木木Em哈哈 Csdn认证博客专家 Csdn认证企业博客 码龄3年 Python领域新星创作者"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://0ha.top/posts/131743884/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "木哈文轩",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://0ha.top/favicon.ico"
-    }
-  }
-}
-</script>
-</head>
-
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://0ha.top/" accesskey="h" title="木哈文轩 (Alt + H)">木哈文轩</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-                <ul class="lang-switch"><li>|</li>
-                </ul>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://0ha.top/search" title="🔍搜索">
-                    <span>🔍搜索</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://0ha.top/" title="🏠主页">
-                    <span>🏠主页</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://0ha.top/posts" title="📚文章">
-                    <span>📚文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://0ha.top/archives/" title="⏱时间轴">
-                    <span>⏱时间轴</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://0ha.top/tags" title="🔖标签">
-                    <span>🔖标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://0ha.top/about" title="🙋🏻‍♂️关于">
-                    <span>🙋🏻‍♂️关于</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://0ha.top/links" title="🤝友链">
-                    <span>🤝友链</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="https://0ha.top/">Home</a>&nbsp;»&nbsp;<a href="https://0ha.top/posts/">Posts</a></div>
-    <h1 class="post-title entry-hint-parent">
-      C&#43;&#43;智能指针（3/3）
-    </h1>
-    <div class="post-description">
-      文章浏览阅读168次。public:cout
-    </div>
-    <div class="post-meta"><span title='2023-07-15 15:14:35 +0000 UTC'>2023-07-15</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;木木Em哈哈 Csdn认证博客专家 Csdn认证企业博客 码龄3年 Python领域新星创作者
-
-</div>
-
-    
-    <div style="display: flex; justify-content: center;">
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://0ha.top/"><img class="app-header-avatar" src="https://s3.bmp.ovh/imgs/2024/02/27/ebc3b3191cd37c75.jpg" alt="木木em哈哈" /></a>
+      <span class="app-header-title">木哈文轩</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">主页</a>
+              ·  
+          
+          <a class="app-header-menu-item" href="/tags/">标签</a>
+              ·  
+          
+          <a class="app-header-menu-item" href="/about/">有关</a>
+      </nav>
+      <p>别让我逮住嗷</p>
+      <div class="app-header-social">
+        
+          <a href="https://blog.csdn.net/mumuemhaha" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-circle">
+  <title>CSDN</title>
+  <circle cx="12" cy="12" r="10"></circle>
+</svg>
+          </a>
+        
+          <a href="https://github.com/mumuhaha487" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
       
-  </div>
-
-  </header> <div class="toc">
-    <details  open>
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
-
-        <div class="inner"><ul>
-                <li>
-                    <a href="#%e4%b8%8a%e4%b8%80%e8%8a%82%e5%86%85%e5%ae%b9" aria-label="上一节内容">上一节内容</a><ul>
-                        
-                <li>
-                    <a href="#%e4%be%8b%e5%ad%90%e7%b1%bb%e5%ae%9a%e4%b9%89" aria-label="例子（类定义）">例子（类定义）</a></li>
-                <li>
-                    <a href="#%e4%b8%bb%e5%87%bd%e6%95%b0%e4%bb%a3%e7%a0%81" aria-label="主函数代码">主函数代码</a></li>
-                <li>
-                    <a href="#%e6%89%a7%e8%a1%8c%e7%9a%84%e7%bb%93%e6%9e%9c" aria-label="执行的结果">执行的结果</a></li>
-                <li>
-                    <a href="#%e8%a7%a3%e9%87%8a%e8%af%b4%e6%98%8e" aria-label="解释说明">解释说明</a><ul>
-                        
-                <li>
-                    <a href="#%e8%b5%8b%e5%80%bc" aria-label="赋值">赋值</a></li>
-                <li>
-                    <a href="#%e4%b8%bb%e5%8a%a8%e9%87%8a%e6%94%be" aria-label="主动释放">主动释放</a></li>
-                <li>
-                    <a href="#%e9%87%8d%e7%bd%ae%e6%8c%87%e9%92%88" aria-label="重置指针">重置指针</a></li>
-                <li>
-                    <a href="#%e4%ba%a4%e6%8d%a2%e6%8c%87%e9%92%88%e7%9a%84%e5%80%bc" aria-label="交换指针的值">交换指针的值</a></li></ul>
-                </li>
-                <li>
-                    <a href="#%e5%8e%9f%e5%9b%a0" aria-label="原因">原因</a></li>
-                <li>
-                    <a href="#%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95%e4%b9%8b%e4%b8%80" aria-label="解决办法之一">解决办法之一</a></li></ul>
-                </li>
-                <li>
-                    <a href="#weak_ptr%e6%99%ba%e8%83%bd%e6%8c%87%e9%92%88%e5%bc%b1%e6%8c%87%e9%92%88" aria-label="weak_ptr智能指针（弱指针）">weak_ptr智能指针（弱指针）</a><ul>
-                        
-                <li>
-                    <a href="#weak%e6%99%ba%e8%83%bd%e6%8c%87%e9%92%88%e7%9a%84%e7%94%a8%e6%b3%95" aria-label="weak智能指针的用法">weak智能指针的用法</a></li>
-                <li>
-                    <a href="#%e6%b3%a8%e6%84%8f" aria-label="注意">注意</a></li>
-                <li>
-                    <a href="#%e5%bc%b1%e6%8c%87%e9%92%88%e5%88%b0%e5%85%b1%e4%ba%ab%e6%8c%87%e9%92%88%e7%9a%84%e8%bd%ac%e5%8c%96" aria-label="弱指针到共享指针的转化">弱指针到共享指针的转化</a></li></ul>
-                </li>
-                <li>
-                    <a href="#%e7%89%b9%e5%88%ab%e6%84%9f%e8%b0%a2" aria-label="特别感谢">特别感谢</a>
-                </li>
-            </ul>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">C&#43;&#43;智能指针（3/3）</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 15, 2023
         </div>
-    </details>
-</div>
-
-  <div class="post-content"><p><strong>目录</strong></p>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          4 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p><strong>目录</strong></p>
 <p><a href="#%e4%b8%8a%e4%b8%80%e8%8a%82%e5%86%85%e5%ae%b9">上一节内容</a></p>
 <p><a href="#%c2%a0%e4%be%8b%e5%ad%90%ef%bc%88%e7%b1%bb%e5%ae%9a%e4%b9%89%ef%bc%89">例子（类定义）</a></p>
 <p><a href="#%e4%b8%bb%e5%87%bd%e6%95%b0%e4%bb%a3%e7%a0%81">主函数代码</a></p>
@@ -289,16 +97,14 @@
 <p><a href="#%e6%b3%a8%e6%84%8f">注意</a></p>
 <p><a href="#%e5%bc%b1%e6%8c%87%e9%92%88%e5%88%b0%e5%85%b1%e4%ba%ab%e6%8c%87%e9%92%88%e7%9a%84%e8%bd%ac%e5%8c%96">弱指针到共享指针的转化</a></p>
 <p><a href="#%e7%89%b9%e5%88%ab%e6%84%9f%e8%b0%a2">特别感谢</a></p>
-<h2 id="上一节内容">上一节内容<a hidden class="anchor" aria-hidden="true" href="#上一节内容">#</a></h2>
-<p><a href="https://blog.csdn.net/mumuemhaha/article/details/131689322?spm=1001.2014.3001.5502" title="C++智能指针（2/3）_木木em哈哈的博客-CSDN博客">C++智能指针（2/3）_木木em哈哈的博客-CSDN博客自动释放内存：智能指针使用了RAII（资源获取即初始化）的原则，在创建时分配内存，在销毁时自动释放内存，无需手动管理内存释放，避免了因为忘记释放内存而造成的内存泄漏问题。unique_ptr是一种独占所有权的智能指针，同一时间只能有一个unique_ptr指向一个对象，当unique_ptr被销毁时，对象也会被释放。在这之中开始时p1托管str的指针，后面p2接管str指针的同时会把p1的托管给取消，这样p1指针指向的就是NULL（空），从而报错。这是因为auto_ptr与unique_ptr的排他性。<img loading="lazy" src="https://g.csdnimg.cn/static/logo/favicon32.ico" alt=""  />
-https://blog.csdn.net/mumuemhaha/article/details/131689322?spm=1001.2014.3001.5502 ;</a>这一节我们来学最后的share_ptr和weak_ptr</p>
+<h2 id="上一节内容">上一节内容</h2>
+<p><a href="https://blog.csdn.net/mumuemhaha/article/details/131689322?spm=1001.2014.3001.5502" title="C++智能指针（2/3）_木木em哈哈的博客-CSDN博客">C++智能指针（2/3）_木木em哈哈的博客-CSDN博客自动释放内存：智能指针使用了RAII（资源获取即初始化）的原则，在创建时分配内存，在销毁时自动释放内存，无需手动管理内存释放，避免了因为忘记释放内存而造成的内存泄漏问题。unique_ptr是一种独占所有权的智能指针，同一时间只能有一个unique_ptr指向一个对象，当unique_ptr被销毁时，对象也会被释放。在这之中开始时p1托管str的指针，后面p2接管str指针的同时会把p1的托管给取消，这样p1指针指向的就是NULL（空），从而报错。这是因为auto_ptr与unique_ptr的排他性。<img src="https://g.csdnimg.cn/static/logo/favicon32.ico" alt="">https://blog.csdn.net/mumuemhaha/article/details/131689322?spm=1001.2014.3001.5502 ;</a>这一节我们来学最后的share_ptr和weak_ptr</p>
 <blockquote>
 <p>shared_ptr使用引用计数的方式来管理资源，即每个shared_ptr对象都有一个关联的计数器，记录有多少个shared_ptr对象共享同一块内存资源。当计数器为0时，资源会被自动释放。</p>
 </blockquote>
 <p>当复制或拷贝时， <strong>引用计数</strong>加1，当智能指针析构时， <strong>引用计数</strong>减1，如果计数为零，代表已经没有指针指向这块内存，那么我们就释放它！这就是 shared_ptr 采用的策略！</p>
-<p><img loading="lazy" src="https://0ha.top/img/d83afe675d7d4eb9bfbc922ae4b2745b.png" alt=""  />
-</p>
-<h3 id="例子类定义">例子（类定义）<a hidden class="anchor" aria-hidden="true" href="#例子类定义">#</a></h3>
+<p><img src="https://0ha.top/img/d83afe675d7d4eb9bfbc922ae4b2745b.png" alt=""></p>
+<h3 id="例子类定义">例子（类定义）</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>	Person(<span style="color:#66d9ef">int</span> v) {
@@ -313,7 +119,7 @@ https://blog.csdn.net/mumuemhaha/article/details/131689322?spm=1001.2014.3001.55
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> no;
 </span></span><span style="display:flex;"><span>};
-</span></span></code></pre></div><h3 id="主函数代码">主函数代码<a hidden class="anchor" aria-hidden="true" href="#主函数代码">#</a></h3>
+</span></span></code></pre></div><h3 id="主函数代码">主函数代码</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">//定义两个share指针同时第二个由于已经构造好了，引用次数+1
@@ -338,7 +144,7 @@ https://blog.csdn.net/mumuemhaha/article/details/131689322?spm=1001.2014.3001.55
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="执行的结果">执行的结果<a hidden class="anchor" aria-hidden="true" href="#执行的结果">#</a></h3>
+</span></span></code></pre></div><h3 id="执行的结果">执行的结果</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">构造函数</span>         no <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
 </span></span><span style="display:flex;"><span>sp1引用计数 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>sp2引用计数 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
@@ -355,7 +161,7 @@ https://blog.csdn.net/mumuemhaha/article/details/131689322?spm=1001.2014.3001.55
 </span></span><span style="display:flex;"><span>D:<span style="color:#960050;background-color:#1e0010">\</span>C<span style="color:#f92672">++</span><span style="color:#960050;background-color:#1e0010">\调试\</span>x64<span style="color:#960050;background-color:#1e0010">\</span>Debug<span style="color:#960050;background-color:#1e0010">\调试</span>.exe (<span style="color:#960050;background-color:#1e0010">进程</span> <span style="color:#ae81ff">1536</span>)<span style="color:#960050;background-color:#1e0010">已退出，代码为</span> <span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">。</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">要在调试停止时自动关闭控制台，请启用</span><span style="color:#e6db74">&#34;工具&#34;</span><span style="color:#f92672">-&gt;</span><span style="color:#e6db74">&#34;选项&#34;</span><span style="color:#f92672">-&gt;</span><span style="color:#e6db74">&#34;调试&#34;</span><span style="color:#f92672">-&gt;</span><span style="color:#e6db74">&#34;调试停止时自动关闭控制台&#34;</span><span style="color:#960050;background-color:#1e0010">。</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">按任意键关闭此窗口</span>. . .
-</span></span></code></pre></div><h3 id="解释说明">解释说明<a hidden class="anchor" aria-hidden="true" href="#解释说明">#</a></h3>
+</span></span></code></pre></div><h3 id="解释说明">解释说明</h3>
 <p>注释中说的很明白了，只要引用了share_ptr所指向的变量，他的引用计数就会加一</p>
 <p>同时在函数中sp1,sp2,sp3共同管理一个share_ptr指针</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>shared_ptr sp1;
@@ -396,23 +202,23 @@ https://blog.csdn.net/mumuemhaha/article/details/131689322?spm=1001.2014.3001.55
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>shared_ptr <span style="color:#a6e22e">up1</span>(<span style="color:#66d9ef">new</span> Person(<span style="color:#ae81ff">10</span>));  <span style="color:#75715e">// Person(10) 的引用计数为1
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>shared_ptr <span style="color:#a6e22e">up2</span>(up1);  <span style="color:#75715e">// 使用智能指针up1构造up2, 此时Person(10) 引用计数为2
 </span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>shared_ptr up3 <span style="color:#f92672">=</span> make_shared(<span style="color:#ae81ff">2</span>); <span style="color:#75715e">// 多个参数以逗号&#39;,&#39;隔开，最多接受十个
-</span></span></span></code></pre></div><h4 id="赋值">赋值<a hidden class="anchor" aria-hidden="true" href="#赋值">#</a></h4>
+</span></span></span></code></pre></div><h4 id="赋值">赋值</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>shared_ptrr <span style="color:#a6e22e">up1</span>(<span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>(<span style="color:#ae81ff">10</span>));  <span style="color:#75715e">// int(10) 的引用计数为1
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>shared_ptr <span style="color:#a6e22e">up2</span>(<span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>(<span style="color:#ae81ff">11</span>));   <span style="color:#75715e">// int(11) 的引用计数为1
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>up1 <span style="color:#f92672">=</span> up2;	<span style="color:#75715e">// 因为为赋值，故int(10) 的引用计数减1,计数归零内存释放，up2共享int(11)给up1, int(11)的引用计数为2
-</span></span></span></code></pre></div><h4 id="主动释放">主动释放<a hidden class="anchor" aria-hidden="true" href="#主动释放">#</a></h4>
+</span></span></span></code></pre></div><h4 id="主动释放">主动释放</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>shared_ptrr <span style="color:#a6e22e">up1</span>(<span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>(<span style="color:#ae81ff">10</span>));
 </span></span><span style="display:flex;"><span>up1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span> ;	<span style="color:#75715e">// int(10) 的引用计数减1,计数归零内存释放
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 或
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>up1 <span style="color:#f92672">=</span> NULL; <span style="color:#75715e">// 作用同上
-</span></span></span></code></pre></div><h4 id="重置指针">重置指针<a hidden class="anchor" aria-hidden="true" href="#重置指针">#</a></h4>
+</span></span></span></code></pre></div><h4 id="重置指针">重置指针</h4>
 <blockquote>
 <p>p.reset() ; 将p重置为空指针，所管理对象引用计数 减1
 p.reset(p1); 将p重置为p1（的值）,p 管控的对象计数减1，p接管对p1指针的管控
 p.reset(p1,d); 将p重置为p1（的值），p 管控的对象计数减1并使用d作为删除器
 p1是一个指针！</p>
 </blockquote>
-<h4 id="交换指针的值">交换指针的值<a hidden class="anchor" aria-hidden="true" href="#交换指针的值">#</a></h4>
+<h4 id="交换指针的值">交换指针的值</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>std<span style="color:#f92672">::</span>swap(p1,p2); <span style="color:#75715e">// 交换p1 和p2 管理的对象，原对象的引用计数不变
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>p1.swap(p2);    <span style="color:#75715e">// 交换p1 和p2 管理的对象，原对象的引用计数不变
 </span></span></span></code></pre></div><p>小心因循环引用造成无法释放资源!</p>
@@ -486,15 +292,13 @@ Girl类中有Boy的智能指针；
 </span></span><span style="display:flex;"><span>Girl <span style="color:#960050;background-color:#1e0010">构造函数</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">请按任意键继续</span>. . .
 </span></span></code></pre></div><p>空间都没有释放出来（没有析构函数）</p>
-<h3 id="原因">原因<a hidden class="anchor" aria-hidden="true" href="#原因">#</a></h3>
-<p><img loading="lazy" src="https://0ha.top/img/25ce19fe52e4480b86e1d47aa0e769ad.png" alt=""  />
-</p>
+<h3 id="原因">原因</h3>
+<p><img src="https://0ha.top/img/25ce19fe52e4480b86e1d47aa0e769ad.png" alt=""></p>
 <p>这里由于都各有对方的类，故引用计数为2</p>
 <p>但是当程序结束的时候</p>
-<p><img loading="lazy" src="https://0ha.top/img/f3c86d95e1984c9aaab6ee1d1a4677d6.png" alt=""  />
-</p>
+<p><img src="https://0ha.top/img/f3c86d95e1984c9aaab6ee1d1a4677d6.png" alt=""></p>
 <p>函数中的智能指针清理掉了，但是类中嵌套的智能指针无法释放，所有类无法调用析构函数</p>
-<h3 id="解决办法之一">解决办法之一<a hidden class="anchor" aria-hidden="true" href="#解决办法之一">#</a></h3>
+<h3 id="解决办法之一">解决办法之一</h3>
 <p>如果不用两个类中的指针互相关联，而是一方单方面获得管理对方的共享指针，这样可以正常释放</p>
 <p>假设还是上面的那个例子</p>
 <p>由于因为开始释放boy是引用次数为2，函数结束计数减一变为一</p>
@@ -509,16 +313,16 @@ Girl类中有Boy的智能指针；
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">//spBoy-&gt;setGirlFriend(spGirl);
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	spGirl<span style="color:#f92672">-&gt;</span>setBoyFriend(spBoy);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="weak_ptr智能指针弱指针">weak_ptr智能指针（弱指针）<a hidden class="anchor" aria-hidden="true" href="#weak_ptr智能指针弱指针">#</a></h2>
+</span></span></code></pre></div><h2 id="weak_ptr智能指针弱指针">weak_ptr智能指针（弱指针）</h2>
 <blockquote>
 <p>weak_ptr 设计的目的是为配合 shared_ptr 而引入的一种智能指针来协助 shared_ptr 工作, 它只可以从一个 shared_ptr 或另一个 weak_ptr 对象构造, 它的构造和析构不会引起引用记数的增加或减少。 同时weak_ptr 没有重载*和-&gt;但可以使用 lock 获得一个可用的 shared_ptr 对象。</p>
 </blockquote>
-<h3 id="weak智能指针的用法">weak智能指针的用法<a hidden class="anchor" aria-hidden="true" href="#weak智能指针的用法">#</a></h3>
+<h3 id="weak智能指针的用法">weak智能指针的用法</h3>
 <p>weak_ptr的定义空指针(weak_ptr</p>
 <p>同时和share_ptr一样可以用 .count()来查看引用次数</p>
-<h3 id="注意">注意<a hidden class="anchor" aria-hidden="true" href="#注意">#</a></h3>
+<h3 id="注意">注意</h3>
 <p>弱指针不支持 * 和 -&gt; 对指针的访问</p>
-<h3 id="弱指针到共享指针的转化">弱指针到共享指针的转化<a hidden class="anchor" aria-hidden="true" href="#弱指针到共享指针的转化">#</a></h3>
+<h3 id="弱指针到共享指针的转化">弱指针到共享指针的转化</h3>
 <p>弱指针到共享指针的转化可以用.lock()来表示</p>
 <p>例如</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>shared_ptr sp_girl;
@@ -596,220 +400,16 @@ Girl类中有Boy的智能指针；
 </span></span></code></pre></div><p>再次感谢大佬的代码</p>
 <p>在这一串代码中主要变的就是各两个类中的对方函数的指针变为了弱指针（在需要的时候用.lock()给变回共享指针，使用完后置空）</p>
 <p>这样就避免了双方都没有权限去析构对方类</p>
-<h2 id="特别感谢">特别感谢<a hidden class="anchor" aria-hidden="true" href="#特别感谢">#</a></h2>
+<h2 id="特别感谢">特别感谢</h2>
 <p>（本章中用了不少这位大佬的代码，如有不妥，联系改正）</p>
-<p><a href="https://blog.csdn.net/cpp_learner/article/details/118912592" title="C++ 智能指针 - 全部用法详解_cpp智能指针特性_cpp_learners的博客-CSDN博客">C++ 智能指针 - 全部用法详解_cpp智能指针特性_cpp_learners的博客-CSDN博客血的教训？不学智能指针，本人丢了一份工作。_cpp智能指针特性<img loading="lazy" src="https://g.csdnimg.cn/static/logo/favicon32.ico" alt=""  />
-https://blog.csdn.net/cpp_learner/article/details/118912592 ;</a></p>
+<p><a href="https://blog.csdn.net/cpp_learner/article/details/118912592" title="C++ 智能指针 - 全部用法详解_cpp智能指针特性_cpp_learners的博客-CSDN博客">C++ 智能指针 - 全部用法详解_cpp智能指针特性_cpp_learners的博客-CSDN博客血的教训？不学智能指针，本人丢了一份工作。_cpp智能指针特性<img src="https://g.csdnimg.cn/static/logo/favicon32.ico" alt="">https://blog.csdn.net/cpp_learner/article/details/118912592 ;</a></p>
 
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
 
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="https://0ha.top/posts/132119564/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>2019蓝桥杯省赛题目——“数的分解”</span>
-  </a>
-  <a class="next" href="https://0ha.top/posts/131668974/">
-    <span class="title">Next »</span>
-    <br>
-    <span>C&#43;&#43;的智能指针（1/3）</span>
-  </a>
-</nav>
-
-
-<ul class="share-buttons">
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43;智能指针（3/3） on x"
-            href="https://x.com/intent/tweet/?text=C%2b%2b%e6%99%ba%e8%83%bd%e6%8c%87%e9%92%88%ef%bc%883%2f3%ef%bc%89&amp;url=https%3a%2f%2f0ha.top%2fposts%2f131743884%2f&amp;hashtags=">
-            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43;智能指针（3/3） on linkedin"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2f0ha.top%2fposts%2f131743884%2f&amp;title=C%2b%2b%e6%99%ba%e8%83%bd%e6%8c%87%e9%92%88%ef%bc%883%2f3%ef%bc%89&amp;summary=C%2b%2b%e6%99%ba%e8%83%bd%e6%8c%87%e9%92%88%ef%bc%883%2f3%ef%bc%89&amp;source=https%3a%2f%2f0ha.top%2fposts%2f131743884%2f">
-            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43;智能指针（3/3） on reddit"
-            href="https://reddit.com/submit?url=https%3a%2f%2f0ha.top%2fposts%2f131743884%2f&title=C%2b%2b%e6%99%ba%e8%83%bd%e6%8c%87%e9%92%88%ef%bc%883%2f3%ef%bc%89">
-            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43;智能指针（3/3） on facebook"
-            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2f0ha.top%2fposts%2f131743884%2f">
-            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43;智能指针（3/3） on whatsapp"
-            href="https://api.whatsapp.com/send?text=C%2b%2b%e6%99%ba%e8%83%bd%e6%8c%87%e9%92%88%ef%bc%883%2f3%ef%bc%89%20-%20https%3a%2f%2f0ha.top%2fposts%2f131743884%2f">
-            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43;智能指针（3/3） on telegram"
-            href="https://telegram.me/share/url?text=C%2b%2b%e6%99%ba%e8%83%bd%e6%8c%87%e9%92%88%ef%bc%883%2f3%ef%bc%89&amp;url=https%3a%2f%2f0ha.top%2fposts%2f131743884%2f">
-            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
-                <path
-                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
-            </svg>
-        </a>
-    </li>
-    <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share C&#43;&#43;智能指针（3/3） on ycombinator"
-            href="https://news.ycombinator.com/submitlink?t=C%2b%2b%e6%99%ba%e8%83%bd%e6%8c%87%e9%92%88%ef%bc%883%2f3%ef%bc%89&u=https%3a%2f%2f0ha.top%2fposts%2f131743884%2f">
-            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
-                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
-                <path
-                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
-            </svg>
-        </a>
-    </li>
-</ul>
-
-  </footer>
-</article>
     </main>
-    
-<p style="text-align: center;"><a href="https://beian.miit.gov.cn/">备案号：赣ICP备2023004523号-1</a></p>
-<footer class="footer">
-    <span>&copy; 2024 <a href="https://0ha.top/">木哈文轩</a></span>
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-
-
-</body>
-
+  </body>
 </html>
