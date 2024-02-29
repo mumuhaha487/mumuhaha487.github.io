@@ -276,18 +276,18 @@
 <p>pve安装好后，如果你有不止一个网口（单网口也行，不过要特殊的交换机来做单臂路由器，如果有多余的pcie口的话建议还是拓展出网口）</p>
 <h2 id="前置条件">前置条件<a hidden class="anchor" aria-hidden="true" href="#前置条件">#</a></h2>
 <p>接下来进入pve的webui中进行添加虚拟网卡（一般pve只会虚拟出一张虚拟网卡，我们要进行替换）</p>
-<p><img loading="lazy" src="https://:0ha.top/img/d2e24fa8c66d40b1870d6a78306b9a61.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/d2e24fa8c66d40b1870d6a78306b9a61.png" alt=""  />
 </p>
 <p>填上网卡的名称就行了</p>
 <p>不知道的可以用</p>
 <pre tabindex="0"><code>ip a
 </code></pre><p>查看，其中真实的物理网卡一般是enp开头的名称，别搞错了（算了还是上张图吧！！）</p>
-<p><img loading="lazy" src="https://:0ha.top/img/5a85fb469c324108bfad78ef691572dc.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/5a85fb469c324108bfad78ef691572dc.png" alt=""  />
 </p>
-<p><img loading="lazy" src="https://:0ha.top/img/c813cd147b0d4a85b476dee530968ac9.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/c813cd147b0d4a85b476dee530968ac9.png" alt=""  />
 </p>
 <p>设置好了点击确定然后应用配置（好像会报一个什么命令找不到错误，但是创建出来的网口可以用，所以问题不大）</p>
-<p><img loading="lazy" src="https://:0ha.top/img/9139bdc47d5c45f7a1805bc1097a5693.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/9139bdc47d5c45f7a1805bc1097a5693.png" alt=""  />
 </p>
 <h2 id="安装ikuai">安装ikuai<a hidden class="anchor" aria-hidden="true" href="#安装ikuai">#</a></h2>
 <p>多余的也不多说（上传镜像-&gt;创建虚拟机-&gt;操作系统中选择ikuai的镜像-&gt;分配好内存cpu-&gt;开机安装）</p>
@@ -296,16 +296,16 @@
 <p>我改了后台地址默认是192.168.1.1</p>
 <p>如果要改的话选择2改你的lan口网络地址</p>
 <p>改为192.168.2.1/255.255.255.0(192.168.2.1可以随便变，这就是你的后台地址</p>
-<p><img loading="lazy" src="https://:0ha.top/img/f8feccf869ee4ed094f2499245d77787.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/f8feccf869ee4ed094f2499245d77787.png" alt=""  />
 </p>
 <p>接下就是修改你的ip地址改成与他同一网段右键wifi</p>
-<p><img loading="lazy" src="https://:0ha.top/img/7bbe0f2ec0c84f8a98da3080cfe680ea.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/7bbe0f2ec0c84f8a98da3080cfe680ea.png" alt=""  />
 </p>
-<p><img loading="lazy" src="https://:0ha.top/img/db545c1570484305a325b1ade57f373d.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/db545c1570484305a325b1ade57f373d.png" alt=""  />
 </p>
-<p><img loading="lazy" src="https://:0ha.top/img/bb068de1007b40be8a507ced73dfa547.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/bb068de1007b40be8a507ced73dfa547.png" alt=""  />
 </p>
-<p><img loading="lazy" src="https://:0ha.top/img/4fcd60a60699421daedcf327cbcc0b30.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/4fcd60a60699421daedcf327cbcc0b30.png" alt=""  />
 </p>
 <p>ip地址改为同一网段就行</p>
 <p>比如后台是192.168.2.1你就改成192.168.2.2</p>
@@ -314,55 +314,55 @@
 <p>账号是admin</p>
 <p>默认密码是admin或者是（adminadmin）</p>
 <p>或者这样也可以查看</p>
-<p><img loading="lazy" src="https://:0ha.top/img/c33c4ec83a184310876b28a38f6743b3.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/c33c4ec83a184310876b28a38f6743b3.png" alt=""  />
 </p>
 <h2 id="配置lan口以及wan口">配置lan口，以及wan口<a hidden class="anchor" aria-hidden="true" href="#配置lan口以及wan口">#</a></h2>
 <p>简单来说WAN口就是连接外网的接口，LAN口就是连接局域网/内网的接口</p>
 <p>开始lan口就是你创建系统时你选择的网口（为了可以直接访问ikuai后台）</p>
 <p>此时我们要添加新的网口，来做wan口（lan/wan口设置不做考虑，太麻烦了）</p>
-<p><img loading="lazy" src="https://:0ha.top/img/6cfd54501ca945d5ab69b3c1e82a6383.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/6cfd54501ca945d5ab69b3c1e82a6383.png" alt=""  />
 </p>
 <p>有多少个网口添加上去就可以了</p>
 <h3 id="配置lan口桥接">配置lan口桥接<a hidden class="anchor" aria-hidden="true" href="#配置lan口桥接">#</a></h3>
 <p>点击lan1</p>
-<p><img loading="lazy" src="https://:0ha.top/img/1192a120b74943f9841373a4eb4ba24e.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/1192a120b74943f9841373a4eb4ba24e.png" alt=""  />
 </p>
 <p>点击高级设置把其他的网口全部连接起来（最好把ip地址也改一下，之前的192.168.1.1会和光猫的ip后台冲突）</p>
-<p><img loading="lazy" src="https://:0ha.top/img/63e77353f5414181aedfdb87d4ee9302.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/63e77353f5414181aedfdb87d4ee9302.png" alt=""  />
 </p>
 <h2 id="按实际情况来设置了">按实际情况来设置了<a hidden class="anchor" aria-hidden="true" href="#按实际情况来设置了">#</a></h2>
 <p>如果你是连接到上级路由器或者是拨号光猫的话</p>
 <p>点击wan口设置</p>
-<p><img loading="lazy" src="https://:0ha.top/img/5bd012c30f6244378198e6c7000ee38d.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/5bd012c30f6244378198e6c7000ee38d.png" alt=""  />
 </p>
 <p>直接选择dhcp（动态获取ip）就行了</p>
-<p><img loading="lazy" src="https://:0ha.top/img/8a56686e94b64cf29afa34b1f97b3b07.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/8a56686e94b64cf29afa34b1f97b3b07.png" alt=""  />
 </p>
 <p>如果连接的是桥接光猫</p>
 <p>下面两个都可以选择（前提是你知道你的宽带账号和密码）</p>
-<p><img loading="lazy" src="https://:0ha.top/img/63822af69cdb45559cf6b12831058cde.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/63822af69cdb45559cf6b12831058cde.png" alt=""  />
 </p>
 <p>第一个是单拨（就是一个宽带账号拨号一次），第二个就是多拨（一个宽带账号或者是多个宽带账号拨多次，实现宽带叠加（叠加速率上限看光猫的网口速率/拨号成不成功看当地运营商支不支持多拨））</p>
 <h3 id="单拨ppoe拨号">单拨（PPOE拨号）<a hidden class="anchor" aria-hidden="true" href="#单拨ppoe拨号">#</a></h3>
 <p>很简单，前提是你知道你的宽带账号和密码</p>
-<p><img loading="lazy" src="https://:0ha.top/img/c586402a2c93424496345d71b42b10d0.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/c586402a2c93424496345d71b42b10d0.png" alt=""  />
 </p>
 <p>设置这个就可以了</p>
 <h3 id="多拨内外网设置点击基于物理网卡的混合模式">多拨(内外网设置点击基于物理网卡的混合模式)<a hidden class="anchor" aria-hidden="true" href="#多拨内外网设置点击基于物理网卡的混合模式">#</a></h3>
 <p>前置设置（按照这个来就行了）</p>
-<p><img loading="lazy" src="https://:0ha.top/img/bec0e88f9abe4110b5ead01ff820fd55.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/bec0e88f9abe4110b5ead01ff820fd55.png" alt=""  />
 </p>
 <p>点击网络设置-&gt;内外网设置点击基于物理网卡的混合模式</p>
 <p>好划到下面进行添加账号</p>
-<p><img loading="lazy" src="https://:0ha.top/img/dd19dcf9f4c44118a6ced2ee3e06f747.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/dd19dcf9f4c44118a6ced2ee3e06f747.png" alt=""  />
 </p>
 <p>点击添加（同一个账号也可以添加多次，名称随便取）</p>
 <p>然后下划，点击保存就可以了</p>
 <p>最后进入多线负载</p>
-<p><img loading="lazy" src="https://:0ha.top/img/9c5d6752570e4359ba956c5ca5143835.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/9c5d6752570e4359ba956c5ca5143835.png" alt=""  />
 </p>
 <p>需要填写的框框出来了</p>
-<p><img loading="lazy" src="https://:0ha.top/img/8cd1550918dd4b1c97b0a6a14894d7dd.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/8cd1550918dd4b1c97b0a6a14894d7dd.png" alt=""  />
 </p>
 <h2 id="后续步骤">后续步骤<a hidden class="anchor" aria-hidden="true" href="#后续步骤">#</a></h2>
 <p>电脑连接你给电脑设置的lan口</p>
@@ -372,7 +372,7 @@
 <p>pve连接就进入网络配置界面编辑</p>
 <pre tabindex="0"><code>nano /etv/network/interfaces
 </code></pre><p>下划，随便挑一个lan口对应的虚拟网卡名称把他原来的manual改成dhcp就行了</p>
-<p><img loading="lazy" src="https://:0ha.top/img/b0b764a117d5456390d89ebae26bfdfd.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/b0b764a117d5456390d89ebae26bfdfd.png" alt=""  />
 </p>
 <p>最后重启，等待一段时间大概为（pve开机-&gt; ikuai开机 -&gt;pve连接ikuai网络）</p>
 <p>最后看ikuai后台有没有pve的网络登录</p>

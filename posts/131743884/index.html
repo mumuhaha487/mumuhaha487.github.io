@@ -296,7 +296,7 @@ https://blog.csdn.net/mumuemhaha/article/details/131689322?spm=1001.2014.3001.55
 <p>shared_ptr使用引用计数的方式来管理资源，即每个shared_ptr对象都有一个关联的计数器，记录有多少个shared_ptr对象共享同一块内存资源。当计数器为0时，资源会被自动释放。</p>
 </blockquote>
 <p>当复制或拷贝时， <strong>引用计数</strong>加1，当智能指针析构时， <strong>引用计数</strong>减1，如果计数为零，代表已经没有指针指向这块内存，那么我们就释放它！这就是 shared_ptr 采用的策略！</p>
-<p><img loading="lazy" src="https://:0ha.top/img/d83afe675d7d4eb9bfbc922ae4b2745b.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/d83afe675d7d4eb9bfbc922ae4b2745b.png" alt=""  />
 </p>
 <h3 id="例子类定义">例子（类定义）<a hidden class="anchor" aria-hidden="true" href="#例子类定义">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
@@ -487,11 +487,11 @@ Girl类中有Boy的智能指针；
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">请按任意键继续</span>. . .
 </span></span></code></pre></div><p>空间都没有释放出来（没有析构函数）</p>
 <h3 id="原因">原因<a hidden class="anchor" aria-hidden="true" href="#原因">#</a></h3>
-<p><img loading="lazy" src="https://:0ha.top/img/25ce19fe52e4480b86e1d47aa0e769ad.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/25ce19fe52e4480b86e1d47aa0e769ad.png" alt=""  />
 </p>
 <p>这里由于都各有对方的类，故引用计数为2</p>
 <p>但是当程序结束的时候</p>
-<p><img loading="lazy" src="https://:0ha.top/img/f3c86d95e1984c9aaab6ee1d1a4677d6.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/f3c86d95e1984c9aaab6ee1d1a4677d6.png" alt=""  />
 </p>
 <p>函数中的智能指针清理掉了，但是类中嵌套的智能指针无法释放，所有类无法调用析构函数</p>
 <h3 id="解决办法之一">解决办法之一<a hidden class="anchor" aria-hidden="true" href="#解决办法之一">#</a></h3>

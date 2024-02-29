@@ -297,25 +297,25 @@ https://blog.csdn.net/mumuemhaha/article/details/131191005?spm=1001.2014.3001.55
 <p>本章我们要学插入时候的第一类情况——父亲节点为红色叔叔节点也为红（当然祖父节点一定为黑色）</p>
 <h2 id="情况">情况<a hidden class="anchor" aria-hidden="true" href="#情况">#</a></h2>
 <p>当我的红色节点插上去时因为特性二——红色节点不可以相邻出现从而要对整个树进行平衡性调整</p>
-<p><img loading="lazy" src="https://:0ha.top/img/dbbac92f5d8e45919ec610cf708254b9.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/dbbac92f5d8e45919ec610cf708254b9.png" alt=""  />
 </p>
 <p>我们可以把新节点的颜色不变，然后把父亲节点和叔叔节点的颜色变为黑色，然后把爷爷节点的颜色变为红色</p>
 <h2 id="局部解决办法">局部解决办法<a hidden class="anchor" aria-hidden="true" href="#局部解决办法">#</a></h2>
 <p>从而达到这棵树的平衡</p>
-<p><img loading="lazy" src="https://:0ha.top/img/faf8cccfd8d74da8ab865104e5d3cfdc.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/faf8cccfd8d74da8ab865104e5d3cfdc.png" alt=""  />
 </p>
 <p>需要注意的是如果祖父是根节点的话要把祖父的颜色也调为黑色</p>
-<p><img loading="lazy" src="https://:0ha.top/img/0b09c32cf65846bf9dcc93c3fd456369.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/0b09c32cf65846bf9dcc93c3fd456369.png" alt=""  />
 </p>
 <h2 id="全局解决的思想">全局解决的思想<a hidden class="anchor" aria-hidden="true" href="#全局解决的思想">#</a></h2>
 <p>然而不幸的是一颗树的深度不仅仅可以是3，他可以更深——4，5,，6，7&hellip;或者更多</p>
 <p>如图</p>
-<p><img loading="lazy" src="https://:0ha.top/img/266754728f294627b6ca3259cac15e05.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/266754728f294627b6ca3259cac15e05.png" alt=""  />
 </p>
 <p>要在这个红黑树上把插入一个新的红色节点</p>
 <p>那么还是安装之前的方法调整你会发现一个问题就是你插入节点的祖父节点的父亲节点（也就是你的曾祖父节点）是红色的且你祖父节点的叔叔节点是黑色不在这一类方法中</p>
 <p>如图</p>
-<p><img loading="lazy" src="https://:0ha.top/img/70cdc4d080dc4358a942c792fb442297.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/70cdc4d080dc4358a942c792fb442297.png" alt=""  />
 </p>
 <p><em>但是不要慌张，后面两节会讲到其他的情况以及应对的方法（需要注意的时在后续解决中你要把蓝圈部分当成一个整体【因为他已经平衡了】）</em></p>
 <p><strong>现在恭喜你，你已经学到了红黑树插入时会遇到的第一种情况的解决办法</strong></p>

@@ -292,7 +292,7 @@ https://blog.csdn.net/mumuemhaha/article/details/131296981?csdn_share_tail=%7B%2
 <h2 id="情况">情况<a hidden class="anchor" aria-hidden="true" href="#情况">#</a></h2>
 <p>第二种情况就是父亲节点为红色，叔叔节点没有或者为黑色，父亲节点为爷爷的左节点，且爷爷节点为曾祖父（爷爷的父亲）节点的左节点。</p>
 <p>就是这么一个图</p>
-<p><img loading="lazy" src="https://:0ha.top/img/8f203c8f3e0744e08ae25385a630cb68.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/8f203c8f3e0744e08ae25385a630cb68.png" alt=""  />
 </p>
 <h2 id="解决办法">解决办法<a hidden class="anchor" aria-hidden="true" href="#解决办法">#</a></h2>
 <p>这里要把节点进行右旋</p>
@@ -304,18 +304,18 @@ https://blog.csdn.net/mumuemhaha/article/details/131296981?csdn_share_tail=%7B%2
 <p>同时把父亲节点得到右指针指向祖父节点，如果父亲节点有右孩子节点需要把他提取出来放到原曾祖父的左孩子（同时连接祖父的父亲指针，后面都记得变，不说了）</p>
 <p>就完成了右旋的操作</p>
 <p>结果图为</p>
-<p><img loading="lazy" src="https://:0ha.top/img/b5913821a04f4504af18f0db1f561ebf.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/b5913821a04f4504af18f0db1f561ebf.png" alt=""  />
 </p>
 <h2 id="变色">变色<a hidden class="anchor" aria-hidden="true" href="#变色">#</a></h2>
 <p>这个时候只需要变色就行了</p>
 <p>把你的父亲节点变为黑色，同时把原爷爷节点变为红色</p>
 <p>就为下图</p>
-<p><img loading="lazy" src="https://:0ha.top/img/91abac6a30564ce8abe40e4319222d98.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/91abac6a30564ce8abe40e4319222d98.png" alt=""  />
 </p>
 <p>这时候红黑树就进行了平衡</p>
 <h2 id="接上一章的问题">接上一章的问题<a hidden class="anchor" aria-hidden="true" href="#接上一章的问题">#</a></h2>
 <p>上一章的图片为</p>
-<p><img loading="lazy" src="https://:0ha.top/img/f70cfba786784bbfa43dd14c8b0fbcf3.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/f70cfba786784bbfa43dd14c8b0fbcf3.png" alt=""  />
 </p>
 <p>还记得我们上一回记住的吗？</p>
 <p>把篮圈内的部分看为一个整体（因为他已经平衡了）</p>
@@ -327,10 +327,10 @@ https://blog.csdn.net/mumuemhaha/article/details/131296981?csdn_share_tail=%7B%2
 <p>把父亲的节点的右孩子连接到祖父节点，再把原父亲右孩子节点连接到祖父的左节点</p>
 <p>这样宏观的结果就是相当于把爷爷节点&quot;拽&quot;了下来</p>
 <p>最后的图为</p>
-<p><img loading="lazy" src="https://:0ha.top/img/8f4b6233986549508c0f38ca782dc0de.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/8f4b6233986549508c0f38ca782dc0de.png" alt=""  />
 </p>
 <p>最后进行变色</p>
-<p><img loading="lazy" src="https://:0ha.top/img/9ccfd1408a7b40269b91db3eed9db2bb.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/9ccfd1408a7b40269b91db3eed9db2bb.png" alt=""  />
 </p>
 <p>一个红黑树到达平衡</p>
 <h2 id="代码讲解">代码讲解<a hidden class="anchor" aria-hidden="true" href="#代码讲解">#</a></h2>
@@ -402,7 +402,7 @@ https://blog.csdn.net/mumuemhaha/article/details/131296981?csdn_share_tail=%7B%2
 </span></span></code></pre></div><h2 id="注意事项">注意事项<a hidden class="anchor" aria-hidden="true" href="#注意事项">#</a></h2>
 <p>在每次平衡性调整时，需要注意新节点的颜色最好不要变，因为它可能会是一个整体</p>
 <p>比如这个</p>
-<p><img loading="lazy" src="https://:0ha.top/img/00f4217305c74dd99a3a58c9f447e0ae.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/00f4217305c74dd99a3a58c9f447e0ae.png" alt=""  />
 </p>
 <p>这里新节点的颜色被整体看为红色</p>
 <p>如果后续新节点要变化颜色，这个整体就要变化为黑色（也就是30这个节点变为黑色），一般情况下要篮圈内进行平衡性调整，这是复杂化且不合理的。</p>

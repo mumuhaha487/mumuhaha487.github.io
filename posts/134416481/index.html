@@ -280,7 +280,7 @@ https://blog.csdn.net/mumuemhaha/article/details/133554220?spm=1001.2014.3001.55
 <p>这一变博客就讲讲c++中的Condition Variable库吧</p>
 <h2 id="condition-variable的简介">Condition Variable的简介<a hidden class="anchor" aria-hidden="true" href="#condition-variable的简介">#</a></h2>
 <p>官方原文解释</p>
-<p><img loading="lazy" src="https://:0ha.top/img/3326c9d3996443c5afd4341929209dcf.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/3326c9d3996443c5afd4341929209dcf.png" alt=""  />
 翻译就是</p>
 <p>_条件变量_是一个对象，它能够阻止调用线程，直到 _通知_恢复。</p>
 <p>当调用线程的一个 _ <a href="https://cplusplus.com/condition_variable::wait" title="等待函数">等待函数</a><em>时，它使用 （mutex ） 来锁定线程。该线程将保持阻塞状态，直到被另一个线程唤醒，该线程对同一对象调用 _ <a href="https://cplusplus.com/condition_variable::notify_one" title="通知函数">通知函数</a></em>。</p>
@@ -293,7 +293,7 @@ https://blog.csdn.net/mumuemhaha/article/details/133554220?spm=1001.2014.3001.55
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wait</span> (unique_lock<span style="color:#f92672">&amp;</span> lck, Predicate pred);
 </span></span></code></pre></div><p>第一种为他只是传递一个mutex锁(注意是unique_lock锁）来锁定自己，也就是堵塞当前的线程，直到自己被notify(下面要讲到的函数)唤醒。</p>
 <p>第二种和第一种差不多不过他多了一个predicate的参数，这里可以是一个函数，类型为true或者false，我画了一张并不是很准确的图片可以帮助理解一下</p>
-<p><img loading="lazy" src="https://:0ha.top/img/631992eeb0884930aa547d1dda947924.png" alt=""  />
+<p><img loading="lazy" src="https://0ha.top/img/631992eeb0884930aa547d1dda947924.png" alt=""  />
 </p>
 <p>大部分时候为了缩短代码的长度他一般会写出lambda表达式，也就是类似与[x] () { x=1; };这样的表达式</p>
 <p>它可以等效为</p>
